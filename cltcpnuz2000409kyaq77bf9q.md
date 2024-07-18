@@ -177,7 +177,7 @@ Git is a version control manager created by Linus Torvalds in 2005 and, since th
 
 # What is GitHub?
 
-GitHub hosts a collection of remote repos where local changes to a code base can be saved to an off-site location. These remote repos can either be public or private. Competing Git-based repos include GitLab and Bitbucket.
+GitHub hosts a collection of remote repos where local changes to a code base can be saved to an off-site location. These remote repos can either be public or private. Alternatives to GitHub include GitLab and Bitbucket.
 
 [https://docs.github.com/en/get-started/using-git/about-git](https://docs.github.com/en/get-started/using-git/about-git)***↗.***
 
