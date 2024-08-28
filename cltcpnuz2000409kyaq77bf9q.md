@@ -46,6 +46,12 @@ AnythingLLM is a free, easy-to-use, and versatile document chatbot. It is made f
 
 [https://useanything.com/](https://useanything.com/)***↗.***
 
+# What is Astro?
+
+Astro is a frontend meta-framework. A meta-framework makes use of the resources provided by other, underlying frameworks. In the case of Astro, it can import components from React, Svelte, Vue, and other frameworks by using simple directives. There are hundreds of available integrations and API hooks that can customize a project to my exact use cases. Highlights of using Astro include Islands, Agnostic UIs, Server-Side Rendering, Zero JS (by default), Content Collections, and Custom Integrations.
+
+[https://astro.build/](https://astro.build/) ***↗.***
+
 # What is a BRD?
 
 A Business Requirements Document (BRD) is used to clarify specific goals, the resources needed to reach those goals, the estimated costs involved, and the projected timeline for completion.
