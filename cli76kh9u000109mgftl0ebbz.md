@@ -59,7 +59,7 @@ ssh-copy-id -i /home/brian/.ssh/container-name.pub yt@192.168.?.?
 
 ## Logging In to the Remote Container.
 
-* From the `workstation` terminal (`CTRL` + `ALT` + `T`), I login to the “brian” account of the remote container:
+* From the `workstation` terminal (`CTRL` + `ALT` + `T`), I login to the “yt” account of the remote container:
     
 
 ```plaintext
