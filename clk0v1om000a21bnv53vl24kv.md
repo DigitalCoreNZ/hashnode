@@ -16,7 +16,7 @@ Install CrowdSec in a Docker container to detect and block malicious traffic usi
 
 ## An Introduction.
 
-My previous post in this 8-part mini-series covered how I [installed Docker Swarm](https://solodev.app/7-of-8-docker-swarm-with-docker-containers) for remote Docker containers. This time, I'm going to show how I install CrowdSec in the Docker container.
+My previous post in this 10-part mini-series covered how I [installed Docker Swarm](https://solodev.app/7-of-8-docker-swarm-with-docker-containers) for remote Docker containers. This time, I'm going to show how I install CrowdSec in the Docker container.
 
 > The purpose of this post is to install CrowdSec in the Docker container.
 
