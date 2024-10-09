@@ -86,6 +86,12 @@ CUDA also helps developers easily use the latest GPU features, like those in the
 
 [https://blogs.nvidia.com/blog/what-is-cuda-2/](https://blogs.nvidia.com/blog/what-is-cuda-2/)***↗.***
 
+# What is DaVinci Resolve?
+
+DaVinci Resolve is a video editing, colour grading and correction, visual effects, motion graphics, and audio post-production application for macOS, Windows, and Linux. It was originally developed by da Vinci Systems as da Vinci Resolve. Then in 2009, when da Vinci Systems was acquired by Blackmagic Design, the application was rebranded as DaVinci Resolve.
+
+[https://www.blackmagicdesign.com/](https://www.blackmagicdesign.com/)***↗.***
+
 # What is Distrobox?
 
 Distrobox is a tool that allows me to run any Linux distribution within my terminal. It enables both backward and forward compatibility with any software, and the freedom to use whichever distribution I'm most comfortable with. Distrobox uses Podman, Docker, or Lilipod to create containers using the Linux distribution of my choosing. It aims to run any software, on top of my host system, without any hassle.
@@ -423,7 +429,7 @@ PyTorch is an open-source deep learning framework known for its flexibility and 
 
 Rivest-Shamir-Adleman (RSA) is a type of encryption that is popular in many products and services. It uses two connected keys to lock and unlock data. There is a private key and a public key. The public key can be shared with anyone, but the private key is kept secret by the person who made the keys. With RSA, the public key can lock the data, but only the private key can unlock it.
 
-[https://en.wikipedia.org/wiki/RSA\_(cryptosystem)](https://en.wikipedia.org/wiki/RSA_(cryptosystem))***↗.***
+[https://en.wikipedia.org/wiki/RSA\_(cryptosystem)](https://en.wikipedia.org/wiki/RSA_\(cryptosystem\))***↗.***
 
 # What is Rust?
 
