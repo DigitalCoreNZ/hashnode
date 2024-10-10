@@ -2,7 +2,7 @@
 title: "2 of 5: Learning the Basics of Scrapy."
 datePublished: Tue Apr 09 2024 10:00:27 GMT+0000 (Coordinated Universal Time)
 cuid: clus7nlye000q08l01c7xgol6
-slug: 2-of-5-learning-the-scrapy-basics
+slug: 2-of-5-learning-the-basics-of-scrapy
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1728526598361/fd34d1e9-46db-455c-8abd-b1677a629b7e.png
 tags: python, scrapy, web-scraping, web-crawling, python-programming, miniconda, programming-tips, virtual-environment, data-extraction, tech-insights, tech-tutorial, scrapy-tutorial, scrapy-spiders
 
