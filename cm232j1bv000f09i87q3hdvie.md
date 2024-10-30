@@ -156,9 +156,9 @@ sudo mkdir ./disabled_libs
 sudo mv libglib-2.0.so* libgio-2.0.so* libgmodule-2.0.so* disabled_libs/
 ```
 
-> NOTE: Moving these libraries forces Resolve to use the Ubuntu libraries.
+> NOTE: Moving these libraries forces Resolve to use the Ubuntu 24.04LTS libraries.
 
-* I update my NVIDIA drivers:
+* I update my NVIDIA drivers, if required:
     
 
 ```bash
