@@ -2,7 +2,7 @@
 title: "Installing DaVinci Resolve 19 Studio on Ubuntu 24.04 LTS."
 datePublished: Thu Oct 10 2024 09:00:20 GMT+0000 (Coordinated Universal Time)
 cuid: cm232j1bv000f09i87q3hdvie
-slug: installing-davinci-resolve-19-studio-on-ubuntu-2404
+slug: installing-davinci-resolve-19-studio-on-ubuntu-2404-lts
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1728524560078/3a997ce1-f641-4b4a-8db5-e4937fc3ae01.png
 tags: video-editing, video-production, video-post-production, motion-graphics, blackmagic-design, davinci-resolve-19, davinci-resolve-19-studio, colour-grading, video-post, video-content-creation, film-editing, creative-editing, professional-video-editing, audio-post-production, linux-video-editing
 
