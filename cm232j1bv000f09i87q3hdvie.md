@@ -1,5 +1,5 @@
 ---
-title: "Installing DaVinci Resolve 19 Studio on Ubuntu 24.04."
+title: "Installing DaVinci Resolve 19 Studio on Ubuntu 24.04 LTS."
 datePublished: Thu Oct 10 2024 09:00:20 GMT+0000 (Coordinated Universal Time)
 cuid: cm232j1bv000f09i87q3hdvie
 slug: installing-davinci-resolve-19-studio-on-ubuntu-2404
