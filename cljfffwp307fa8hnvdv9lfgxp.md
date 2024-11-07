@@ -1,5 +1,5 @@
 ---
-title: "4 of 10: Installing Docker Desktop."
+title: "4 of 10: Installing Docker Desktop (deprecated)."
 datePublished: Wed Jun 28 2023 08:00:39 GMT+0000 (Coordinated Universal Time)
 cuid: cljfffwp307fa8hnvdv9lfgxp
 slug: 4-of-10-installing-docker-desktop
