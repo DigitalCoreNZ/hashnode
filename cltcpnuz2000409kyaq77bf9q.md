@@ -32,9 +32,9 @@ Python projects run in virtual environments. These isolated spaces are used to m
 
 venv is a virtual environment manager that is bundled with Python since version 3.3. However, venv is not the only environment manager. Anaconda is a Python and R distribution for scientific computing that includes the conda package manager. Miniconda, a bootstrap version of Anaconda, is a virtual environment manager that is small, FREE, and also includes the conda package manager, Python, and other packages that are required or useful to a developer, like pip and zlib.
 
-[http://www.anaconda.com/](http://www.anaconda.com/%E2%86%97)↗,
+[http://www.anaconda.com/](http://www.anaconda.com/%E2%86%97) ↗,
 
-[https://docs.anaconda.com/free/miniconda/index.html](https://docs.anaconda.com/free/miniconda/index.html%E2%86%97)↗, and
+[https://docs.anaconda.com/free/miniconda/index.html](https://docs.anaconda.com/free/miniconda/index.html%E2%86%97) ↗, and
 
 [https://solodev.app/installing-miniconda](https://solodev.app/installing-miniconda).
 
@@ -44,7 +44,7 @@ Miniconda must be installed (conda -V) before continuing with this post.
 
 AnythingLLM is a free, easy-to-use, and versatile document chatbot. It is made for people who want to chat with, or create, a custom knowledge base using existing documents and websites. RAG (Retrieval-Augmented Generation) is the process of creating custom knowledge bases, which conveniently sidesteps the need for finetuning an LLM (Large Language Model) with LoRA (Low-Rank Adaptation) or QLoRA (Quantised LoRA). The information from the documents and websites are converted, and saved, to a vector database so an LLM can use this data to improve its answers my queries. AnythingLLM can work with many users, or just a single user, from one installation. This makes AnythingLLM great for those who want a ChatGPT experience, and complete privacy, while supporting multiple users in the same setup.
 
-[https://useanything.com/](https://useanything.com/)***↗.***
+[https://useanything.com/](https://useanything.com/) ***↗.***
 
 # What is Astro?
 
@@ -68,13 +68,13 @@ This is a business document for business people, not a technology document for t
 
 Chroma is an open-source vector database used for saving, and using, embeddings. Its main job is to store embeddings, with related meta data, that is used by large language models. Chroma works well as a foundation for text-based search engines and is perfect for handling lots of unstructured and partly structured data.
 
-[https://www.trychroma.com/](https://www.trychroma.com/)***↗.***
+[https://www.trychroma.com/](https://www.trychroma.com/) ***↗.***
 
 # What is Cloudflare?
 
 Cloudflare is a worldwide network of data centres that offer content and services that make websites and apps faster, safer, and more reliable. It's one of the biggest networks in the world. Companies, non-profits, bloggers, and anyone with an online presence enjoy quicker, more secure websites and apps because of Cloudflare. It supports millions of internet properties, and its network grows by tens of thousands daily. Cloudflare handles internet requests for millions of websites and manages, on average, 55 million HTTP requests per second.
 
-[https://www.cloudflare.com/](https://www.cloudflare.com/)***↗.***
+[https://www.cloudflare.com/](https://www.cloudflare.com/) ***↗.***
 
 # What is CUDA?
 
@@ -84,29 +84,29 @@ Some people think CUDA, launched in 2006, is just a programming language or an A
 
 CUDA also helps developers easily use the latest GPU features, like those in the NVIDIA Ampere GPU architecture.
 
-[https://blogs.nvidia.com/blog/what-is-cuda-2/](https://blogs.nvidia.com/blog/what-is-cuda-2/)***↗.***
+[https://blogs.nvidia.com/blog/what-is-cuda-2/](https://blogs.nvidia.com/blog/what-is-cuda-2/) ***↗.***
 
 # What is DaVinci Resolve?
 
 DaVinci Resolve is a video editing, colour grading and correction, visual effects, motion graphics, and audio post-production application for macOS, Windows, and Linux. It was originally developed by da Vinci Systems as da Vinci Resolve. Then in 2009, when da Vinci Systems was acquired by Blackmagic Design, the application was rebranded as DaVinci Resolve.
 
-[https://www.blackmagicdesign.com/](https://www.blackmagicdesign.com/)***↗.***
+[https://www.blackmagicdesign.com/](https://www.blackmagicdesign.com/) ***↗.***
 
 # What is Distrobox?
 
 Distrobox is a tool that allows me to run any Linux distribution within my terminal. It enables both backward and forward compatibility with any software, and the freedom to use whichever distribution I'm most comfortable with. Distrobox uses Podman, Docker, or Lilipod to create containers using the Linux distribution of my choosing. It aims to run any software, on top of my host system, without any hassle.
 
-[https://distrobox.it/](https://distrobox.it/)***↗.***
+[https://distrobox.it/](https://distrobox.it/) ***↗.***
 
 # What is Docker?
 
 Docker is a tool for easily deploying, and running my applications on any platform. I can package an application with all its code, libraries, dependencies, and tools, which allows me to deploy that app as a single bundle. Docker guarantees that my application will run on any computer that also runs Docker.
 
-[https://ubuntu.com/tutorials/how-to-run-docker-inside-lxd-containers](https://ubuntu.com/tutorials/how-to-run-docker-inside-lxd-containers)***↗,***
+[https://ubuntu.com/tutorials/how-to-run-docker-inside-lxd-containers](https://ubuntu.com/tutorials/how-to-run-docker-inside-lxd-containers) ***↗,***
 
 [https://solodev.app/installing-docker](https://solodev.app/installing-docker), and
 
-[https://www.docker.com/***↗***](https://www.docker.com/%E2%86%97)[***.***](https://www.docker.com/)
+[https://www.docker.com/](https://www.docker.com/%E2%86%97) ***↗.***
 
 [Docker must be installed](https://solodev.app/installing-docker) (`docker -v`) before continuing with this post.
 
@@ -114,43 +114,43 @@ Docker is a tool for easily deploying, and running my applications on any platfo
 
 Docker Compose is a tool that helps define and run applications with multiple containers. It makes development and deployment smoother and more efficient. Compose makes it simple to control my whole application stack, managing services, networks, and volumes in one easy-to-understand YAML configuration file. I can create, and start, all the services from my configuration file with just one command. Compose works in all environments, like production, staging, development, testing, and CI/CD. It also has commands to manage my applications' entire lifecycle.
 
-[https://docs.docker.com/compose/](https://docs.docker.com/compose/)***↗.***
+[https://docs.docker.com/compose/](https://docs.docker.com/compose/) ***↗.***
 
 # What is a Docker Container?
 
 Docker Containers are ephemeral (temporary) system simulations that run on PCs. Containers, which are created from Docker Images, are virtual spaces that separates my running applications from the base OS and other apps. Containers are easy to run on other systems that also support Docker.
 
-[https://docs.docker.com/guides/walkthroughs/what-is-a-container/](https://docs.docker.com/guides/walkthroughs/what-is-a-container/)***↗.***
+[https://docs.docker.com/guides/walkthroughs/what-is-a-container/](https://docs.docker.com/guides/walkthroughs/what-is-a-container/) ***↗.***
 
 # What is Docker Desktop?
 
 Docker Desktop is a developer utility for my Mac, Linux, or Windows environment that lets me build, share, and run containerized applications and microservices. It provides a straightforward GUI (Graphical User Interface) that lets me manage my applications, containers, and images directly.
 
-[https://docs.docker.com/desktop/](https://docs.docker.com/desktop/)***↗.***
+[https://docs.docker.com/desktop/](https://docs.docker.com/desktop/) ***↗.***
 
 # What is Docker Hub?
 
 Docker Hub is a place where developers and open source contributors can find, use, and share container images. It lets developers host public repos for free or private repos for teams and businesses. Docker Hub is the biggest collection of container images, with content from community developers, open source projects, and software companies creating and sharing their code in containers.
 
-[https://docs.docker.com/docker-hub/](https://docs.docker.com/docker-hub/)***↗.***
+[https://docs.docker.com/docker-hub/](https://docs.docker.com/docker-hub/) ***↗.***
 
 # What is a Docker Image?
 
 Docker Images are immutable (permanent) files that are used to run code in Docker Containers. They also serve as a guide for building Docker Containers, like a template. Images are the starting point when using Docker. They are similar to a snapshot in virtual machine (VM) environments.
 
-[https://docs.docker.com/build/building/packaging/](https://docs.docker.com/build/building/packaging/)***↗.***
+[https://docs.docker.com/build/building/packaging/](https://docs.docker.com/build/building/packaging/) ***↗.***
 
 # What is Docker Scout?
 
 Docker Scout helps keep software safe by analysing images, quickly finding vulnerabilities, giving suggestions to fix problems, and more. It is made for developers and works well with Docker. With Docker Scout, I spend less time looking for, and fixing, issues and more time working on my code. The Docker Scout CLI plugin is a powerful, yet flexible terminal interface.
 
-[https://docs.docker.com/scout/](https://docs.docker.com/scout/)***↗.***
+[https://docs.docker.com/scout/](https://docs.docker.com/scout/) ***↗.***
 
 # What is Docker Swarm?
 
 Docker Swarm mode is part of the current versions of Docker and helps manage a group of Docker Engines called a swarm. With the Docker CLI, I can create a swarm, put app services into it, and control how the swarm works. Docker Swarm mode is built directly into the Docker Engine.
 
-[https://docs.docker.com/engine/swarm/](https://docs.docker.com/engine/swarm/)***↗.***
+[https://docs.docker.com/engine/swarm/](https://docs.docker.com/engine/swarm/) ***↗.***
 
 # What is a Domain Name?
 
@@ -177,25 +177,25 @@ Elia is a terminal-based app for interacting with LLMs. It's designed to be keyb
 
 FFmpeg is a top multimedia tool that can decode, encode, transcode, mux, demux, stream, filter, and play almost any format created by humans or machines. It supports both old and new formats, whether made by a standards group, the community, or a company. FFmpeg is also very portable: it can be compiled, run, and tested on Linux, Mac OS X, Windows, BSDs, Solaris, and more, across different build environments, machine types, and setups.
 
-[https://ffmpeg.org/](https://ffmpeg.org/)***↗.***
+[https://ffmpeg.org/](https://ffmpeg.org/) ***↗.***
 
 # What is Flowise?
 
 Flowise is an open-source, low-code platform that helps me easily create customized AI workflows and agents. It simplifies the development of AI applications, which usually require many iterations, by allowing for quick changes from testing to production. Chatflows link AI models with various tools like memory, data loaders, and cache, along with over a hundred other integrations including LangChain and LlamaIndex. This setup enables the creation of autonomous agents and assistants that can perform diverse tasks using custom tools. I can build functional agents and OpenAI assistants, or opt for local AI models to save costs. Flowise supports extensions and integrations through APIs, SDKs, and embedded chat features. It is platform-agnostic, meaning Flowise can work with local, open-source AI models in secure, offline environments using local data storage. It is compatible with various platforms and technologies like Ollama, HuggingFace, AWS (Amazon Web Services), Azure, and GCP (Google Cloud Platform), offering flexibility in deployment.
 
-[https://docs.flowiseai.com/](https://docs.flowiseai.com/)↗.
+[https://docs.flowiseai.com/](https://docs.flowiseai.com/) ↗.
 
 # What is Gatsby?
 
 Gatsby is an open-source, React-based, static site generator (SSG) framework. It is used to build websites that are performant, scalable, and secure. I can also pull data from a headless CMS.
 
-[https://www.gatsbyjs.com/](https://www.gatsbyjs.com/)***↗.***
+[https://www.gatsbyjs.com/](https://www.gatsbyjs.com/) ***↗.***
 
 # What is Git?
 
 Git is a version control manager created by Linus Torvalds in 2005 and, since then, this project has been maintained by Junio Hamano. This utility helps me track the changes I make to my code. Git is used by development team members, who collaborate on software projects, to merge their individual changes to a local, or remote, repository (repo) at the end of each day.
 
-[https://git-scm.com/book/en/v2/Getting-Started-What-is-Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)***↗.***
+[https://git-scm.com/book/en/v2/Getting-Started-What-is-Git?](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) ***↗.***
 
 [Git must be installed](https://solodev.app/installing-git) (`git -v`) before continuing with this post.
 
@@ -203,14 +203,14 @@ Git is a version control manager created by Linus Torvalds in 2005 and, since th
 
 GitHub hosts a collection of remote repos where local changes to a code base can be saved to an off-site location. These remote repos can either be public or private. Alternatives to GitHub include GitLab and Bitbucket.
 
-[https://docs.github.com/en/get-started/using-git/about-git](https://docs.github.com/en/get-started/using-git/about-git)***↗.***
+[https://docs.github.com/en/get-started/using-git/about-git](https://docs.github.com/en/get-started/using-git/about-git) ***↗.***
 
 # What is GitLab CE?
 
 GitLab CE (Community Edition) is an open source, end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more.  
 I can self-host GitLab CE on my own servers, in a container, or on a cloud provider.
 
-[https://gitlab.com/free-releases/gitlab-ce](https://gitlab.com/free-releases/gitlab-ce)***↗.***
+[https://gitlab.com/free-releases/gitlab-ce](https://gitlab.com/free-releases/gitlab-ce) ***↗.***
 
 # What is GPT Pilot?
 
@@ -220,13 +220,13 @@ GPT Pilot is the main engine that powers the Pythagora VS Code extension. (The d
 
 Jekyll is a free, Ruby-based, open-source tool for creating static websites. I don't need to know Ruby; It just needs to be installed. It is ideal for various static websites, such as personal blogs, portfolios, and documentation sites, eliminating the need for databases or content management systems. Jekyll works with text and markdown files, converting them into secure static HTML files, which can be easily hosted without complex systems. It is secure, does not require a database or server-side scripts, and is highly customizable. Additionally, Jekyll has a large community that provides inspiration and assistance.
 
-[https://jekyllrb.com/docs/](https://jekyllrb.com/docs/)***↗.***
+[https://jekyllrb.com/docs/](https://jekyllrb.com/docs/) ***↗.***
 
 # What is Jupyter Notebook?
 
 Jupyter Notebook is an open source web application that lets me create, and share, documents that include live code, equations, visuals, and text. It is managed by the maintainers at Project Jupyter and started as part of the IPython project. The name "Jupyter" reflects the main languages it supports: Julia, Python, and R. It comes with the IPython kernel for Python programming, but I can also use over 100 other kernels.
 
-[https://jupyter-notebook.readthedocs.io/en/latest/](https://jupyter-notebook.readthedocs.io/en/latest/)***↗.***
+[https://jupyter-notebook.readthedocs.io/en/latest/](https://jupyter-notebook.readthedocs.io/en/latest/) ***↗.***
 
 # What is LangChain, LangSmith, LangeServe, and LangGraph?
 
@@ -238,13 +238,13 @@ LangeServe is a platform for deploying and maintaining my LLM applications. It h
 
 LangGraph is a tool for creating complex applications with LLMs that involve multiple parts working together. It is designed to work with LangChain and adds new features to the LangChain Expression Language, helping me manage several chains (or parts) through many steps in a loop.
 
-[https://python.langchain.com/docs/get\_started/introduction](https://python.langchain.com/docs/get_started/introduction)↗,
+[https://python.langchain.com/docs/get\_started/introduction](https://python.langchain.com/docs/get_started/introduction) ↗,
 
-[https://docs.smith.langchain.com](https://docs.smith.langchain.com)↗,
+[https://docs.smith.langchain.com](https://docs.smith.langchain.com) ↗,
 
-[https://www.langchain.com/langserve](https://www.langchain.com/langserve)↗, and
+[https://www.langchain.com/langserve](https://www.langchain.com/langserve) ↗, and
 
-[https://python.langchain.com/docs/langgraph](https://python.langchain.com/docs/langgraph)↗.
+[https://python.langchain.com/docs/langgraph](https://python.langchain.com/docs/langgraph) ↗.
 
 These LangChain tools must be installed (`pip show langchain`) before continuing with this post.
 
@@ -252,13 +252,13 @@ These LangChain tools must be installed (`pip show langchain`) before continuing
 
 Langflow is a user-friendly interface for LangChain, built using react-flow. It lets me easily create, and test, different setups by dragging and dropping components and using a chat box. Each part of the graph in Langflow works on its own. It's designed to help me quickly try out new ideas and build AI applications without needing to write much code. Langflow comes with ready-to-use components that I can mix and match to build AI apps. It fits perfectly with the tools I already use and makes it simple to develop basic, or advanced, AI applications. Langflow is all about making AI integration straightforward while expanding what I can do with AI in both tests and real-life use cases.
 
-[https://docs.langflow.org/](https://docs.langflow.org/)↗.
+[https://docs.langflow.org/](https://docs.langflow.org/) ↗.
 
 # What is LiteLLM?
 
 LiteLLM is a proxy that provides LLMs with IP addresses. It is a unified interface that calls 100+ LLMs using the same Input/Output format, supporting OpenAI, Huggingface, Anthropic, vLLM, Cohere, and even custom LLM API services.
 
-[https://litellm.ai/](https://litellm.ai/)***↗.***
+[https://litellm.ai/](https://litellm.ai/) ***↗.***
 
 [LiteLLM must be installed](https://solodev.app/installing-litellm) (`litellm -v`) before continuing with this post.
 
@@ -276,13 +276,11 @@ A LXC (LinuX Container) is an isolated, OS-level virtualization which, for effic
 
 [https://solodev.app/installing-lxd-and-using-lxcs](https://solodev.app/installing-lxd-and-using-lxcs).
 
-[LXD must be installed](https://solodev.app/installing-lxd-and-using-lxcs) (`lxc --version`) before continuing with this post.
-
 # What is MAX?
 
 MAX (Modular Accelerated Engine) is a set of tools that makes it easier for me to work on AI projects. It includes the MAX Engine, MAX Serving, and the Mojo programming language. These tools help me create, and run, the next generation of machine learning solutions.
 
-[https://www.modular.com/max](https://www.modular.com/max).
+[https://www.modular.com/max](https://www.modular.com/max) ↗.
 
 # What is MemGPT?
 
@@ -309,29 +307,29 @@ Microservices are small, independent "components" that communicate over well-def
 
 The microservice architecture enables an organization to deliver large, complex applications rapidly, frequently, reliably, and sustainably - a necessity for deploying my 12 Startups.
 
-[https://www.ibm.com/topics/microservices](https://www.ibm.com/topics/microservices)***↗.***
+[https://www.ibm.com/topics/microservices](https://www.ibm.com/topics/microservices) ***↗.***
 
 # What is a Multi-Agent Workflow?
 
 An agent is an entity that is powered by an LLM (large language model). The agent will also have its own prompt, a selection of tools, and some custom code that helps with collaboration. A multi-agent workflow is built with *at least* two agents that collaborate with each other in order to achieve my specifically defined outcome.
 
-[https://microsoft.github.io/autogen/blog/2023/12/01/AutoGenStudio/](https://microsoft.github.io/autogen/blog/2023/12/01/AutoGenStudio/)***↗,***
+[https://microsoft.github.io/autogen/blog/2023/12/01/AutoGenStudio/](https://microsoft.github.io/autogen/blog/2023/12/01/AutoGenStudio/) ***↗,***
 
-[https://blog.langchain.dev/langgraph-multi-agent-workflows/](https://blog.langchain.dev/langgraph-multi-agent-workflows/)***↗,***
+[https://blog.langchain.dev/langgraph-multi-agent-workflows/](https://blog.langchain.dev/langgraph-multi-agent-workflows/) ***↗,***
 
-[https://docs.crewai.com/core-concepts/Collaboration/](https://docs.crewai.com/core-concepts/Collaboration/)***↗.***
+[https://docs.crewai.com/core-concepts/Collaboration/](https://docs.crewai.com/core-concepts/Collaboration/) ***↗.***
 
 # What is NGINX?
 
 NGINX is a free, open-source tool for web hosting, reverse proxying, caching, load balancing, media streaming, and more. It began as a web server focused on top performance and stability. Besides its HTTP server features, NGINX can also work as an email proxy server (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers.
 
-[https://www.nginx.com/resources/glossary/nginx/](https://www.nginx.com/resources/glossary/nginx/)***↗.***
+[https://www.nginx.com/resources/glossary/nginx/](https://www.nginx.com/resources/glossary/nginx/) ***↗.***
 
 # What is NGINX Reverse Proxy?
 
 A reverse proxy is a server that sits behind the firewall in a network and directs client requests to appropriate backend servers. The NGINX Reverse Proxy is a reconfigured NGINX server that provides an additional level of abstraction and control. This go-between server ensures network traffic between clients and servers flows smoothly.
 
-[https://www.nginx.com/resources/glossary/reverse-proxy-server/](https://www.nginx.com/resources/glossary/reverse-proxy-server/)***↗.***
+[https://www.nginx.com/resources/glossary/reverse-proxy-server/](https://www.nginx.com/resources/glossary/reverse-proxy-server/) ***↗.***
 
 # What is NodeJS, NPM, NVM, and PNPM?
 
@@ -343,17 +341,17 @@ NVM (Node Version Manager) is used to switch between versions of NodeJS. NVM wor
 
 PNPM (Performant Node Package Manager) is a JavaScript package manager, similar to NPM.
 
-[https://nodejs.org/en/learn/getting-started/introduction-to-nodejs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)↗,
+[https://nodejs.org/en/learn/getting-started/introduction-to-nodejs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) ↗,
 
-[https://docs.npmjs.com/about-npm](https://docs.npmjs.com/about-npm)↗,
+[https://docs.npmjs.com/about-npm](https://docs.npmjs.com/about-npm) ↗,
 
-[https://github.com/nvm-sh/nvm#intro](https://github.com/nvm-sh/nvm#intro)↗, and
+[https://github.com/nvm-sh/nvm#intro](https://github.com/nvm-sh/nvm#intro) ↗, and
 
-[https://solodev.app/installing-node-and-npm-with-nvm](https://solodev.app/installing-node-and-npm-with-nvm)↗, and
+[https://solodev.app/installing-node-and-npm-with-nvm](https://solodev.app/installing-node-and-npm-with-nvm) ↗, and
 
-[https://pnpm.io/](https://pnpm.io/)↗.
+[https://pnpm.io/](https://pnpm.io/) ↗.
 
-> NOTE: [NPX](https://www.npmjs.com/package/npx) [is](https://www.npmjs.com/package/npx) now part of the NPM CLI.
+> NOTE: [NPX](https://www.npmjs.com/package/npx) is now part of the NPM CLI.
 
 # What is Nomic Embed?
 
@@ -504,7 +502,7 @@ Technology encompasses an array of tools, platforms, and frameworks that aid in 
 
 # In Conclusion.
 
-Technology is vast and diverse arena, with each tool, platform, and framework playing a unique role in tasks like software development, web hosting, data management, and more.
+Technology is a vast, diverse, and constantly expanding arena. Each tool, platform, and framework plays a unique role in tasks like software development, web hosting, data management, and more.
 
 In the ever-evolving digital landscape, understanding these technologies can give me a significant edge.
 
