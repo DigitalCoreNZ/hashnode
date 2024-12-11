@@ -353,6 +353,8 @@ PNPM (Performant Node Package Manager) is a JavaScript package manager, similar 
 
 [https://pnpm.io/](https://pnpm.io/)↗.
 
+> NOTE: [NPX](https://www.npmjs.com/package/npx) [is](https://www.npmjs.com/package/npx) now part of the NPM CLI.
+
 # What is Nomic Embed?
 
 Nomic Embed is a text embedding model that is open source and fully reproducible. It can process text up to 8,192 characters long and uses openly available, curated data for training. Text embeddings are crucial for modern NLP (natural language processing) applications that offer enhanced search, or mechanisms that generate responses for LLMs (large language models). Embeddings models turn text into vectors, which are then used in various tasks such as clustering for visualization, classifying information, and retrieving data.
