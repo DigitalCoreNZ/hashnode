@@ -333,7 +333,7 @@ A reverse proxy is a server that sits behind the firewall in a network and direc
 
 [https://www.nginx.com/resources/glossary/reverse-proxy-server/](https://www.nginx.com/resources/glossary/reverse-proxy-server/)***↗.***
 
-# What is Node.js, NPM, and NVM?
+# What is Node.js, NPM, and NVM, and PNPM?
 
 Node.js is a free, JavaScript (JS) server runtime. It runs JS code as single-threaded, non-blocking, asynchronous programs, which makes it very memory efficient. Node.js performs many system-level tasks, but is commonly used to run JS servers.
 
@@ -341,15 +341,17 @@ NPM (Node Package Manager) is the world's largest software registry. Open source
 
 NVM (Node Version Manager) is used to switch between versions of Node.js. NVM works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash) and runs on Linux distros, macOS, and Windows WSL.
 
+PNPM (Performant Node Package Manager) is a JavaScript package manager, similar to NPM.
+
 [https://nodejs.org/en/learn/getting-started/introduction-to-nodejs](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)↗,
 
 [https://docs.npmjs.com/about-npm](https://docs.npmjs.com/about-npm)↗,
 
 [https://github.com/nvm-sh/nvm#intro](https://github.com/nvm-sh/nvm#intro)↗, and
 
-[https://solodev.app/installing-node-and-npm-with-nvm](https://solodev.app/installing-node-and-npm-with-nvm).
+[https://solodev.app/installing-node-and-npm-with-nvm](https://solodev.app/installing-node-and-npm-with-nvm)↗, and
 
-[Node.js must be installed](https://solodev.app/installing-node-and-npm-with-nvm) (`node -v`) before continuing with this post.
+[https://pnpm.io/](https://pnpm.io/)↗.
 
 # What is Nomic Embed?
 
