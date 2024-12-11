@@ -333,7 +333,7 @@ A reverse proxy is a server that sits behind the firewall in a network and direc
 
 [https://www.nginx.com/resources/glossary/reverse-proxy-server/](https://www.nginx.com/resources/glossary/reverse-proxy-server/)***↗.***
 
-# What is NodeJS, NPM, and NVM, and PNPM?
+# What is NodeJS, NPM, NVM, and PNPM?
 
 NodeJS is a free, JavaScript (JS) server runtime. It runs JS code as single-threaded, non-blocking, asynchronous programs, which makes it very memory efficient. NodeJS performs many system-level tasks, but is commonly used to run JS servers.
 
