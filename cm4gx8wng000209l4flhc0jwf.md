@@ -442,6 +442,33 @@ sudo groupdel ollama
 
 ---
 
+# Installing Pinokio.
+
+**Pinokio** **is** a browser that lets me install, run, and programmatically control ANY application, automatically. I can run chatbots, image generators, and music AI on my PC at the click of a button.
+
+* I visit the download page:
+    
+
+```bash
+https://github.com/pinokiocomputer/pinokio/releases/tag/3.0.26
+```
+
+> NOTE: In this example, I am referencing Pinokio v3.0.26.
+
+* At the bottom of the page, I download the Debian package for AMD64 processors.
+    
+* From the terminal, I install Pinokio:
+    
+
+```bash
+sudo apt install -y ~/Downloads/Pinokio*
+```
+
+* I run Pinokio from the Apps drawer.
+    
+
+---
+
 # Installing Docker Desktop.
 
 Docker Desktop is used to build, share, and run containerized applications.
