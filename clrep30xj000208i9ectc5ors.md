@@ -1,5 +1,5 @@
 ---
-title: "Installing ComfyUI, it's Manager, and SDXL."
+title: "Installing ComfyUI, it's Manager, and SDXL (DEPRECATED)."
 datePublished: Mon Jan 15 2024 09:00:27 GMT+0000 (Coordinated Universal Time)
 cuid: clrep30xj000208i9ectc5ors
 slug: installing-comfyui-its-manager-and-sdxl
@@ -7,6 +7,10 @@ cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1704961284771/634c746
 tags: ai-image-generator, sdxl, comfyui, comfyui-manager, ai-image-generation
 
 ---
+
+# DEPRECATED.
+
+Use [Pinokio](https://solodev.app/apps-utilities-for-ubuntu-2404-lts#heading-installing-pinokio) to run ComfyUI.
 
 # TL;DR.
 
