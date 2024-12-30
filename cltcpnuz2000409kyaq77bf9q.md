@@ -92,7 +92,7 @@ CUDA also helps developers easily use the latest GPU features, like those in the
 
 # What is Curl?
 
-`curl` is a command-line utility for transferring data from or to a server designed to work without user interaction. With `curl`, you can download or upload data using a supported protocol. `curl` provides a number of options allowing you to resume transfers, limit the bandwidth, proxy support, user authentication, and much more.
+`curl` is a command-line utility for transferring data from, or to, a server. With `curl`, you can download (or upload) data using a various, supported protocols. `curl` provides a number of options allowing you to resume transfers, limit the bandwidth, access proxy support, apply user authentication, and much more.
 
 Curl supports the following protocols:
 
