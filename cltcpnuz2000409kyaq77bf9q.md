@@ -12,7 +12,7 @@ tags: cloudflare, github, technology, python, git, miniconda, streamlit, anacond
 
 This post provides an overview of the various technologies I refer to in this blog. This list is *not* extensive, yet still emphasizes the importance of understanding, and applying, technological solutions. To excel in the continually-evolving development landscape, adapting to new tools needs to be an integral part of my daily routine.
 
-Also, writing (and maintaining) this list is how I flex.
+---
 
 # An Introduction.
 
@@ -20,11 +20,15 @@ This list evolves as I adopt new ways of solving problems. This list will also e
 
 > The purpose of this post is to centralise the descriptions of the techniques, and technologies, I employ in my workflow.
 
+---
+
 # The Big Picture.
 
 I usually describe the technologies I use within the posts that I write. As a result, my tool descriptions are usually repeated throughout my blog. This is the result of trying to ensure each post is self-contained. (Sometimes, however, I may need to divide a topic across multiple posts.) Repetitive tool descriptions will happen when using the same tool on multiple projects. Therefore, having a repository of these descriptions makes creating new posts a little easier.
 
 Below are descriptions of many technologies I use to build my solutions.
+
+---
 
 # What is Anaconda and Miniconda?
 
@@ -86,6 +90,69 @@ CUDA also helps developers easily use the latest GPU features, like those in the
 
 [https://blogs.nvidia.com/blog/what-is-cuda-2/](https://blogs.nvidia.com/blog/what-is-cuda-2/) ***↗.***
 
+# What is Curl?
+
+`curl` is a command-line utility for transferring data from or to a server designed to work without user interaction. With `curl`, you can download or upload data using a supported protocol. `curl` provides a number of options allowing you to resume transfers, limit the bandwidth, proxy support, user authentication, and much more.
+
+Curl supports the following protocols:
+
+* DICT,
+    
+* FILE,
+    
+* FTP,
+    
+* FTPS,
+    
+* GOPHER,
+    
+* GOPHERS,
+    
+* HTTP,
+    
+* HTTPS,
+    
+* IMAP,
+    
+* IMAPS,
+    
+* LDAP,
+    
+* LDAPS,
+    
+* MQTT,
+    
+* POP3,
+    
+* POP3S,
+    
+* RTMP,
+    
+* RTMPS,
+    
+* RTSP,
+    
+* SCP,
+    
+* SFTP,
+    
+* SMB,
+    
+* SMBS,
+    
+* SMTP,
+    
+* SMTPS,
+    
+* TELNET,
+    
+* TFTP,
+    
+* WS, and
+    
+* WSS.
+    
+
 # What is DaVinci Resolve?
 
 DaVinci Resolve is a video editing, colour grading and correction, visual effects, motion graphics, and audio post-production application for macOS, Windows, and Linux. It was originally developed by da Vinci Systems as da Vinci Resolve. Then in 2009, when da Vinci Systems was acquired by Blackmagic Design, the application was rebranded as DaVinci Resolve.
@@ -99,6 +166,8 @@ Distrobox is a tool that allows me to run any Linux distribution within my termi
 [https://distrobox.it/](https://distrobox.it/) ***↗.***
 
 # What is Docker?
+
+> TLDR: Docker is used to containerise an app (and its dependencies) so it can run on any platform.
 
 Docker is a tool for easily deploying, and running my applications on any platform. I can package an application with all its code, libraries, dependencies, and tools, which allows me to deploy that app as a single bundle. Docker guarantees that my application will run on any computer that also runs Docker.
 
@@ -123,6 +192,8 @@ Docker Containers are ephemeral (temporary) system simulations that run on PCs. 
 [https://docs.docker.com/guides/walkthroughs/what-is-a-container/](https://docs.docker.com/guides/walkthroughs/what-is-a-container/) ***↗.***
 
 # What is Docker Desktop?
+
+> TL;DR: Docker Desktop is used to build, share, and run containerized applications and microservices.
 
 Docker Desktop is a developer utility for my Mac, Linux, or Windows environment that lets me build, share, and run containerized applications and microservices. It provides a straightforward GUI (Graphical User Interface) that lets me manage my applications, containers, and images directly.
 
