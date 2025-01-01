@@ -77,18 +77,20 @@ The chmod command is used to change the mode of files and directories. Given tha
 
 where:
 
-* sudo = run the command using the root account privileges,
+* sudo means to run the command using the root account privileges,
     
-* chmod = (ch)ange (mod)e,
+* chmod means to (ch)ange the (mod)e of files and directories,
     
-* \-R = switch (-) to (R)ecusive mode
+* \-R means to switch (-) to the (R)ecusive feature,
     
-* u = (u)ser account
+* u means to select the (u)ser account,
     
-* rwx = apply read, write, and execute permissions, and
+* rwx means to apply (r)ead, (w)rite, and e(x)ecute permissions, and
     
-* /media = the media directory, and subdirectories (due to (-R)ecursion).
+* /media means to apply the permission changes to the /media directory, and subdirectories.
     
+
+> NOTE: The /media subdirectories are affected due to the (-R)ecursion flag used in the command.
 
 # What is CHOWN?
 
