@@ -68,6 +68,34 @@ The inclusion of both high-level business information and detailed technical spe
 
 This is a business document for business people, not a technology document for technicians and engineers. It is designed to identify the resources and processes that are used to create a digital product. The focus of this business document is to determine how to convert an investment of time, effort, energy, creativity, resources, and money into a viable, digital asset.
 
+# What is CHMOD?
+
+The chmod command is used to change the mode of files and directories. Given that ‘u’ is user, ‘g’ is group, and ‘o’ is others, I can change the modes of files and directories using ‘r’ for read, ‘w’ for write, and ‘x’ for execute. For example:
+
+* sudo chmod -R u=rwx /media
+    
+
+where:
+
+* sudo = run the command using the root account privileges,
+    
+* chmod = (ch)ange (mod)e,
+    
+* \-R = switch (-) to (R)ecusive mode
+    
+* u = (u)ser account
+    
+* rwx = apply read, write, and execute permissions, and
+    
+* /media = the media directory, and subdirectories (due to (-R)ecursion).
+    
+
+# What is CHOWN?
+
+The chown command is used to change the owner of a file.
+
+\[pending\]
+
 # What is Chroma?
 
 Chroma is an open-source vector database used for saving, and using, embeddings. Its main job is to store embeddings, with related meta data, that is used by large language models. Chroma works well as a foundation for text-based search engines and is perfect for handling lots of unstructured and partly structured data.
