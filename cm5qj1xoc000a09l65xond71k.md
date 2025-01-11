@@ -329,6 +329,8 @@ jupyter notebook --port 8091
 ```bash
 import dspy
 
+# I tell DSPy that I will use Ollama's
+# Qwen 2.5 Coder model in my modules
 lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
 dspy.configure(lm=lm)
 ```
