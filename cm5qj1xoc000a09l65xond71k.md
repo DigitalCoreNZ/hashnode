@@ -9,6 +9,8 @@ cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1736447549485/b7aca56
 
 ## TL;DR.
 
+*Update: Thursday 14th January 2025.*
+
 This post is a guide to installing, setting up, and testing DSPy (***Declarative Self-improving Python***) and will cover the following topics:
 
 * The prerequisites for assembling a DSPy development environment,
