@@ -21,9 +21,11 @@ This post is a guide to installing, setting up, and testing DSPy (***Declarative
     
 * The installation of the DSPy framework,
     
-* The installation and setup up of Jupyter Notebook, and
+* The installation and setup up of Jupyter Notebook,
     
-* The testing of the newly assembled DSPy development environment.
+* Running the test code in the newly assembled DSPy development environment, and
+    
+* Running the test code using Python.
     
 
 The aim of this guide is to assemble, and test, a development environment for DSPy programming.
@@ -36,13 +38,13 @@ The aim of this guide is to assemble, and test, a development environment for DS
 
 ## An Introduction.
 
-DSPy is used to programmatically provide "a more systematic approach to solving hard tasks with advanced LMs." It exists to build simple Classifiers, sophisticated RAG pipelines, and Agentic loops.
+DSPy is used to programmatically provide "a more systematic approach to solving hard tasks with advanced LMs." It exists to build simple Classifiers, sophisticated RAG pipelines, and Agentic processes.
 
-> The purpose of this post is to provide a process for creating a DSPy programming environment.
+> The purpose of this post is to provide a procedure for creating a DSPy programming environment.
 
 ## The Big Picture.
 
-For classifiers, RAG (Retrieval-Augmented Generation), and agent, the main idea is to take advantage of advanced LM workflows, especially those systems that can retrieve relevant information while generating contextually accurate responses. By integrating retrieval mechanisms with generative models, these workflows aim to create intelligent systems that can autonomously navigate complex tasks, adapt to dynamic environments, and provide insightful solutions. This approach not only improves the accuracy and relevance of LM outputs but also empowers users to leverage AI for complex, problem-solving operations.
+For classifiers, RAG (Retrieval-Augmented Generation), and agents, the main idea is to take advantage of advanced LM workflows, especially those systems that can retrieve relevant information while generating contextually accurate responses. By integrating retrieval mechanisms with generative models, these workflows aim to create intelligent systems that can autonomously navigate complex tasks, adapt to dynamic environments, and provide insightful solutions. This approach not only improves the accuracy and relevance of LM outputs but also empowers users to leverage AI for complex, problem-solving operations.
 
 DSPy is a programmatic tool for creating advanced AI solutions that was originally designed to replace the clunky, and fragile, prompt engineering paradigm.
 
@@ -134,14 +136,14 @@ mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
 ```
 
-* I run the installation:
+* I run the installation script:
     
 
 ```bash
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 ```
 
-* I remove the payload:
+* I remove the installation script:
     
 
 ```bash
@@ -173,7 +175,7 @@ sudo chown -R $USER:$USER $HOME/miniconda3
 conda update -n base -c defaults conda
 ```
 
-### Creating a Conda Environment.
+### Using Conda to Create the DSPy Environment.
 
 * I use `conda` to display a `list` of Miniconda `env`ironments:
     
@@ -216,7 +218,7 @@ mkdir -p ~/anaconda3/envs/DSPy/etc/conda/activate.d
 sudo nano ~/anaconda3/envs/DSPy/etc/conda/activate.d/set_working_directory.sh
 ```
 
-* I add the following, save (CTRL + S) the changes, and exit (CTRL + X) Nano:
+* I add the following, save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor:
     
 
 ```bash
@@ -349,7 +351,7 @@ print(response.response)
 
 ## Running the Code with Python.
 
-* From the DSPy environment terminal, I change to the DSPy directory:
+* From the (DSPy) terminal, I change to the DSPy directory:
     
 
 ```bash
