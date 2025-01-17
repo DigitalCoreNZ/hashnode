@@ -9,7 +9,7 @@ cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1736447549485/b7aca56
 
 ## TL;DR.
 
-*Update: Thursday 14th January 2025.*
+*Update: Friday 17th January 2025.*
 
 This post is a guide to installing, setting up, and testing DSPy (***Declarative Self-improving Python***) and will cover the following topics:
 
@@ -34,7 +34,9 @@ The aim of this guide is to assemble, and test, a development environment for DS
 > 
 > [https://dspy.ai/tutorials/rag/](https://dspy.ai/tutorials/rag/) ***↗,***
 > 
-> [https://github.com/stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) ***↗.***
+> [https://github.com/stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) ***↗, and***
+> 
+> [https://dspy.ai/](https://dspy.ai/) ***↗.***
 
 ## An Introduction.
 
@@ -320,14 +322,14 @@ jupyter notebook --port 8091
     
 * In the file menu of the Notebook, I select "File &gt; Rename...",
     
-* I rename the Notebook as "Hello World.ipynb" and click the blue "Rename" button.
+* I rename the Notebook as "hello-world.ipynb" and click the blue "Rename" button.
     
 
 ---
 
 ## Testing the DSPy Environment.
 
-* In the “Hello World“ Notebook, I define the local model that is used by DSPy:
+* In the “hello-world“ Notebook, I define the local model that is used by DSPy:
     
 
 ```bash
@@ -362,7 +364,7 @@ cd ~/DSPy
     
 
 ```bash
-sudo nano hello_world.py
+sudo nano hello-world.py
 ```
 
 * I add (CTRL + SHIFT + V) the following to the `hello_world.py` file:
@@ -389,6 +391,207 @@ print(response.response)
 
 ```bash
 python3 hello_world.py
+```
+
+---
+
+## Advanced Testing: OPTIONAL
+
+The previous “hello-world” test was to ensure the development software was installed correctly. *These* tests explore what tasks the `qwen2.5-coder:latest` LM can do well out of the box.
+
+* At the (DSPy) terminal, I change to the DSPy directory:
+    
+
+```bash
+cd ~/DSPy
+```
+
+* I install SGLang:
+    
+
+```bash
+pip install "sglang[all]"
+```
+
+> NOTE: [SGLang](https://docs.sglang.ai/index.html) is a fast serving framework for large language models and vision language models.
+
+* I install FlashInfer:
+    
+
+```bash
+pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.4/
+```
+
+> NOTE: [FlashInfer](https://docs.flashinfer.ai/) is a library and kernel generator for Large Language Models that provides high-performance implementation of LLM GPU kernels such as FlashAttention, PageAttention and LoRA.
+
+### Maths.
+
+* I run the Jupyter Notebook:
+    
+
+```bash
+jupyter notebook --port 8091
+```
+
+* In the file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "maths.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+maths = dspy.ChainOfThought("question -> answer: float")
+maths(question="Two dice are tossed. What is the probability that the sum equals two?")
+```
+
+### RAG.
+
+* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "rag.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+[pending]
+```
+
+### Classification.
+
+* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "classification.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+[pending]
+```
+
+### Information Extraction.
+
+* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "extract.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+[pending]
+```
+
+### Agents.
+
+* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "agents.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+[pending]
+```
+
+### Multi-Stage Pipelines.
+
+* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
+    
+* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
+    
+* In the file menu of the Notebook, I select "File &gt; Rename...",
+    
+* I rename the Notebook as "pipelines.ipynb" and click the blue "Rename" button.
+    
+* In the Notebook, I define the local model that is used by DSPy:
+    
+
+```bash
+import dspy
+
+lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+dspy.configure(lm=lm)
+```
+
+* In a new cell, I add the following:
+    
+
+```bash
+[pending]
 ```
 
 ---
