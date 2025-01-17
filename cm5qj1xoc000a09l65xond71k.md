@@ -113,8 +113,10 @@ Error: listen tcp 127.0.0.1:11434: bind: address already in use
     
 
 ```bash
-ollama pull qwen2.5-coder:latest
+ollama pull phi4:14b
 ```
+
+> NOTE: This model is 9.1GB size, has 14.7 billion parameters, and uses 4-bit quantization. I use an RTX 3060 GPU with 12GB and should be able to run this 9.1GB model
 
 ---
 
@@ -335,7 +337,7 @@ jupyter notebook --port 8091
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -373,7 +375,7 @@ sudo nano hello-world.py
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 
 qa = dspy.Predict('question: str -> response: str')
@@ -397,7 +399,7 @@ python3 hello_world.py
 
 ## Advanced Testing: OPTIONAL
 
-The previous “hello-world” test was to ensure the development software was installed correctly. *These* tests explore what tasks the `qwen2.5-coder:latest` LM can do well out of the box.
+The previous “hello-world” test was to ensure the development software was installed correctly. *These* tests explore what tasks the `phi4:14b` LM can do well out of the box.
 
 * At the (DSPy) terminal, I change to the DSPy directory:
     
@@ -447,7 +449,7 @@ jupyter notebook --port 8091
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -458,6 +460,8 @@ dspy.configure(lm=lm)
 maths = dspy.ChainOfThought("question -> answer: float")
 maths(question="Two dice are tossed. What is the probability that the sum equals two?")
 ```
+
+> ANSWER: 0.0277776.
 
 ### RAG.
 
@@ -475,7 +479,7 @@ maths(question="Two dice are tossed. What is the probability that the sum equals
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -493,6 +497,8 @@ question = "What's the name of the castle that David Gregory inherited?"
 rag(context=search_wikipedia(question), question=question)
 ```
 
+> ANSWER: Kinnairdy Castle.
+
 ### Classification.
 
 * In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
@@ -509,7 +515,7 @@ rag(context=search_wikipedia(question), question=question)
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -530,6 +536,8 @@ classify = dspy.Predict(Classify)
 classify(sentence="This book was super fun to read, though not the last chapter.")
 ```
 
+> ANSWER: sentiment='positive', confidence=0.75.
+
 ### Information Extraction.
 
 * In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
@@ -538,7 +546,7 @@ classify(sentence="This book was super fun to read, though not the last chapter.
     
 * In the file menu of the Notebook, I select "File &gt; Rename...",
     
-* I rename the Notebook as "extract.ipynb" and click the blue "Rename" button.
+* I rename the Notebook as "extraction.ipynb" and click the blue "Rename" button.
     
 * In the Notebook, I define the local model that is used by DSPy:
     
@@ -546,7 +554,7 @@ classify(sentence="This book was super fun to read, though not the last chapter.
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -573,6 +581,8 @@ print(response.headings)
 print(response.entities)
 ```
 
+> ANSWER: Apple Inc. Announces iPhone 14 \['Introduction', "CEO's Statement", 'New Features'\] \[{'name': 'Apple Inc.', 'type': 'Organization'}, {'name': 'iPhone 14', 'type': 'Product'}, {'name': 'Tim Cook', 'type': 'Person'}\]
+
 ### Agents.
 
 * In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
@@ -589,7 +599,7 @@ print(response.entities)
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
+lm = dspy.LM(model='ollama/phi4:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -610,63 +620,7 @@ pred = react(question="What is 9362158 divided by the year of birth of David Gre
 print(pred.answer)
 ```
 
-### Multi-Stage Pipelines.
-
-* In the Jupyter Notebook file menu, I select "File &gt; New &gt; Notebook",
-    
-* I choose the default "Python 3 (ipykernel)" kernel, select the "Always start the preferred kernel" tick box, and click the blue "Select" button,
-    
-* In the file menu of the Notebook, I select "File &gt; Rename...",
-    
-* I rename the Notebook as "pipelines.ipynb" and click the blue "Rename" button.
-    
-* In the Notebook, I define the local model that is used by DSPy:
-    
-
-```bash
-import dspy
-
-lm = dspy.LM(model='ollama/qwen2.5-coder:latest')
-dspy.configure(lm=lm)
-```
-
-* In a new cell, I add the following:
-    
-
-```bash
-class Outline(dspy.Signature):
-    """Outline a thorough overview of a topic."""
-
-    topic: str = dspy.InputField()
-    title: str = dspy.OutputField()
-    sections: list[str] = dspy.OutputField()
-    section_subheadings: dict[str, list[str]] = dspy.OutputField(desc="mapping from section headings to subheadings")
-
-class DraftSection(dspy.Signature):
-    """Draft a top-level section of an article."""
-
-    topic: str = dspy.InputField()
-    section_heading: str = dspy.InputField()
-    section_subheadings: list[str] = dspy.InputField()
-    content: str = dspy.OutputField(desc="markdown-formatted section")
-
-class DraftArticle(dspy.Module):
-    def __init__(self):
-        self.build_outline = dspy.ChainOfThought(Outline)
-        self.draft_section = dspy.ChainOfThought(DraftSection)
-
-    def forward(self, topic):
-        outline = self.build_outline(topic=topic)
-        sections = []
-        for heading, subheadings in outline.section_subheadings.items():
-            section, subheadings = f"## {heading}", [f"### {subheading}" for subheading in subheadings]
-            section = self.draft_section(topic=outline.title, section_heading=section, section_subheadings=subheadings)
-            sections.append(section.content)
-        return dspy.Prediction(title=outline.title, sections=sections)
-
-draft_article = DraftArticle()
-article = draft_article(topic="World Cup 2002")
-```
+> ANSWER: 5761.328
 
 ---
 
