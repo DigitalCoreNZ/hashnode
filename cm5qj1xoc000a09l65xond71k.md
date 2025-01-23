@@ -113,10 +113,10 @@ Error: listen tcp 127.0.0.1:11434: bind: address already in use
     
 
 ```bash
-ollama pull phi4:14b
+ollama pull deepseek-r1:14b
 ```
 
-> NOTE: This model is 9.1GB size, has 14.7 billion parameters, and uses 4-bit quantization. I use an RTX 3060 GPU with 12GB and should be able to run this 9.1GB model
+> NOTE: This model has 14B parameters, requires 9GB of VRAM, and runs on my RTX 3060 12GB GPU.
 
 ---
 
@@ -337,9 +337,11 @@ jupyter notebook --port 8091
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
+
+> NOTE: Deepseek R1 uses chain-of-thought reasoning by default and, as a result, may take longer to compose a result. However, using this model results in a higher chance of generating a correct answer.
 
 * In a new cell, I declare a module that takes a `question` (of type `str`) as input and produces a `response` as an output:
     
@@ -375,7 +377,7 @@ sudo nano hello-world.py
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 
 qa = dspy.Predict('question: str -> response: str')
@@ -399,7 +401,9 @@ python3 hello_world.py
 
 ## Advanced Testing: OPTIONAL
 
-The previous “hello-world” test was to ensure the development software was installed correctly. *These* tests explore what tasks the `phi4:14b` LM can do well out of the box.
+The previous “hello-world” test was to ensure the development software was installed correctly. *These* tests explore what tasks the `deepseek-r1:14b` LM can perform out of the box.
+
+Also, these tests show a range of tasks that can be performed using DSPy programming techniques.
 
 * At the (DSPy) terminal, I change to the DSPy directory:
     
@@ -449,7 +453,7 @@ jupyter notebook --port 8091
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -461,7 +465,7 @@ maths = dspy.ChainOfThought("question -> answer: float")
 maths(question="Two dice are tossed. What is the probability that the sum equals two?")
 ```
 
-> ANSWER: 0.0277776.
+> ANSWER: 0.0277778.
 
 ### RAG.
 
@@ -479,7 +483,7 @@ maths(question="Two dice are tossed. What is the probability that the sum equals
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -515,7 +519,7 @@ rag(context=search_wikipedia(question), question=question)
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -554,7 +558,7 @@ classify(sentence="This book was super fun to read, though not the last chapter.
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
 
@@ -581,7 +585,7 @@ print(response.headings)
 print(response.entities)
 ```
 
-> ANSWER: Apple Inc. Announces iPhone 14 \['Introduction', "CEO's Statement", 'New Features'\] \[{'name': 'Apple Inc.', 'type': 'Organization'}, {'name': 'iPhone 14', 'type': 'Product'}, {'name': 'Tim Cook', 'type': 'Person'}\]
+> ANSWER: Apple Announces iPhone 14 \['Announcement Details', 'Press Release Highlights', 'New Features'\] \[{'EntityType': 'Company', 'Description': 'Technology company known for iPhones'}, {'EntityType': 'Person', 'Description': 'CEO of Apple'}\]
 
 ### Agents.
 
@@ -599,7 +603,7 @@ print(response.entities)
 ```bash
 import dspy
 
-lm = dspy.LM(model='ollama/phi4:14b')
+lm = dspy.LM(model='ollama/deepseek-r1:14b')
 dspy.configure(lm=lm)
 ```
 
