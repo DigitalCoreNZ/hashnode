@@ -12,7 +12,7 @@ tags: app-development, ai, web-development, email-marketing, website-development
 
 # TL;DR.
 
-This post lists current and pending domain names associated with various projects under development. It covers the importance of domain names, how they work, and provides a detailed table of domains, their descriptions, and key features. The domains span multiple categories, including media, technology, business, and AI-driven applications, showcasing a diverse range of capabilities in app and website development.
+This post explores the significance of domain names in app and website development. It highlights the role of domain names in defining business units, generating income, and showcasing development projects. This article also provides a list of current and pending domain names, each representing unique projects across media, technology, business, and AI-driven applications. There is a palpable excitement about these projects and I invite my readers to share their thoughts on the most exciting domain-named project.
 
 ---
 
@@ -67,32 +67,32 @@ Every device gets an IP address when it connects to the Internet. These dynamic 
 
 Here is a list of the domains that are, or will be, available to my company. Some of these domains are \[pending\] and will be added to this list as they are secured.
 
-| Domain Name | Description | Type | Key Feature |
+| Domain Name | Description | Colour | Type |
 | --- | --- | --- | --- |
-| Monty.co.nz | Phone Camera App | Blue (media) app | Smart Phone Camera |
-| SoloDev.app | Technology Site | Red (dev) site | Technology Blog |
-| AuditorLog.com | Onboarding App | Green (business) app | Apprentice Logs |
-| \[pending\] | Electronics Site | Red (dev) site | Hardware Projects |
-| TechLearnAI.com | LMS Site | Purple (AI) site | Learning Management |
-| TechNewsAI.com | News App | Purple (AI) app | News Publishing |
-| \[pending\] | Phone Camera App | Blue (media) app | Smart Phone Camera |
-| \[pending\] | Media Prod. Site | Purple (AI) site | AV Production |
-| \[private\] | \[private\] | \[private\] | \[private\] |
-| \[pending\] | Teleprompter App | Blue (media) app | Teleprompter |
-| VocalCue.com | Teleprompter App | Blue (media) app | Teleprompter |
-| \[pending\] | Calendar App | Green (business) app | \[pending\] |
-| DailyDiary.org | Calendar App | Green (business) app | Time Management |
-| \[pending\] | \[pending\] | Green (business) site | \[pending\] |
-| DripMail.net | Email Site | Green (business) site | Email Marketing |
-| CompanyLite.com | Company App | Green (business) app | Business Manager |
-| DistroLite.com | Distribution App | Green (business) app | Distribution Manager |
-| GroceryCart.org | Grocery App | Green (business) app | Grocery Management |
-| RecipeAlbum.org | Recipe App | Green (business) app | Recipe Management |
-| DigitalCore.co.nz | Homepage | Green (business) site | Company Homepage |
-| \[pending\] | Music Gen. Site | Purple (AI) site | Automated Arranger |
-| 22 |  |  |  |
-| 23 |  |  |  |
-| 24 |  |  |  |
+| Monty.co.nz | Mobile Video Camera | Blue (media) | App |
+| SoloDev.app | Technology Blog | Red (dev) | App |
+| \[pending\] | Learning Management | Green (business) | App |
+| \[pending\] | Automated Teleprompting | Green (business) | App |
+| \[pending\] | Arts & Crafts Blog | Blue (media) | Site |
+| \[pending\] | Vector Animation Tool | Blue (media) | Site |
+| AnalogModel.com | Analog Language Models | Red (dev) | App |
+| WearyCoder.com | Grandpa Vlog | Red (dev) | App |
+| \[pending\] | UML & ERD Designer | Red (dev) | Site |
+| MyHomePaige.com | Client Project | Green (business) | App |
+| dcx.sx | DigitalCoreNZ API Library | Red (dev) | Site |
+| RoboticsFab.com | Robotic & Hardware Designs | Red (dev) | Site |
+| \[pending\] | DJ Mashup & Mix Videos | Blue (media) | App |
+| \[pending\] | React Native/Expo/Tauri AI | Purple (AI) | Site |
+| DiaryNotes.org | Diary Management | Green (business) | App |
+| GardenPatch.org | Garden Management | Green (business) | App |
+| DripMail.net | Email Management | Green (business) | Site |
+| AccountsLite.com | Accounts Management | Green (business) | App |
+| CompanyLite.com | Business Management | Green (business) | App |
+| DigitalCoreNZ.com | Redirection Domain | Blue (media) | App |
+| GroceryCart.org | Groceries Management | Green (business) | App |
+| RecipeAlbum.org | Recipes Management | Green (business) | App |
+| DigitalCore.co.nz | Business Domain | Green (business) | App |
+| \[pending\] | Redirection Domain | Blue (media) | App |
 
 ---
 
