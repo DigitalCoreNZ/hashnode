@@ -1,15 +1,15 @@
 ---
-title: "DSPy 01: Install, Setup, and Test."
+title: "DSPy: Install, Setup, and Test."
 datePublished: Fri Jan 10 2025 09:00:45 GMT+0000 (Coordinated Universal Time)
 cuid: cm5qj1xoc000a09l65xond71k
 slug: dspy-01-install-setup-and-test
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1736447549485/b7aca566-4954-4914-95a3-d80dd1a337ca.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1739830337181/5d8a5118-4c84-497b-9815-57cf08698c33.png
 
 ---
 
 ## TL;DR.
 
-*Update: Saturday 18th January 2025.*
+*Update: Saturday 18th February 2025.*
 
 This post is a guide to installing, setting up, and testing DSPy (***Declarative Self-improving Python***) and will cover the following topics:
 
