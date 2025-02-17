@@ -2,7 +2,7 @@
 title: "DSPy: Install, Setup, and Test."
 datePublished: Fri Jan 10 2025 09:00:45 GMT+0000 (Coordinated Universal Time)
 cuid: cm5qj1xoc000a09l65xond71k
-slug: dspy-01-install-setup-and-test
+slug: dspy-install-setup-and-test
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1739830337181/5d8a5118-4c84-497b-9815-57cf08698c33.png
 
 ---
