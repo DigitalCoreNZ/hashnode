@@ -1,8 +1,9 @@
 ---
-title: "Docker Desktop on Ubuntu 24.04."
+title: "Docker Desktop on Ubuntu 24.04 LTS."
 datePublished: Tue Dec 31 2024 09:00:18 GMT+0000 (Coordinated Universal Time)
 cuid: cm5c8mu1h000l09mdg6pp2mfi
-slug: docker-desktop-on-ubuntu-2404
+slug: docker-desktop-on-ubuntu-2404-lts
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1739828782754/b03502c9-e71a-4cec-9587-fe9aed9a3a02.png
 tags: microservices, software-development, linux, docker, opensource, devops, containerization, docker-installation, docker-desktop, ubuntu-2404, docker-uninstallation, docker-tips
 
 ---
