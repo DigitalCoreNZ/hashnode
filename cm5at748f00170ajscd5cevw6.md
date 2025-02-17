@@ -3,6 +3,7 @@ title: "Bolt.diy and Ollama on Ubuntu 24.04 LTS."
 datePublished: Mon Dec 30 2024 09:00:24 GMT+0000 (Coordinated Universal Time)
 cuid: cm5at748f00170ajscd5cevw6
 slug: boltdiy-and-ollama-on-ubuntu-2404-lts
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1739828225418/1b457073-70e3-414c-bdcd-441ff5d43c2a.png
 tags: ai, productivity, web-development, coding, innovation, tech-trends
 
 ---
