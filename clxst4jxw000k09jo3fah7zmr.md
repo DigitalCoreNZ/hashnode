@@ -88,11 +88,11 @@ Here is a list of the domains that are, or will be, available to my company. Som
 | DripMail.net | Email Management | Green (business) | Site |
 | AccountsLite.com | Accounts Management | Green (business) | App |
 | CompanyLite.com | Business Management | Green (business) | App |
-| DigitalCoreNZ.com | Redirection Domain | Blue (media) | App |
+| DigitalCoreNZ.com | Redirection Domain | Green (business) | App |
 | GroceryCart.org | Groceries Management | Green (business) | App |
 | RecipeAlbum.org | Recipes Management | Green (business) | App |
-| DigitalCore.co.nz | Business Domain | Green (business) | App |
-| \[pending\] | Redirection Domain | Blue (media) | App |
+| DigitalCore.co.nz | Company Website | Green (business) | App |
+| \[pending\] | Redirection Domain | Green (business) | App |
 
 ---
 
