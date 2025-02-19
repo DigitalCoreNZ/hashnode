@@ -10,7 +10,7 @@ tags: video-editing, video-production, video-post-production, motion-graphics, b
 
 # TL;DR.
 
-This post provides a step-by-step guide to installing DaVinci Resolve 19 Studio on Ubuntu 24.04. It covers downloading the software, preparing the download, ensuring compatibility with necessary libraries, and updating my drivers. By following these instructions, I can effectively set up DaVinci Resolve for professional video editing on my Linux system.
+This post provides a step-by-step guide to installing DaVinci Resolve 19 Studio on Ubuntu 24.04 LTS. It covers downloading the software, preparing the download, ensuring compatibility with necessary libraries, and updating my drivers. By following these instructions, I can effectively set up DaVinci Resolve for professional video editing on my Linux system.
 
 > NOTE: This guide has only been tested with the Studio version of Resolve. Let me know, in the comments below, if this process also works with the FREE version of DaVinci Resolve. Thank-you.
 
