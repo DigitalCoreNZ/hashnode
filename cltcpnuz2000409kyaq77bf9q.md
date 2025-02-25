@@ -200,6 +200,12 @@ DaVinci Resolve is a video editing, colour grading and correction, visual effect
 
 [https://www.blackmagicdesign.com/](https://www.blackmagicdesign.com/) ***↗.***
 
+# What is DeepSeek-R1?
+
+According to DeepSeek-R1:14B…
+
+“DeepSeek R1 is a groundbreaking, free, and open-source state-of-the-art reasoning model that leverages reinforcement learning for training without the need for supervised fine-tuning. Developed by DeepSeek, this innovative model stands out for its ability to achieve performance metrics comparable to leading closed-source models from major tech companies like Google, OpenAI, and Anthropic. Its open-source nature, combined with advanced architecture and training methodologies, mark a significant milestone in AI research. DeepSeek is accessible, and valuable, to researchers and developers worldwide.“
+
 # What is Distrobox?
 
 Distrobox is a tool that allows me to run any Linux distribution within my terminal. It enables both backward and forward compatibility with any software, and the freedom to use whichever distribution I'm most comfortable with. Distrobox uses Podman, Docker, or Lilipod to create containers using the Linux distribution of my choosing. It aims to run any software, on top of my host system, without any hassle.
