@@ -65,9 +65,9 @@ sudo apt autoremove -y
 
 # My Capture Monitor Settings.
 
-I use the following settings on my capture monitor. This is the screen where my activities and captured as video recordings:
+I use the following settings on my capture monitor. This is the screen where my activities are captured as video recordings:
 
-* I go to Settings &gt; Screening Display &gt; Capture Monitor,
+* I go to Settings &gt; Displays &gt; Capture Monitor,
     
 * I activate `Fractional Scaling`,
     
@@ -94,29 +94,6 @@ A terminal is a text window where I can type commands that are executed by my sy
     
 
 > NOTE: These settings make it easier to see the commands I use when using the terminal.
-
----
-
-# Installing Ubuntu Studio.
-
-Ubuntu Studio contains most the media utilities I use (Inkscape, Audacity, VLC, etc.)
-
-* From the terminal, I install Ubuntu Studio:
-    
-
-```plaintext
-sudo apt install -y ubuntustudio-installer
-```
-
-* I run the installer:
-    
-
-```plaintext
-ubuntustudio-installer
-```
-
-* I reboot my system when the installation completes.
-    
 
 ---
 
