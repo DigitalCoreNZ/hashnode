@@ -789,13 +789,42 @@ sudo apt install -y screenkey
 
 # Installing Inkscape.
 
-\[pending\]
+* From the terminal, I add the repo:
+    
+
+```bash
+sudo add-apt-repository ppa:inkscape.dev/stable
+```
+
+* I update my system:
+    
+
+```bash
+sudo apt clean && \
+sudo apt update && \
+sudo apt -y dist-upgrade && \
+sudo apt --fix-broken install && \
+sudo apt autoclean && \
+sudo apt -y autoremove
+```
+
+* I install Inkscape:
+    
+
+```bash
+sudo apt install -y inkscape
+```
 
 ---
 
 # Installing Krita.
 
-\[pending\]
+* From the terminal, I install Krita:
+    
+
+```bash
+sudo snap install krita
+```
 
 ---
 
