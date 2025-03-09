@@ -446,12 +446,152 @@ sudo apt install -y ~/Downloads/Pinokio*
 
 ---
 
+# Installing Docker.
+
+> **Attribution:**
+> 
+> [https://linuxiac.com/how-to-install-docker-on-ubuntu-24-04-lts/](https://linuxiac.com/how-to-install-docker-on-ubuntu-24-04-lts/) ***↗.***
+
+* From the terminal, I add HTTPS and the Curl utility:
+    
+
+```bash
+sudo apt install -y apt-transport-https curl
+```
+
+* I import the Docker GPG repository key:
+    
+
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+* I add the official Docker repository to my system:
+    
+
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+* I refresh my local repo list:
+    
+
+```bash
+sudo apt update
+```
+
+* I install Docker:
+    
+
+```bash
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+* I check to see if Docker is active:
+    
+
+```bash
+sudo systemctl is-active docker
+```
+
+* I test the installation:
+    
+
+```bash
+sudo docker run hello-world
+```
+
+## Uninstalling Docker.
+
+> **Attributions:**
+> 
+> [https://learnubuntu.com/uninstall-docker/](https://learnubuntu.com/uninstall-docker/) ***↗.***
+
+* From the terminal, I stop the running Docker containers:
+    
+
+```bash
+docker stop $(docker ps -a -q)
+```
+
+* I remove the Docker containers:
+    
+
+```bash
+docker rm $(docker ps -a -q)
+```
+
+* I remove the Docker images:
+    
+
+```bash
+docker rmi $(docker images -a -q)
+```
+
+* I prune the custom Docker networks:
+    
+
+```bash
+docker network prune
+```
+
+* I prune the Docker containers, networks, images, cache and volumes:
+    
+
+```bash
+docker system prune -a
+```
+
+* I purge every Docker package:
+    
+
+```bash
+sudo apt purge docker-* containerd.io --auto-remove
+```
+
+* I remove the Docker files:
+    
+
+```bash
+sudo rm -rf /var/lib/docker
+```
+
+* I remove the Docker group:
+    
+
+```bash
+sudo groupdel docker
+```
+
+* I remove the Docker socket:
+    
+
+```bash
+sudo rm -rf /var/run/docker.sock
+```
+
+* I remove Docker Compose:
+    
+
+```bash
+sudo rm -rf /usr/local/bin/docker-compose && sudo rm -rf /etc/docker && sudo rm -rf ~/.docker
+```
+
+---
+
 # Installing Docker Desktop.
 
-Docker Desktop is used to build, share, and run containerized applications.
+> **Attributions:**
+> 
+> [https://docs.docker.com/desktop/setup/install/linux/ubuntu/](https://docs.docker.com/desktop/setup/install/linux/ubuntu/) ***↗,***
+> 
+> [https://dev.to/chandrashekhar/docker-desktop-is-not-working-on-ubuntu-2404-lts--2kpa](https://dev.to/chandrashekhar/docker-desktop-is-not-working-on-ubuntu-2404-lts--2kpa) ***↗.***
 
-* I [download the Docker Desktop `DEB package`](https://docs.docker.com/desktop/install/ubuntu/) for Ubuntu and save it to the Downloads directory.
+* I download the latest version of Docker Desktop:
     
+
+[https://docs.docker.com/desktop/release-notes/](https://docs.docker.com/desktop/release-notes/)
+
 * From the terminal, I change to the `Downloads` directory:
     
 
@@ -459,21 +599,54 @@ Docker Desktop is used to build, share, and run containerized applications.
 cd ~/Downloads
 ```
 
-* I install the `DEB` package with the `APT` command:
+* I install the DEB package:
     
 
 ```bash
-sudo apt install -y ./docker-desktop-*.deb
+sudo apt install ./docker-desktop*.deb
 ```
 
-* I run the following command to launch Docker Desktop from the terminal:
+> NOTE: Ignore the error message after installation.
+
+* I fix the permissions issue:
+    
+
+```bash
+echo 'kernel.apparmor_restrict_unprivileged_userns = 0' | sudo tee /etc/sysctl.d/20-apparmor-donotrestrict.conf
+```
+
+* I reboot my system:
+    
+
+```bash
+reboot
+```
+
+* After the reboot, I return to a terminal and launch Docker Desktop:
     
 
 ```bash
 systemctl --user start docker-desktop
 ```
 
-> NOTE: . I can also launch Docker Desktop from the Apps drawer.
+* From the Apps Drawer, I pin the Docker Desktop icon to the Dock.
+    
+
+## Uninstall Docker Desktop.
+
+* From the terminal, I remove Docker Desktop from my system:
+    
+
+```bash
+sudo apt remove docker-desktop
+```
+
+* I remove the configuration and data files:
+    
+
+```bash
+sudo apt remove docker-desktop && sudo rm /usr/local/bin/com.docker.cli && sudo apt purge docker-desktop
+```
 
 ---
 
@@ -580,6 +753,54 @@ sudo snap remove spotify
 
 ---
 
+# Installing HydraPaper.
+
+HydraPaper is used to display different wallpapers on each monitor screen.
+
+* From the terminal, I install HydraPaper:
+    
+
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.gabmus.hydrapaper
+```
+
+## Uninstalling HydraPaper.
+
+* I use the following command to uninstall HydraPaper:
+    
+
+```bash
+flatpak uninstall org.gabmus.hydrapaper
+```
+
+---
+
+# Installing Screenkey.
+
+Screenkey is used to display each key press on the monitor.
+
+* From the terminal, I install Screenkey:
+    
+
+```bash
+sudo apt install -y screenkey
+```
+
+---
+
+# Installing the Brave Browser.
+
+Brave is a Chromium-based web browser.
+
+* From the terminal, I install the Brave browser:
+    
+
+```bash
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list && sudo apt update && sudo apt install -y brave-browser
+```
+
+---
+
 # Installing Rust.
 
 Rust is a general-purpose, memory-safe, programming language that emphasises performance, type safety, concurrency, and does not require garbage collection.
@@ -612,41 +833,6 @@ rustup doc
 
 ```bash
 rustup self uninstall
-```
-
----
-
-# Installing HydraPaper.
-
-HydraPaper is used to display different wallpapers on each monitor screen.
-
-* From the terminal, I install HydraPaper:
-    
-
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.gabmus.hydrapaper
-```
-
-## Uninstalling HydraPaper.
-
-* I use the following command to uninstall HydraPaper:
-    
-
-```bash
-flatpak uninstall org.gabmus.hydrapaper
-```
-
----
-
-# Installing Screenkey.
-
-Screenkey is used to display each key press on the monitor.
-
-* From the terminal, I install Screenkey:
-    
-
-```bash
-sudo apt install -y screenkey
 ```
 
 ---
@@ -727,19 +913,6 @@ sudo apt install -y nvidia-driver-550
 
 ```bash
 /opt/resolve/bin/resolve
-```
-
----
-
-# Installing the Brave Browser.
-
-Brave is a Chromium-based web browser.
-
-* From the terminal, I install the Brave browser:
-    
-
-```bash
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list && sudo apt update && sudo apt install -y brave-browser
 ```
 
 ---
