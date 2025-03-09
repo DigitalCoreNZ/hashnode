@@ -97,6 +97,27 @@ A terminal is a text window where I can type commands that are executed by my sy
 
 ---
 
+# Installing GNOME Tweaks.
+
+* From the terminal, I install GNOME Tweaks:
+    
+
+```bash
+sudo apt install -y gnome-tweaks
+```
+
+* I run GNOME Tweaks:
+    
+
+```bash
+gnome-tweaks
+```
+
+* I right-click the icon in the Dock and select “Pin to Dash” from the popup menu.
+    
+
+---
+
 # Installing the Package Managers.
 
 There are numerous package managers, including APT (advanced package tool is the default package manager), Snap, and Flatpak.
@@ -753,28 +774,6 @@ sudo snap remove spotify
 
 ---
 
-# Installing HydraPaper.
-
-HydraPaper is used to display different wallpapers on each monitor screen.
-
-* From the terminal, I install HydraPaper:
-    
-
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.gabmus.hydrapaper
-```
-
-## Uninstalling HydraPaper.
-
-* I use the following command to uninstall HydraPaper:
-    
-
-```bash
-flatpak uninstall org.gabmus.hydrapaper
-```
-
----
-
 # Installing Screenkey.
 
 Screenkey is used to display each key press on the monitor.
@@ -785,6 +784,18 @@ Screenkey is used to display each key press on the monitor.
 ```bash
 sudo apt install -y screenkey
 ```
+
+---
+
+# Installing Inkscape.
+
+\[pending\]
+
+---
+
+# Installing Krita.
+
+\[pending\]
 
 ---
 
