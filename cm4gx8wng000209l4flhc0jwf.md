@@ -63,6 +63,20 @@ sudo apt autoremove -y
 
 ---
 
+# Connecting to the QNAP NAS.
+
+I use a utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps connect my PC to my NAS.
+
+Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
+
+```bash
+sudo nano $HOME/.config/user-dirs.dirs
+```
+
+> NOTE: The details of this process is beyond the scope of this post.
+
+---
+
 # My Capture Monitor Settings.
 
 I use the following settings on my capture monitor. This is the screen where my activities are captured as video recordings:
