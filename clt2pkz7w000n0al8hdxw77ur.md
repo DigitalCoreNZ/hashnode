@@ -120,6 +120,13 @@ rm -rf ~/miniconda3/miniconda.sh
 sudo chown -R $USER:$USER $HOME/miniconda3
 ```
 
+* I refresh the terminal:
+    
+
+```bash
+. ~/.bashrc
+```
+
 * I update `Miniconda`:
     
 
