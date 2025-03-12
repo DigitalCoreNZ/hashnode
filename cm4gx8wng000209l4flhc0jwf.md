@@ -685,6 +685,24 @@ sudo apt remove docker-desktop && sudo rm /usr/local/bin/com.docker.cli && sudo 
 
 ---
 
+# Installing Open WebUI.
+
+* From the terminal, I use Docker to pull Open WebUI:
+    
+
+```bash
+docker pull ghcr.io/open-webui/open-webui:main
+```
+
+* Now I can run Open WebUI on port 3000 from within the Docker container:
+    
+
+```bash
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+```
+
+---
+
 # Updating Blender.
 
 Blender is a 3D modelling, rendering, animation, and simulation application.
