@@ -638,7 +638,7 @@ cd ~/Downloads
     
 
 ```bash
-sudo apt install ./docker-desktop*.deb
+sudo apt install -y ./docker-desktop*.deb
 ```
 
 > NOTE: Ignore the error message after installation.
