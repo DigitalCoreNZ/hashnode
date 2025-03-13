@@ -462,10 +462,10 @@ sudo groupdel ollama
     
 
 ```bash
-https://github.com/pinokiocomputer/pinokio/releases/tag/3.0.26
+https://github.com/pinokiocomputer/pinokio/releases/tag/3.6.23
 ```
 
-> NOTE: In this example, I am referencing Pinokio v3.0.26.
+> NOTE: In this example, I am referencing Pinokio v3.6.23.
 
 * At the bottom of the page, I download the Debian package for AMD64 processors.
     
