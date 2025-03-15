@@ -932,7 +932,7 @@ sudo apt install -y libqt5x11extras5
 cd ~/Downloads
 ```
 
-* I extract the contents of the ZIP file:
+* I extract the contents of the downloaded ZIP file:
     
 
 ```bash
@@ -946,7 +946,7 @@ sudo unzip ./DaVinci_Resolve_*_Linux.zip
 sudo chmod +x ./DaVinci_Resolve_*_Linux.run
 ```
 
-* I install the unzipped file:
+* I install the unzipped `run` file:
     
 
 ```bash
@@ -992,6 +992,50 @@ sudo apt install -y nvidia-driver-550
 
 ```bash
 /opt/resolve/bin/resolve
+```
+
+---
+
+# Installing Fusion Studio 19.
+
+* I download the latest Linux copy of Fusion Studio 19:
+    
+
+[https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion](https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion)
+
+* From the terminal, I install the following packages:
+    
+
+```bash
+sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libxcb-cursor0
+```
+
+* I go to the Downloads directory:
+    
+
+```bash
+cd ~/Downloads
+```
+
+* I extract the contents of the downloaded ZIP file:
+    
+
+```bash
+sudo unzip ./Blackmagic_Fusion_Studio_*_installer.zip
+```
+
+* I change the mode of the extracted RUN file to an executable:
+    
+
+```bash
+sudo chmod +x ./Blackmagic_Fusion_Studio_*_installer.run
+```
+
+* I install the unzipped `run` file:
+    
+
+```bash
+sudo ./Blackmagic_Fusion_Studio_*_installer.run -i
 ```
 
 ---
