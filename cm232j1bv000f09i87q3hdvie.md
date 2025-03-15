@@ -78,6 +78,14 @@ DaVinci Resolve Studio is a paid video editing, colour grading and correction, v
 
 [https://www.blackmagicdesign.com/](https://www.blackmagicdesign.com/%E2%86%97)***↗.***
 
+## Installing the Required Packages.
+
+In a terminal, I install the required packages:
+
+```bash
+sudo apt install -y libqt5x11extras5
+```
+
 ## Downloading DaVinci Resolve Studio.
 
 * I download the latest copy of DaVinci Resolve 19 Studio:
