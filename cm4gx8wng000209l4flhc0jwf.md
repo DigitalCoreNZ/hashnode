@@ -909,7 +909,7 @@ rustup self uninstall
 
 ---
 
-# Installing DaVinci Resolve 19 Studio.
+# Installing DaVinci Resolve 19 Studio 19.0.3.
 
 DaVinci Resolve is a video editing, colour grading, and sound mixing program released by Blackmagic Design. The Studio version of this product requires the purchase of a license.
 
@@ -918,7 +918,14 @@ DaVinci Resolve is a video editing, colour grading, and sound mixing program rel
 
 [https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion](https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion)
 
-* From the terminal, I go to the Downloads directory:
+* From the terminal, I install the following packages:
+    
+
+```bash
+sudo apt install libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xkb1 libxkbcommon-x11-0
+```
+
+* I go to the Downloads directory:
     
 
 ```bash
