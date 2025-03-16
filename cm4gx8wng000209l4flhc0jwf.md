@@ -1058,6 +1058,29 @@ sudo apt install -y nvidia-driver-550
 
 ---
 
+# Installing a Custom PS1 Command.
+
+* I use the Nano text editor to open the `.bashrc` file:
+    
+
+```bash
+sudo nano ~/.bashrc
+```
+
+* I scroll to the bottom of the `.bashrc` file.
+    
+* I add the following:
+    
+
+```bash
+PS1="(\$CONDA_DEFAULT_ENV) \e[0;32m\u@WorkLab\e[0m:\e[0;34m\w\e[0m\$ "
+```
+
+* I save (CTRL + S) the changes to the `.bashrc` file, and exit (CTRL + X) the Nano text editor.
+    
+
+---
+
 # The Results.
 
 Setting up a personalized Ubuntu 24.04 LTS system involves selecting and installing a variety of applications and utilities that cater to my specific needs. From essential software like package managers and partition tools to specialized applications for development, media, and productivity, each component plays a crucial role in enhancing my computing experience. By carefully choosing and configuring these tools, I can create a versatile and efficient environment that supports my daily tasks and long-term goals. I keep my system updated while exploring new tools that can further optimize my workflow.
