@@ -1007,7 +1007,7 @@ sudo apt install -y nvidia-driver-550
     
 
 ```bash
-sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libxcb-cursor0
+sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libxcb-cursor0 sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libasound2-plugins
 ```
 
 * I go to the Downloads directory:
