@@ -1058,7 +1058,7 @@ sudo apt install -y nvidia-driver-550
 
 ---
 
-# Installing a Custom PS1 Command.
+# OPTIONAL: Running a `.bashrc` PS1 Command.
 
 * I use the Nano text editor to open the `.bashrc` file:
     
