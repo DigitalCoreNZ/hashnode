@@ -978,7 +978,7 @@ sudo mv libglib-2.0.so* libgio-2.0.so* libgmodule-2.0.so* disabled_libs/
 
 > NOTE: Moving these libraries forces Resolve to use the Ubuntu libraries.
 
-* I update my NVIDIA drivers:
+* I update my NVIDIA drivers, if required:
     
 
 ```bash
@@ -987,12 +987,21 @@ sudo apt install -y nvidia-driver-550
 
 > NOTE: Resolve requires the 550 drivers or later.
 
-* I run the application:
+* I run the application using the Desktop icon (in the App Drawer), or as a terminal session:
     
 
 ```bash
 /opt/resolve/bin/resolve
 ```
+
+## Fixing the Resolve Scaling Issue.
+
+* Open a project.
+    
+* Go to `DaVinci Resolve` (top left) &gt; `Preferences` &gt; `User`.
+    
+* Set the `UI Display Scale` to `200%`.
+    
 
 ---
 
@@ -1002,13 +1011,6 @@ sudo apt install -y nvidia-driver-550
     
 
 [https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion](https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion)
-
-* From the terminal, I install the following packages:
-    
-
-```bash
-sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libxcb-cursor0 sudo apt install -y libapr1 libaprutil1 libasound2 libglib2.0-0 libxcb-composite0 libasound2-plugins
-```
 
 * I go to the Downloads directory:
     
@@ -1035,7 +1037,23 @@ sudo chmod +x ./Blackmagic_Fusion_Studio_*_installer.run
     
 
 ```bash
-sudo ./Blackmagic_Fusion_Studio_*_installer.run -i
+sudo SKIP_PACKAGE_CHECK=1 ./Blackmagic_Fusion_Studio_*_installer.run -i
+```
+
+* I update my NVIDIA drivers, if required:
+    
+
+```bash
+sudo apt install -y nvidia-driver-550
+```
+
+> NOTE: Fusion requires the 550 drivers or later.
+
+* I run the application using the Desktop icon (in the App Drawer), or as a terminal session:
+    
+
+```bash
+/opt/BlackmagicDesign/Fusion19/Fusion
 ```
 
 ---
