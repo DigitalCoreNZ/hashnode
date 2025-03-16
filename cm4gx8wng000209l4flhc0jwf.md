@@ -1073,7 +1073,7 @@ sudo nano ~/.bashrc
     
 
 ```bash
-PS1="(\$CONDA_DEFAULT_ENV) \e[0;32m\u@WorkLab\e[0m:\e[0;34m\w\e[0m\$ "
+PS1="(\$CONDA_DEFAULT_ENV) \e[0;32m\u@WorkLab01\e[0m:\e[0;34m\w\e[0m\$ "
 ```
 
 * I save (CTRL + S) the changes to the `.bashrc` file, and exit (CTRL + X) the Nano text editor.
