@@ -61,11 +61,14 @@ sudo apt autoclean && \
 sudo apt autoremove -y
 ```
 
+* I go to Settings &gt; System &gt; Software Updates to update my system.
+    
+
 ---
 
 # My Terminal Settings.
 
-A terminal is a text window where I can type commands that are executed by my system.
+A terminal is a text window where system commands are issued.
 
 * I go to Preferences &gt; Unnamed &gt; Text tab,
     
@@ -84,6 +87,8 @@ A terminal is a text window where I can type commands that are executed by my sy
 
 # Connecting to the QNAP NAS.
 
+QNAP is a company, and brand of NAS (network attacked storage) devices.
+
 * I use a utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps connect my PC to my NAS.
     
 * Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
@@ -98,6 +103,8 @@ sudo nano $HOME/.config/user-dirs.dirs
 ---
 
 # Installing GNOME Tweaks.
+
+GNOME Tweaks is a system utility for the GNOME desktop environment GUI.
 
 * From the terminal, I install GNOME Tweaks:
     
@@ -120,7 +127,7 @@ gnome-tweaks
 
 # Installing the Package Managers.
 
-There are numerous package managers, including APT (advanced package tool is the default package manager), Snap, and Flatpak.
+Package managers are used to distribute apps and utilities.
 
 > NOTE: A developer might also package their app as an AppImage.
 
@@ -142,21 +149,25 @@ sudo snap install core
 
 ## Installing the Flatpak Package Manager.
 
-* From the terminal, I use the `APT` to `install` the `Flatpak` package manager:
+* From the terminal, I refresh the terminal:
+    
+
+```bash
+. ~/.bashrc
+```
+
+* I use the `APT` to `install` the `Flatpak` package manager:
     
 
 ```plaintext
 sudo apt install -y flatpak
 ```
 
-* I reboot my system.
-    
-
 ---
 
 # Installing the Partition Managers.
 
-GNOME Disks and GParted are popular partition managers. The following describes how to install these utilities, and add support for creating an exFAT file system.
+Partition managers are system utilities for HDDs and SSDs.
 
 ## Installing GNOME Disks.
 
@@ -180,11 +191,13 @@ GParted, or GNOME Partition Editor, is an alternative to GNOME Disks. It is a fr
 sudo apt -y install gparted
 ```
 
-GParted can also be [installed on a USB thumb drive](https://gparted.org/liveusb.php)***↗***.
+GParted can also be [installed onto a USB thumb drive](https://gparted.org/liveusb.php)***↗***.
 
 ## Installing exfatprogs.
 
-exfatprogs allows partition management tools, like GNOME Disks and GParted, to use the exFAT file system when formatting partitions. exFAT is a proprietary file system from Microsoft, was released in 2006, and is the successor to FAT32.
+exfatprogs allows partition management tools, like GNOME Disks and GParted, to use the exFAT file system when formatting partitions.
+
+> NOTE: exFAT is a proprietary file system from Microsoft, was released in 2006, and is the successor to FAT32.
 
 * From the terminal, I install the exfatprogs library:
     
@@ -256,13 +269,7 @@ node -v
 
 # Installing the NodeJS Package Managers.
 
-NPM (NodeJS Package Manager) is a software registry, package manager, and installer for NodeJS packages.
-
-NVM (Node Version Manager) manages NodeJS versions on my system.
-
-PNPM (Performant Node Package Manager) is another JavaScript package manager.
-
-NPX (Node Package Executor) is used to execute NPM packages.
+Package managers are used to bundle code for distribution.
 
 ## Installing NPM.
 
@@ -289,7 +296,7 @@ npm -v
 wget -q -O- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
 
-* I refresh the current terminal:
+* I refresh my terminal:
     
 
 ```bash
@@ -341,7 +348,7 @@ pnpm -v
 
 # Installing Ollama.
 
-Ollama is used to download, set up, and run large language models on a local PC.
+Ollama is a local, large language model manger.
 
 * From the terminal, I install Ollama:
     
@@ -364,7 +371,7 @@ ollama list
 ollama serve &
 ```
 
-* If the following error displays when Ollama is *already* running as a background service:
+* The following error will display if Ollama is *already* running as a background service:
     
 
 ```bash
@@ -378,6 +385,15 @@ Error: listen tcp 127.0.0.1:11434: bind: address already in use
 
 ```bash
 curl https://ollama.ai/install.sh | sh
+```
+
+## Pulling Models from Ollama.
+
+* I pull the following models from Ollama:
+    
+
+```bash
+ollama pull nomic-embed-text && ollama pull codellama:13b && ollama pull phi4:14b && ollama pull qwen2.5:14b && ollama pull qwen2.5-coder:14b && ollama pull llama3.2-vision:11b && ollama pull granite3.2-vision:2b && ollama pull granite3.2:8b && ollama pull gemma3:12b && ollama pull deepseek-coder-v2:16b && ollama pull deepseek-r1:14b
 ```
 
 ## Uninstalling Ollama.
@@ -435,7 +451,7 @@ sudo groupdel ollama
 
 # Installing Pinokio.
 
-**Pinokio** **is** a browser that lets me install, run, and programmatically control ANY application, automatically. I can run chatbots, image generators, and music AI on my PC at the click of a button.
+Pinokio is a browser that runs applications.
 
 * I visit the download page:
     
@@ -455,12 +471,14 @@ https://github.com/pinokiocomputer/pinokio/releases/tag/3.6.23
 sudo apt install -y ~/Downloads/Pinokio*
 ```
 
-* I run Pinokio from the Apps drawer.
+* I run Pinokio from the Apps Drawer.
     
 
 ---
 
 # Installing Docker.
+
+Docker is a container manager for app development and distribution.
 
 > **Attribution:**
 > 
@@ -491,7 +509,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
     
 
 ```bash
-sudo apt update
+sudo apt update && sudo apt upgrade
 ```
 
 * I install Docker:
@@ -595,6 +613,8 @@ sudo rm -rf /usr/local/bin/docker-compose && sudo rm -rf /etc/docker && sudo rm 
 
 # Installing Docker Desktop.
 
+Docker Desktop is a GUI for Docker.
+
 > **Attributions:**
 > 
 > [https://docs.docker.com/desktop/setup/install/linux/ubuntu/](https://docs.docker.com/desktop/setup/install/linux/ubuntu/) ***↗,***
@@ -666,11 +686,13 @@ sudo apt remove docker-desktop && sudo rm /usr/local/bin/com.docker.cli && sudo 
 
 # Installing Open WebUI.
 
+Open WebUI is a browser-based AI interface.
+
 * From the terminal, I use Docker to pull Open WebUI:
     
 
 ```bash
-docker pull ghcr.io/open-webui/open-webui:main
+sudo docker pull ghcr.io/open-webui/open-webui:main
 ```
 
 * Now I can run Open WebUI on port 3000 from within the Docker container:
@@ -680,11 +702,14 @@ docker pull ghcr.io/open-webui/open-webui:main
 docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
 ```
 
+* Alternatively, I can start Open WebUI from Docker Desktop.
+    
+
 ---
 
 # Updating Blender.
 
-Blender is a 3D modelling, rendering, animation, and simulation application.
+Blender is a 3D modelling, rendering, animation, and simulation app.
 
 * From the terminal, I update Blender:
     
@@ -706,7 +731,7 @@ sudo snap remove blender
 
 # Installing VS Code.
 
-VS Code (Visual Studio Code) **is** a free and versatile code editor that supports almost every major programming language.
+VS Code (Visual Studio Code) **is** a free, versatile code editor.
 
 * From the terminal, I install VS Code:
     
@@ -765,7 +790,7 @@ These optional VS Code extensions are also handy:
 
 # Installing Spotify.
 
-Spotify is an audio streaming and media service provider.
+Spotify is an app and streaming service.
 
 * From the terminal, I install Spotify:
     
@@ -787,7 +812,7 @@ sudo snap remove spotify
 
 # Installing Screenkey.
 
-Screenkey is used to display each key press on the monitor.
+Screenkey displays keystrokes on a monitor.
 
 * From the terminal, I install Screenkey:
     
@@ -799,6 +824,8 @@ sudo apt install -y screenkey
 ---
 
 # Installing Inkscape.
+
+Inkscape is a vector-based image editor.
 
 * From the terminal, I add the repo:
     
@@ -830,6 +857,8 @@ sudo apt install -y inkscape
 
 # Installing Krita.
 
+Krita is a pixel-based image editor.
+
 * From the terminal, I install Krita:
     
 
@@ -854,7 +883,7 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 
 # Installing Rust.
 
-Rust is a general-purpose, memory-safe, programming language that emphasises performance, type safety, concurrency, and does not require garbage collection.
+Rust is a general-purpose, memory-safe, programming language.
 
 * From the terminal, I install Rust:
     
@@ -890,7 +919,9 @@ rustup self uninstall
 
 # Installing DaVinci Resolve Studio 19.
 
-DaVinci Resolve is a video editing, colour grading, and sound mixing program released by Blackmagic Design. The Studio version of this product requires the purchase of a license.
+DaVinci Resolve is a video editing, colour grading, and sound mixing app.
+
+> NOTE: DaVinci Resolve Studio requires a user license.
 
 * I download the latest Linux copy of DaVinci Resolve 19 Studio:
     
@@ -901,7 +932,7 @@ DaVinci Resolve is a video editing, colour grading, and sound mixing program rel
     
 
 ```bash
-sudo apt install -y libqt5x11extras5
+sudo apt install -y libqt5x11extras5 libfuse2
 ```
 
 * I go to the Downloads directory:
@@ -932,27 +963,20 @@ sudo chmod +x ./DaVinci_Resolve_*_Linux.run
 sudo SKIP_PACKAGE_CHECK=1 ./DaVinci_Resolve_*_Linux.run -i
 ```
 
-> NOTE: This command does not check for missing libraries during the installation.
-
-* I change to the `libs` directory:
-    
-
-```bash
-cd /opt/resolve/libs
-```
+> NOTE: The `SKIP_PACKAGE_CHECK=1` command bypasses the check system that looks for missing libraries during the installation.
 
 * I make a new directory called `disabled_libs`:
     
 
 ```bash
-sudo mkdir ./disabled_libs
+sudo mkdir /opt/resolve/libs/disabled_libs
 ```
 
 * I move the `libglib`, `libgio`, and `libgmodule` into the `disabled_libs` directory:
     
 
 ```bash
-sudo mv libglib-2.0.so* libgio-2.0.so* libgmodule-2.0.so* disabled_libs/
+sudo mv /opt/resolve/libs/libglib-2.0.so* /opt/resolve/libs/libgio-2.0.so* /opt/resolve/libs/libgmodule-2.0.so* /opt/resolve/libs/disabled_libs/
 ```
 
 > NOTE: Moving these libraries forces Resolve to use the Ubuntu libraries.
@@ -966,7 +990,7 @@ sudo apt install -y nvidia-driver-550
 
 > NOTE: Resolve requires the 550 drivers or later.
 
-* I run the application using the Desktop icon (in the App Drawer), or as a terminal session:
+* I run the application using the Desktop icon (in the Apps Drawer), or as a terminal session:
     
 
 ```bash
@@ -985,6 +1009,10 @@ sudo apt install -y nvidia-driver-550
 ---
 
 # Installing Fusion Studio 19.
+
+Fusion Studio is a visual effects, 3D animation, and motion graphics app.
+
+> NOTE: Fusion Studio uses the same license that activates DaVinci Resolve Studio.
 
 * I download the latest Linux copy of Fusion Studio 19:
     
@@ -1028,35 +1056,12 @@ sudo apt install -y nvidia-driver-550
 
 > NOTE: Fusion requires the 550 drivers or later.
 
-* I run the application using the Desktop icon (in the App Drawer), or as a terminal session:
+* I run the application using the Desktop icon (in the Apps Drawer), or as a terminal session:
     
 
 ```bash
 /opt/BlackmagicDesign/Fusion19/Fusion
 ```
-
----
-
-# OPTIONAL: Running a `.bashrc` PS1 Command.
-
-* I use the Nano text editor to open the `.bashrc` file:
-    
-
-```bash
-sudo nano ~/.bashrc
-```
-
-* I scroll to the bottom of the `.bashrc` file.
-    
-* I add the following:
-    
-
-```bash
-PS1="(\$CONDA_DEFAULT_ENV) \e[0;32m\u@WorkLab01\e[0m:\e[0;34m\w\e[0m\$ "
-```
-
-* I save (CTRL + S) the changes to the `.bashrc` file, and exit (CTRL + X) the Nano text editor.
-    
 
 ---
 
