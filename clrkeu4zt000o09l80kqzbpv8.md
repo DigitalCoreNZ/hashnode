@@ -108,7 +108,7 @@ ip addr
 sudo lxd init
 ```
 
-> NOTE: When initialised, the host interface (enp6s0) will become available to the LXD manager. Now the LXD manager can connect to the router and ask for IP addresses for any running containers.
+> NOTE: When initialized, the host interface (enp6s0) will become available to the LXD manager. Now the LXD manager can connect to the router and ask for IP addresses for any running containers.
 > 
 > ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1712190917770/01120360-fb3d-4186-8921-571e192d5383.png align="center")
 
