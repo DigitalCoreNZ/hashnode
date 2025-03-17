@@ -63,51 +63,37 @@ sudo apt autoremove -y
 
 ---
 
-# Connecting to the QNAP NAS.
-
-I use a utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps connect my PC to my NAS.
-
-Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
-
-```bash
-sudo nano $HOME/.config/user-dirs.dirs
-```
-
-> NOTE: The details of this process is beyond the scope of this post.
-
----
-
-# My Capture Monitor Settings.
-
-I use the following settings on my capture monitor. This is the screen where my activities are captured as video recordings:
-
-* I go to Settings &gt; Displays &gt; Capture Monitor,
-    
-* I activate `Fractional Scaling`,
-    
-* I set the Scale to 125%.
-    
-
-> NOTE: The increase in scale makes it easier to see the actions I perform when staging a tutorial.
-
----
-
 # My Terminal Settings.
 
 A terminal is a text window where I can type commands that are executed by my system.
 
 * I go to Preferences &gt; Unnamed &gt; Text tab,
     
-* I set the `Initial terminal size` to 72 columns and 20 rows,
+* I set the `Initial terminal size` to 72 columns and 28 rows,
     
-* I set the `Custom font` to Monospace at 18pt,
+* I set the `Custom font` to Monospace at 20pt,
     
 * I set the `Allow blinking text` to Never, and
     
 * I set the `Cursor blinking` to Disabled.
     
 
-> NOTE: These settings make it easier to see the commands I use when using the terminal.
+> NOTE: These settings make it easier to see the commands I use.
+
+---
+
+# Connecting to the QNAP NAS.
+
+* I use a utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps connect my PC to my NAS.
+    
+* Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
+    
+
+```bash
+sudo nano $HOME/.config/user-dirs.dirs
+```
+
+> NOTE: The details of this process is beyond the scope of this post.
 
 ---
 
@@ -152,13 +138,6 @@ sudo apt install -y snapd
 
 ```plaintext
 sudo snap install core
-```
-
-* I create a symbolic (`-s`) link (`ln`) to the `Snapd` daemon:
-    
-
-```plaintext
-sudo ln -s /var/lib/snapd/snap /snap
 ```
 
 ## Installing the Flatpak Package Manager.
