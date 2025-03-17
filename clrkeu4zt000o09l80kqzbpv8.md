@@ -105,7 +105,7 @@ ip addr
     
 
 ```plaintext
-lxd init
+sudo lxd init
 ```
 
 > NOTE: When initialised, the host interface (enp6s0) will become available to the LXD manager. Now the LXD manager can connect to the router and ask for IP addresses for any running containers.
