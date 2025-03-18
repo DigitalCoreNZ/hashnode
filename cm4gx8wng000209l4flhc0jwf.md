@@ -917,6 +917,33 @@ rustup self uninstall
 
 ---
 
+# Installing OBS Studio.
+
+OBS Studio is a screen casting and streaming app.
+
+* From the terminal, I install the repository:
+    
+
+```bash
+sudo add-apt-repository ppa:obsproject/obs-studio
+```
+
+* I update, and upgrade, my system:
+    
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+* I install OBS Studio:
+    
+
+```bash
+sudo apt install obs-studio
+```
+
+---
+
 # Installing DaVinci Resolve Studio 19.
 
 DaVinci Resolve is a video editing, colour grading, and sound mixing app.
