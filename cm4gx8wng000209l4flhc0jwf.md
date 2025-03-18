@@ -66,6 +66,29 @@ sudo apt autoremove -y
 
 ---
 
+# Activating Ubuntu Pro.
+
+Ubuntu Pro is a subscription service that extends the Long Term Support (LTS) versions of Ubuntu from 5 years to 10 years (and soon to be 12 years).
+
+* In the Apps Drawer, I click on the blue, `Additional Drivers` icon to start the utility.
+    
+* In the `Additional Drivers` window, I click on the `Ubuntu Pro` tab.
+    
+* I click on the `Enable Ubuntu Pro` button.
+    
+* I can create an account, or login to an existing Ubuntu One account.
+    
+* The `Enable Ubuntu Pro` window generates a token.
+    
+* I take the token to [https://ubuntu.com/pro/attach](https://ubuntu.com/pro/attach).
+    
+* It takes a moment to successfully apply the subscription.
+    
+
+> NOTE: Canonical provides up to five (5) FREE tokens.
+
+---
+
 # My Terminal Settings.
 
 A terminal is a text window where system commands are issued.
@@ -932,14 +955,14 @@ sudo add-apt-repository ppa:obsproject/obs-studio
     
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt -y upgrade
 ```
 
 * I install OBS Studio:
     
 
 ```bash
-sudo apt install obs-studio
+sudo apt install -y obs-studio
 ```
 
 ---
@@ -1088,6 +1111,22 @@ sudo apt install -y nvidia-driver-550
 
 ```bash
 /opt/BlackmagicDesign/Fusion19/Fusion
+```
+
+---
+
+One Final Update.
+
+* From the terminal, I update my system one last time:
+    
+
+```python
+sudo apt clean && \
+sudo apt update && \
+sudo apt dist-upgrade -y && \
+sudo apt --fix-broken install && \
+sudo apt autoclean && \
+sudo apt autoremove -y
 ```
 
 ---
