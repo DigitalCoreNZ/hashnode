@@ -95,9 +95,9 @@ A terminal is a text window where system commands are issued.
 
 * I go to Preferences &gt; Unnamed &gt; Text tab,
     
-* I set the `Initial terminal size` to 72 columns and 28 rows,
+* I set the `Initial terminal size` to 72 columns and 21 rows,
     
-* I set the `Custom font` to Monospace at 20pt,
+* I set the `Custom font` to Monospace at 22pt,
     
 * I set the `Allow blinking text` to Never, and
     
