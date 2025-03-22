@@ -418,8 +418,8 @@ curl https://ollama.ai/install.sh | sh
 ```bash
 ollama pull nomic-embed-text &&
 ollama pull codellama:13b &&
-ollama pull qwen2.5:14b &&
 ollama pull qwen2.5-coder:14b &&
+ollama pull qwen2.5:14b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.2:8b &&
 ollama pull llama3.1:8b-instruct-q8_0 &&
