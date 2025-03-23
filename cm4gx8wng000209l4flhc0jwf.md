@@ -442,9 +442,9 @@ ollama pull qwen2.5-coder:14b &&
 ollama pull qwen2.5:14b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.2:8b &&
-ollama pull llama3.1:8b-instruct-q8_0 &&
+ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
-ollama pull llama3.2:3b-instruct-fp16 &&
+ollama pull llama3.2:3b &&
 ollama pull phi4:14b &&
 ollama pull gemma3:12b &&
 ollama pull deepseek-coder-v2:16b &&
