@@ -355,6 +355,26 @@ pnpm -v
 
 ---
 
+# Installing Git.
+
+Git is a version control system.
+
+* From the terminal, I install Git:
+    
+
+```bash
+sudo apt install -y git-all
+```
+
+* I verify the installation:
+    
+
+```bash
+git -v
+```
+
+---
+
 # Installing Miniconda.
 
 * Check out this post to see how [to install Miniconda](https://solodev.app/installing-miniconda).
