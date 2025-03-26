@@ -581,6 +581,20 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 sudo systemctl is-active docker
 ```
 
+* I create the Docker group:
+    
+
+```bash
+sudo groupadd docker
+```
+
+* I add my account to the group:
+    
+
+```bash
+sudo usermod -aG docker $USER
+```
+
 * I test the installation:
     
 
