@@ -389,148 +389,6 @@ git -v
 
 ---
 
-# Installing Ollama.
-
-Ollama is a local, large language model manger.
-
-* From the terminal, I install Ollama:
-    
-
-```bash
-curl https://ollama.ai/install.sh | sh
-```
-
-* I list the LLMs downloaded by Ollama:
-    
-
-```bash
-ollama list
-```
-
-* If the above command fails, I run Ollama as a background service:
-    
-
-```bash
-ollama serve &
-```
-
-* The following error will display if Ollama is *already* running as a background service:
-    
-
-```bash
-Error: listen tcp 127.0.0.1:11434: bind: address already in use
-```
-
-## Updating Ollama.
-
-* I update Ollama:
-    
-
-```bash
-curl https://ollama.ai/install.sh | sh
-```
-
-## Pulling Models from Ollama.
-
-* I pull the following models from Ollama:
-    
-
-```bash
-ollama pull nomic-embed-text &&
-ollama pull codellama:13b &&
-ollama pull qwen2.5-coder:14b &&
-ollama pull qwen2.5:14b &&
-ollama pull granite3.2-vision:2b &&
-ollama pull granite3.2:8b &&
-ollama pull llama3.1:8b &&
-ollama pull llama3.2-vision:11b &&
-ollama pull llama3.2:3b &&
-ollama pull phi4:14b &&
-ollama pull gemma3:12b &&
-ollama pull deepseek-coder-v2:16b &&
-ollama pull deepseek-r1:14b
-```
-
-## Uninstalling Ollama.
-
-* I stop the Ollama service:
-    
-
-```bash
-sudo systemctl stop ollama
-```
-
-* I disable the Ollama service:
-    
-
-```bash
-sudo systemctl disable ollama
-```
-
-* I remove the Ollama service:
-    
-
-```bash
-sudo rm /etc/systemd/system/ollama.service
-```
-
-* I remove the Ollama binary from my bin directory:
-    
-
-```bash
-sudo rm $(which ollama)
-```
-
-* I remove the models downloaded by Ollama:
-    
-
-```bash
-sudo rm -r /usr/share/ollama
-```
-
-* I delete the Ollama service user:
-    
-
-```bash
-sudo userdel ollama
-```
-
-* I delete the Ollama service group:
-    
-
-```bash
-sudo groupdel ollama
-```
-
----
-
-# Installing Pinokio.
-
-Pinokio is a browser that runs applications.
-
-* I visit the download page:
-    
-
-```bash
-https://github.com/pinokiocomputer/pinokio/releases/tag/3.6.23
-```
-
-> NOTE: In this example, I am referencing Pinokio v3.6.23.
-
-* At the bottom of the page, I download the Debian package for AMD64 processors.
-    
-* From the terminal, I install Pinokio:
-    
-
-```bash
-sudo apt install -y ~/Downloads/Pinokio*
-```
-
-* I run Pinokio from the Apps Drawer.
-    
-
----
-
 # Installing Docker.
 
 Docker is a container manager for app development and distribution.
@@ -750,29 +608,6 @@ sudo apt remove docker-desktop
 ```bash
 sudo apt remove docker-desktop && sudo rm /usr/local/bin/com.docker.cli && sudo apt purge docker-desktop
 ```
-
----
-
-# Installing Open WebUI.
-
-Open WebUI is a browser-based AI interface.
-
-* From the terminal, I use Docker to pull Open WebUI:
-    
-
-```bash
-sudo docker pull ghcr.io/open-webui/open-webui:main
-```
-
-* Now I can run Open WebUI on port 3000 from within the Docker container:
-    
-
-```bash
-docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
-```
-
-* Alternatively, I can start Open WebUI from Docker Desktop.
-    
 
 ---
 
@@ -1161,7 +996,7 @@ sudo apt install -y nvidia-driver-550
 
 ---
 
-One Final Update.
+# One Final Update.
 
 * From the terminal, I update my system one last time:
     
