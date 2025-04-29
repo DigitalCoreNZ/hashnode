@@ -357,7 +357,7 @@ pnpm -v
 
 # Installing Git.
 
-Git is a version control system.
+Git is a version control utility.
 
 * From the terminal, I install Git:
     
