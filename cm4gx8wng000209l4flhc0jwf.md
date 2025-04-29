@@ -375,7 +375,11 @@ git -v
 
 ---
 
-# Installing GitHub CLI.
+# Installing the GitHub CLI Utility.
+
+GitHub CLI is a tool that extends the capabilities of Git. Developers can interact with GitHub repositories, pull requests, issues, and workflows directly from their terminal.
+
+## Installing GitHub CLI.
 
 * From the terminal, I install GitHub CLI:
     
@@ -391,7 +395,7 @@ git -v
 	&& sudo apt install gh -y
 ```
 
-# Upgrading GitHub CLI.
+## Upgrading GitHub CLI.
 
 * I upgrade GitHub CLI:
     
@@ -400,7 +404,7 @@ git -v
 sudo apt update && sudo apt install gh
 ```
 
-# Authorizing GitHub CLI.
+## Authorizing GitHub CLI.
 
 * I authorize GitLab CLI:
     
