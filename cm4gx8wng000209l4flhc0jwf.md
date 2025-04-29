@@ -375,7 +375,7 @@ git -v
 
 ---
 
-# Installing the GitHub CLI Utility.
+# Installing the GitHub Utility.
 
 GitHub CLI is a tool that extends the capabilities of Git. Developers can interact with GitHub repositories, pull requests, issues, and workflows directly from their terminal.
 
