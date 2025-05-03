@@ -227,9 +227,17 @@ crawl4ai-doctor
 
 ---
 
+## What are VS Code Extensions?
+
+VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code.
+
+### Some Popular AI Extensions.
+
+---
+
 ## What is Cursor?
 
-Cursor is an IDE (integrated development environment) that is used for AI development.
+Cursor is an IDE, an integrated development environment forked from VS Code, that is used for AI development.
 
 > NOTE: The following process can be use on any AppImage app.
 
@@ -310,6 +318,36 @@ sudo ln -s ~/Apps/Cursor/Cursor.AppImage /usr/local/bin/cursor
 
 ```bash
 cursor
+```
+
+---
+
+## What is Windsurf?
+
+Windsurf is an AI-powered code editor designed to enhance the coding experience with features like automatic context analysis, AI-driven autocompletion, and an intuitive user interface.
+
+### Installing Windsurf.
+
+* I add the Windsurf repo to my local system:
+    
+
+```bash
+curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list > /dev/null
+```
+
+* I update my system:
+    
+
+```bash
+sudo apt update
+```
+
+* I upgrade Windsurf:
+    
+
+```bash
+sudo apt upgrade windsurf
 ```
 
 ---
