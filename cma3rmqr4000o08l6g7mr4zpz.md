@@ -196,33 +196,6 @@ pip install crewai 'crewai[tools]'
 
 ---
 
-## What is Pinokio?
-
-Pinokio is a browser that runs applications.
-
-### Installing Pinokio.
-
-* I use a browser to visit the download page for Pinokio:
-    
-
-```bash
-https://github.com/pinokiocomputer/pinokio/releases
-```
-
-* I download the latest version of Pinokio that runs on Debian (.deb) distributions for AMD64 processors.
-    
-* From the terminal, I install Pinokio:
-    
-
-```bash
-sudo apt install -y ~/Downloads/Pinokio*
-```
-
-* I run Pinokio from the Apps Drawer.
-    
-
----
-
 ## What is Crawl4AI?
 
 Crawl4AI is a web-scraping tool that can conform website data into a format that can be understood by AI models, or prepared for uploading to a vector database.
@@ -250,6 +223,93 @@ crawl4ai-setup
 
 ```python
 crawl4ai-doctor
+```
+
+---
+
+## What is Cursor?
+
+Cursor is an IDE (integrated development environment) that is used for AI development.
+
+> NOTE: The following process can be use on any AppImage app.
+
+### Installing Cursor.
+
+> ATTRIBUTION: [https://forum.cursor.com/t/tutorial-install-cursor-permanently-when-appimage-install-didnt-work-on-linux/7712](https://forum.cursor.com/t/tutorial-install-cursor-permanently-when-appimage-install-didnt-work-on-linux/7712)
+
+* From a browser, I download the AppImage file from the [cursor.com](https://www.cursor.com) website.
+    
+* From the file manager, I move the Cursor app to the NAS (network attached storage) server.
+    
+* From the terminal, I create the Apps/Cursor directory:
+    
+
+```bash
+mkdir ~/Apps/Cursor
+```
+
+* I copy the Cursor download to the the Apps/Cursor directory:
+    
+
+```bash
+cp ~/Downloads/Ubuntu/Cursor/Cursor*.AppImage ~/Apps/Cursor/Cursor.AppImage
+```
+
+> NOTE: This copy command changes the download name to Cursor.AppImage.
+
+* OPTIONAL:
+    
+* OPTIONAL: I copy the 128px by 128px logo to the ~/Apps/Cursor directory:
+    
+
+```bash
+cp /media/brian/Drawings/logos/cursor/Images/Cursor-icon.png ~/Apps/Cursor/Cursor-icon.png
+```
+
+> NOTE: I downloaded this image from the Internet.
+
+* I make the AppImage executable:
+    
+
+```bash
+chmod +x ~/Apps/Cursor/Cursor.AppImage
+```
+
+* I use the Nano text editor to create a desktop entry:
+    
+
+```bash
+nano ~/.local/share/applications/cursor.desktop
+```
+
+* I paste (CTRL + SHIFT + V) the following into the desktop entry:
+    
+
+```bash
+[Desktop Entry]
+Name=Cursor
+Exec=~/Apps/Cursor/Cursor.AppImage
+Icon=~/Apps/Cursor/Cursor-icon.png
+Type=Application
+Categories=Utility;Development;
+```
+
+* I save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor.
+    
+* I create a symlink to start Cursor from the terminal:
+    
+
+```bash
+sudo ln -s ~/Apps/Cursor/Cursor.AppImage /usr/local/bin/cursor
+```
+
+* I restart my system.
+    
+* From the terminal, I run the Cursor IDE:
+    
+
+```bash
+cursor
 ```
 
 ---
@@ -360,6 +420,33 @@ lmstudio
 
 ---
 
+## What is Pinokio?
+
+Pinokio is a browser that runs applications.
+
+### Installing Pinokio.
+
+* I use a browser to visit the download page for Pinokio:
+    
+
+```bash
+https://github.com/pinokiocomputer/pinokio/releases
+```
+
+* I download the latest version of Pinokio that runs on Debian (.deb) distributions for AMD64 processors.
+    
+* From the terminal, I install Pinokio:
+    
+
+```bash
+sudo apt install -y ~/Downloads/Pinokio*
+```
+
+* I run Pinokio from the Apps Drawer.
+    
+
+---
+
 ## What is Ngrok?
 
 Ngrok creates secure tunnels to localhost, allowing developers to expose local servers to the Internet.
@@ -393,93 +480,6 @@ ngrok http <local_port_number>
 
 ---
 
-## What is Cursor?
-
-Cursor is an IDE (integrated development environment) that is used for AI development.
-
-> NOTE: The following process can be use on any AppImage app.
-
-## Installing Cursor.
-
-> ATTRIBUTION: [https://forum.cursor.com/t/tutorial-install-cursor-permanently-when-appimage-install-didnt-work-on-linux/7712](https://forum.cursor.com/t/tutorial-install-cursor-permanently-when-appimage-install-didnt-work-on-linux/7712)
-
-* From a browser, I download the AppImage file from the [cursor.com](https://www.cursor.com) website.
-    
-* From the file manager, I move the Cursor app to the NAS (network attached storage) server.
-    
-* From the terminal, I create the Apps/Cursor directory:
-    
-
-```bash
-mkdir ~/Apps/Cursor
-```
-
-* I copy the Cursor download to the the Apps/Cursor directory:
-    
-
-```bash
-cp ~/Downloads/Ubuntu/Cursor/Cursor*.AppImage ~/Apps/Cursor/Cursor.AppImage
-```
-
-> NOTE: This copy command changes the download name to Cursor.AppImage.
-
-* OPTIONAL:
-    
-* OPTIONAL: I copy the 128px by 128px logo to the ~/Apps/Cursor directory:
-    
-
-```bash
-cp /media/brian/Drawings/logos/cursor/Images/Cursor-icon.png ~/Apps/Cursor/Cursor-icon.png
-```
-
-> NOTE: I downloaded this image from the Internet.
-
-* I make the AppImage executable:
-    
-
-```bash
-chmod +x ~/Apps/Cursor/Cursor.AppImage
-```
-
-* I use the Nano text editor to create a desktop entry:
-    
-
-```bash
-nano ~/.local/share/applications/cursor.desktop
-```
-
-* I paste (CTRL + SHIFT + V) the following into the desktop entry:
-    
-
-```bash
-[Desktop Entry]
-Name=Cursor
-Exec=~/Apps/Cursor/Cursor.AppImage
-Icon=~/Apps/Cursor/Cursor-icon.png
-Type=Application
-Categories=Utility;Development;
-```
-
-* I save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor.
-    
-* I create a symlink to start Cursor from the terminal:
-    
-
-```bash
-sudo ln -s ~/Apps/Cursor/Cursor.AppImage /usr/local/bin/cursor
-```
-
-* I restart my system.
-    
-* From the terminal, I run the Cursor IDE:
-    
-
-```bash
-cursor
-```
-
----
-
 ## The Results.
 
 Setting up a local AI toolkit significantly improves my chances of improving my AI development skills. By following this guide, I efficiently installed, can manage, and will utilise various AI tools and frameworks. Combining Ollama, CrewAI, Pinokio, Open WebUI, LM Studio, Ngrok, and Cursor provides a robust environment for developing and experimenting with open AI models. This well-equipped, local toolkit will help me develop my vibe coding skills.
@@ -496,8 +496,4 @@ Until next time: Be safe, be kind, be awesome.
 
 ## Hash Tags.
 
-#AI #Artificial-Intelligence #Machine-Learning #Deep-Learning #AI-Development
-
-#Ubuntu #Linux #Open-Source #Tech-Tools #AI-Models #Coding
-
-#Tech-Guide #AI-Community #Innovation #Future-Tech
+#AI #Artificial-Intelligence #Machine-Learning #Deep-Learning #AI-Development #Ubuntu #Linux #Open-Source #Tech-Tools #AI-Models #Coding #Tech-Guide #AI-Community #Innovation #Future-Tech
