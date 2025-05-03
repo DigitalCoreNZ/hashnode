@@ -22,9 +22,9 @@ This post is a guide to setting up a local AI toolkit on a Debian-based Linux di
 
 ## An Introduction.
 
-This post highlights the tools I find useful as an AI generalist. I want to share my insights into these tools and explain why they are beneficial to AI developers:
+This post highlights the tools I find useful as an AI enthusiast. I want to share my insights into these tools and explain why they are beneficial to AI developers:
 
-> The purpose of this post is to describe the tools that I, as an AI generalist, find useful.
+> The purpose of this post is to describe the tools that I, as an AI enthusiast, find useful.
 
 ---
 
