@@ -130,14 +130,14 @@ curl https://ollama.com/install.sh | sh
 
 ```bash
 ollama pull nomic-embed-text:v1.5 &&
-ollama pull codellama:13b &&
-ollama pull qwen2.5-coder:14b &&
-ollama pull qwen2.5:14b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.2:8b &&
 ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
 ollama pull llama3.2:3b &&
+ollama pull codellama:13b &&
+ollama pull qwen2.5-coder:14b &&
+ollama pull qwen3:14b &&
 ollama pull gemma3:12b &&
 ollama pull phi4:14b &&
 ollama pull deepseek-coder-v2:16b &&
