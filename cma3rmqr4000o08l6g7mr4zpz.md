@@ -252,7 +252,7 @@ OpenRouter is a platform that provides a unified API for accessing various large
 
 ### Open Models vs. OpenRouter.
 
-I prefer downloading, and using, open models on my local system. This ensures my data does not leak and my constructs are not used to train frontier models. Sometimes, however, I need access to better models with more parameters that run on better hardware.
+I prefer downloading open models to my local system, and using then using these models on my personal computer. That way, I can ensure my data does not leak, and my constructs are not used to train frontier models. Sometimes, however, I need to run complex inference. In those cases, I access better models with more parameters that run on powerful hardware. That is why I occasionally switch to using OpenRouter.
 
 Choosing OpenRouter over open models depends on my requirements at each stage of a project.
 
@@ -260,7 +260,7 @@ Choosing OpenRouter over open models depends on my requirements at each stage of
 
 ## What is Cursor?
 
-Cursor is an IDE, an integrated development environment forked from VS Code, that is used for AI development.
+Cursor is a VS Code fork that provides an improved AI development experience.
 
 > NOTE: The following process can be use on any AppImage app.
 
