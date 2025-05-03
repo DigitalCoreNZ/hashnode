@@ -231,7 +231,30 @@ crawl4ai-doctor
 
 VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code.
 
-### Some Popular AI Extensions.
+### Some Popular AI Extensions for VS Code.
+
+Some of my favourite AI Extensions for VS Code include:
+
+* Twinny,
+    
+* Roo Code,
+    
+* Cline, and
+    
+* Continue.
+    
+
+---
+
+## What is OpenRouter.ai?
+
+OpenRouter is a platform that provides a unified API for accessing various large language models (LLMs) from multiple providers.
+
+### Open Models vs. OpenRouter.
+
+I prefer downloading, and using, open models on my local system. This ensures my data does not leak and my constructs are not used to train frontier models. Sometimes, however, I need access to better models with more parameters that run on better hardware.
+
+Choosing OpenRouter over open models depends on my requirements at each stage of a project.
 
 ---
 
