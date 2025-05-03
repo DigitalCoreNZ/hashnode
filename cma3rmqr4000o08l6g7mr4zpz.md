@@ -5,7 +5,7 @@ seoDescription: "Discover how to set up a powerful local AI toolkit on Ubuntu wi
 datePublished: Wed Apr 30 2025 10:00:42 GMT+0000 (Coordinated Universal Time)
 cuid: cma3rmqr4000o08l6g7mr4zpz
 slug: local-ai-toolkit
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1745999042472/ed51bd4d-c83b-4a51-ba91-6ee1f924d7ae.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746233213818/9ff97f58-6ff6-4dd1-bf6a-26e002239b7e.png
 tags: ai, artificial-intelligence, ubuntu, linux, machine-learning, coding, deep-learning, innovation, ai-development, ai-community, open-source, ai-models, future-tech, tech-guide, tech-tools
 
 ---
@@ -32,7 +32,7 @@ This post highlights the tools I find useful as an AI generalist. I want to shar
 
 November 30th 2022 saw the launch of AI’s first killer app: ChatGPT (Generative Pre-trained Transformer). Three months later, in February 2023, someone “leaked“ the first LLM (Large Language Model) from Meta, the corporation that owns Facebook. Since then, many open LLMs have dropped and Hugging Face has become the de facto centre for these models.
 
-The year is now 2025 and over the last two years there has been an explosion of tools and workflows hitting the Internet. The continued growth of commercial, frontier LLMs (e.g. OpenAI models such as GPT-4o, GPT-4o mini, and the GPT-4.1 series) has easily matched, and usually surpasses, the power of my favourite open models (DeepSeek-R1, Phi4, Qwen3, etc.) However, thanks to the rise of open reasoning models, MoE (Mixture of Experts) models, agents, agentic tools, RAG (Retrieval-Augmented Generation) knowledge saved in vector databases, and AI-specific scraping tools like Crawl4AI, AI generalists like myself can develop our vibe coding skills on our own PCs.
+The year is now 2025 and over the last two and-a-bit years there has been an explosion of tools and workflows hitting the Internet. The continued growth of commercial, frontier LLMs (e.g. OpenAI models such as GPT-4o, GPT-4o mini, and the GPT-4.1 series) has easily matched, and usually surpasses, the power of my favourite open models (DeepSeek-R1, Phi4, Qwen3, etc.) However, thanks to the rise of open reasoning models, MoE (Mixture of Experts) models, agents, agentic tools, RAG (Retrieval-Augmented Generation) knowledge saved in vector databases, and AI-specific scraping tools like Crawl4AI, AI enthusiasts like myself can develop our vibe coding skills on our own PCs.
 
 ---
 
@@ -488,7 +488,7 @@ Setting up a local AI toolkit significantly improves my chances of improving my 
 
 ## In Conclusion.
 
-In this post, I described how to set up a powerful local AI toolkit on Ubuntu with step-by-step instructions. I learned how to install and manage AI tools like Ollama, CrewAI, and more, enhancing my AI development capabilities. This article is perfect for AI generalists and developers looking to harness both open and commercial AI technologies.
+In this post, I described how to set up a powerful local AI toolkit on Ubuntu with step-by-step instructions. I learned how to install and manage AI tools like Ollama, CrewAI, and more, enhancing my AI development capabilities. This article is perfect for AI enthusiasts and developers looking to harness both open and commercial AI technologies.
 
 Until next time: Be safe, be kind, be awesome.
 
