@@ -12,7 +12,32 @@ tags: ai, artificial-intelligence, ubuntu, linux, machine-learning, coding, deep
 
 ## TL;DR.
 
-This post is a guide to setting up a local AI toolkit on a Debian-based Linux distribution, specifically Ubuntu. It covers the installation and management of various AI tools and frameworks, including Ollama, CrewAI, Pinokio, Open WebUI, LM Studio, Ngrok, and Cursor. This guide includes step-by-step instructions for installing, updating, and uninstalling these tools, as well as setting up virtual environments for best practices. Additionally, it offers insights into the functionalities of each tool and how they can be utilized for AI development.
+This post is a guide to setting up a local AI toolkit on a Debian-based Linux distribution, specifically Ubuntu. It covers the installation and management of various AI tools and frameworks, including:
+
+* Ollama,
+    
+* CrewAI,
+    
+* Crawl4AI,
+    
+* AI Extensions for VS Code,
+    
+* OpenRouter.ai,
+    
+* Cursor,
+    
+* Windsurf,
+    
+* Open WebUI,
+    
+* LM Studio,
+    
+* Pinokio, and
+    
+* Ngrok.
+    
+
+This guide includes step-by-step instructions for installing, updating, and uninstalling these tools, as well as promoting virtual environments (specifically [Conda](https://solodev.app/installing-miniconda)) for best practices. Also, this post occasionally offers insights into these tools and how they are utilised during AI development.
 
 > **Attributions:**
 > 
@@ -30,9 +55,11 @@ This post highlights the tools I find useful as an AI enthusiast. I want to shar
 
 ## The Big Picture.
 
-November 30th 2022 saw the launch of AI’s first killer app: ChatGPT (Generative Pre-trained Transformer). Three months later, in February 2023, someone “leaked“ the first LLM (Large Language Model) from Meta, the corporation that owns Facebook. Since then, many open LLMs have dropped and Hugging Face has become the de facto centre for these models.
+November 30th 2022 saw the launch of AI’s first killer app: ChatGPT (Generative Pre-trained Transformer). Three months later, in February 2023, someone “leaked“ the first, open LLM (Large Language Model) which was built by Meta, the corporation that owns Facebook. Since then, many open models have dropped and Hugging Face has become the de facto centre for these AI machines.
 
-The year is now 2025 and over the last two and-a-bit years there has been an explosion of tools and workflows hitting the Internet. The continued growth of commercial, frontier LLMs (e.g. OpenAI models such as GPT-4o, GPT-4o mini, and the GPT-4.1 series) has easily matched, and usually surpasses, the power of my favourite open models (DeepSeek-R1, Phi4, Qwen3, etc.) However, thanks to the rise of open reasoning models, MoE (Mixture of Experts) models, agents, agentic tools, RAG (Retrieval-Augmented Generation) knowledge saved in vector databases, and AI-specific scraping tools like Crawl4AI, AI enthusiasts like myself can develop our vibe coding skills on our own PCs.
+> NOTE: From here on, I will refer to LLMs as models.
+
+It is now early 2025 and, over the last two and-a-bit years, there has been an explosion of tools and workflows hitting the Internet. The continued growth of commercial, frontier models (e.g. OpenAI models such as GPT-4o, GPT-4o mini, and the GPT-4.1 series) has easily matched, and usually surpassed, the power of my favourite open models (DeepSeek-R1, Phi4, Qwen3, etc.) However, thanks to the rise of MoE (Mixture of Experts) models, reasoning models, agents, agentic tasks and tools, RAG (Retrieval-Augmented Generation) processes, and AI-specific scraping tools, AI enthusiasts can easily develop vibe coding skills *on local PCs* using open models, frontier models, or a combination of both types of systems.
 
 ---
 
@@ -81,7 +108,7 @@ curl https://ollama.com/install.sh | sh
 ollama serve &
 ```
 
-> NOTE: An error typically displays (see below) because Ollama, by default, *already* runs as a background service. Also, by default, the Ollama localhost (127.0.0.1 or 0.0.0.0) port is 11434.
+> NOTE: An error typically displays (see below) because Ollama, by default, *already* runs as a background service. Also, by default, Ollama run on port 11434.
 > 
 > ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1745578527337/acba5663-7582-4eba-8f4b-6475a7bcba16.png align="center")
 
@@ -119,7 +146,7 @@ ollama pull deepseek-r1:14b
 
 > NOTE: Theses models are perfect for running on my GTX3060 GPU with 12GB VRAM.
 
-* I list the LLMs (large language models) downloaded by Ollama:
+* I list the models downloaded by Ollama:
     
 
 ```bash
@@ -181,13 +208,13 @@ sudo groupdel ollama
 
 ## What is CrewAI?
 
-CrewAI is a framework that is used to build AI crews, agents, and tools.
+CrewAI is a framework that is used to build AI crews, agents, tasks, and tools.
 
 ### Installing CrewAI.
 
-> NOTE: Best practice involves installing this app in a virtual environment, using either venv or [conda](https://solodev.app/installing-miniconda).
+> NOTE: Best practice involves installing this app in a virtual environment, using either venv or [Conda](https://solodev.app/installing-miniconda).
 
-* From the terminal, I install CrewAI and its’ tools:
+* From the terminal, I use the pip command to install CrewAI and its’ tools:
     
 
 ```bash
@@ -198,13 +225,13 @@ pip install crewai 'crewai[tools]'
 
 ## What is Crawl4AI?
 
-Crawl4AI is a web-scraping tool that can conform website data into a format that can be understood by AI models, or prepared for uploading to a vector database.
+Crawl4AI is a web-scraping tool that can conform website data into a format that can be understood by AI models, or the data can be prepared for uploading to a vector database (pending).
 
 ### Installing Crawl4AI.
 
-> NOTE: Best practice involves installing this app in a virtual environment, using either venv or [conda](https://solodev.app/installing-miniconda).
+> NOTE: Best practice involves installing this app in a virtual environment, using either venv or [Conda](https://solodev.app/installing-miniconda).
 
-* I use the pip command to install Crawl4AI:
+* I use the pip command to install the updated version of Crawl4AI:
     
 
 ```python
@@ -227,9 +254,9 @@ crawl4ai-doctor
 
 ---
 
-## What are VS Code Extensions?
+## What are AI Extensions for VS Code?
 
-VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code.
+VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code. AI extensions for VS Code are tools and integrations that connect to local, AI models
 
 ### Some Popular AI Extensions for VS Code.
 
@@ -248,7 +275,7 @@ Some of my favourite AI Extensions for VS Code include:
 
 ## What is OpenRouter.ai?
 
-OpenRouter is a platform that provides a unified API for accessing various large language models (LLMs) from multiple providers.
+OpenRouter is a platform that provides a unified API for accessing various models from multiple providers.
 
 ### Open Models vs. OpenRouter.
 
