@@ -1,7 +1,7 @@
 ---
 title: "Local System Toolkit for Ubuntu."
-seoTitle: "Essential Tools for Local System Management"
-seoDescription: "Set up Ubuntu 24.04 LTS with essential productivity, development, and media production tools, emphasising workflow optimisation"
+seoTitle: "Local System Tools for Ubuntu Management"
+seoDescription: "Set up Ubuntu 24.04 LTS with essential productivity, development, and media production tools that emphasise workflow productivity"
 datePublished: Mon May 05 2025 10:00:32 GMT+0000 (Coordinated Universal Time)
 cuid: cmaawtsfq000i09jp5vbqexbx
 slug: local-system-toolkit-for-ubuntu
