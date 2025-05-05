@@ -1,11 +1,11 @@
 ---
-title: "Local System Toolkit."
+title: "Local System Toolkit for Ubuntu."
 seoTitle: "Essential Tools for Local System Management"
 seoDescription: "Set up Ubuntu 24.04 LTS with essential productivity, development, and media production tools, emphasising workflow optimisation"
 datePublished: Mon May 05 2025 10:00:32 GMT+0000 (Coordinated Universal Time)
 cuid: cmaawtsfq000i09jp5vbqexbx
-slug: local-system-toolkit
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746410866635/e095e606-697a-4beb-8c86-1a517098b443.png
+slug: local-system-toolkit-for-ubuntu
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746440588224/03f98290-7290-4d41-ae55-bda8523b31bf.png
 tags: ubuntu, productivity, software-development, linux, docker, spotify, blender, vs-code, innovation, open-source, tech-community, tech-tools, ubuntu-studio, davinci-resolve-studio
 
 ---
