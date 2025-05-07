@@ -47,6 +47,19 @@ A PC is a generic tool where the installed software defines what the user is cap
 
 ---
 
+## Deleting My Login Password.
+
+* From the terminal, I delete my login password:
+    
+
+```nix
+sudo passwd -d <account_name>
+```
+
+> Generally speaking, and in most situations, this command is NOT recommended. Use with CAUTION.
+
+---
+
 ## Updating the System.
 
 APT (advanced package tool) handles the installation and removal of software on Debian and Debian-based Linux distributions. The following commands are used to keep my Ubuntu system (a Debian-based Linux distro) up-to-date.
