@@ -753,7 +753,7 @@ These optional VS Code extensions are also handy:
     
 
 ```bash
-sudo apt install ruby-full
+sudo apt install ruby-full -y
 ```
 
 ### Removing Ruby.
