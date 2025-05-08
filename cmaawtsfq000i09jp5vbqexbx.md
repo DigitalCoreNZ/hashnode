@@ -747,6 +747,26 @@ These optional VS Code extensions are also handy:
 
 ---
 
+## Installing Ruby.
+
+* From the terminal, I install Ruby:
+    
+
+```bash
+sudo apt install ruby-full
+```
+
+### Removing Ruby.
+
+* I use the following command to remove Ruby:
+    
+
+```bash
+sudo apt remove ruby -y
+```
+
+---
+
 ## Installing Spotify.
 
 Spotify is an app and streaming service.
