@@ -707,54 +707,36 @@ I use the following command to remove VS Code:
 sudo snap remove code
 ```
 
-### VS Code Extensions.
+### Printing an AsciiDoc File as a PDF.
 
-I find the following VS Code extensions useful:
-
-* Live Server,
+* I install the AsciiDoc extension for VS Code.
     
-* Geo Data Viewer,
-    
-* Code Spell Checker,
-    
-* JavaScript (ES6) Code Snippets,
-    
-* Prettier - Code formatter,
-    
-* Markdown All in One,
-    
-* rust-analyzer, and
-    
-* C/C++
-    
-
-These optional VS Code extensions are also handy:
-
-* Ayu,
-    
-* ES Lint,
-    
-* Beautify,
-    
-* Colorize,
-    
-* Rainbow Tags,
-    
-* Auto Rename Tag,
-    
-* Markdown Table Prettifier,
-    
-
----
-
-## Installing Ruby.
-
 * From the terminal, I install Ruby:
     
 
 ```bash
 sudo apt install ruby-full -y
 ```
+
+* I install the AsciiDoctor PDF Gem:
+    
+
+```bash
+sudo gem install asciidoctor-pdf
+```
+
+* Within VS Code, I open the Settings tab and search for `asciidoc-pdf`.
+    
+* I set the `Asciidoc > Pdf: Engine` to `asciidoctor-pdf`.
+    
+* I set the `Asciidoc > Pdf: Asciidoctor Pdf Command Path` to `asciidoctor-pdf`.
+    
+* I open an AsciiDoc (.ad) file.
+    
+* I open the Command Palette (CTRL + SHIFT + P) and search for `AsciiDoc: Export Document as PDF`.
+    
+* I save the file.
+    
 
 ### Removing Ruby.
 
