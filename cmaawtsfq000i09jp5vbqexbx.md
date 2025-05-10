@@ -709,7 +709,7 @@ sudo snap remove code
 
 ### Printing an AsciiDoc File as a PDF.
 
-* I install the AsciiDoc extension for VS Code.
+* I install the AsciiDoc extension from Asciidoctor for VS Code.
     
 * From the terminal, I install Ruby:
     
@@ -731,11 +731,11 @@ sudo gem install asciidoctor-pdf
     
 * I set the `Asciidoc > Pdf: Asciidoctor Pdf Command Path` to `asciidoctor-pdf`.
     
-* I open an AsciiDoc (.ad) file.
+* I open an AsciiDoc (example.ad) file.
     
 * I open the Command Palette (CTRL + SHIFT + P) and search for `AsciiDoc: Export Document as PDF`.
     
-* I save the file.
+* I use this feature to generate a PDF file based on my my `example.ad` file.
     
 
 ### Removing Ruby.
@@ -746,6 +746,15 @@ sudo gem install asciidoctor-pdf
 ```bash
 sudo apt remove ruby -y
 ```
+
+### Other Useful VS Code Extensions for the AsciiDoc Extension.
+
+Here is a list of other VS Code extensions I find useful when creating an `example.ad` file or generating a PDF file from the `example.ad` file:
+
+* Code Spell Checker from Street Side Software let’s me check for spelling mistakes in my `example.ad` file, and
+    
+* vscode-pdf from tomoki1207 let’s me view PDF files within VS Code. This is useful when I use AsciiDoc to generate PDF files because the view automatically updates on when I export an update to the `example.ad` content.
+    
 
 ---
 
