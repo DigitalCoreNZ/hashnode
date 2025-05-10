@@ -1,11 +1,11 @@
 ---
-title: "Local AI Toolkit for Developers."
+title: "Local AI Toolkit for Ubuntu."
 seoTitle: "AI Toolkit for Local Use"
 seoDescription: "Guide to setting up a local AI toolkit on Ubuntu, including installation and management of various AI tools and frameworks"
 datePublished: Tue May 06 2025 10:00:24 GMT+0000 (Coordinated Universal Time)
 cuid: cmacc9grh002m09kycxyr8roc
-slug: local-ai-toolkit-for-developers
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746440796055/50cca5f5-33bd-4062-95e6-7490d5c413c5.png
+slug: local-ai-toolkit-for-ubuntu
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746921051526/d469b47f-6f93-4f61-b561-fd72aa6fcce1.png
 tags: ai, artificial-intelligence, ubuntu, linux, machine-learning, coding, deep-learning, innovation, ai-development, ai-community, open-source, ai-models, future-tech, tech-guide, tech-tools
 
 ---
