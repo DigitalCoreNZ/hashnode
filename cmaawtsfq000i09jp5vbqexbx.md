@@ -747,7 +747,7 @@ sudo gem install asciidoctor-pdf
 sudo apt remove ruby -y
 ```
 
-### Other Useful VS Code Extensions for the AsciiDoc Extension.
+### Useful VS Code Extensions when using AsciiDoc.
 
 Here is a list of other VS Code extensions I find useful when creating an `example.ad` file or generating a PDF file from the `example.ad` file:
 
