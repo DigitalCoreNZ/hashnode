@@ -108,7 +108,7 @@ curl https://ollama.com/install.sh | sh
 ollama serve &
 ```
 
-> NOTE: An error typically displays (see below) because Ollama, by default, *already* runs as a background service. Also, by default, Ollama run on port 11434.
+> NOTE: An error typically displays (see below) because Ollama, by default, *already* runs as a background service. Also, by default, Ollama runs on port 11434.
 > 
 > ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1745578527337/acba5663-7582-4eba-8f4b-6475a7bcba16.png align="center")
 
@@ -130,21 +130,23 @@ curl https://ollama.com/install.sh | sh
 
 ```bash
 ollama pull nomic-embed-text:v1.5 &&
+ollama pull gemma3:12b &&
+ollama pull deepcoder:14b &&
+ollama pull codellama:13b &&
 ollama pull granite3.2-vision:2b &&
-ollama pull granite3.2:8b &&
+ollama pull granite3.3:8b &&
 ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
 ollama pull llama3.2:3b &&
-ollama pull codellama:13b &&
 ollama pull qwen2.5-coder:14b &&
 ollama pull qwen3:14b &&
-ollama pull gemma3:12b &&
 ollama pull phi4:14b &&
+ollama pull phi4-reasoning:14b
 ollama pull deepseek-coder-v2:16b &&
 ollama pull deepseek-r1:14b
 ```
 
-> NOTE: Theses models are perfect for running on my GTX3060 GPU with 12GB VRAM.
+> NOTE: Theses models are perfect for running on my GTX3060 GPU with 12GB VRAM. Also, this list is continually updated. If a newer version of a model is released, I remove the old listing above, replace it with the new listing, run the pull commands, list the installed models (`ollama ls`), and remove (`ollama rm <model-name>`) the older model.
 
 * I list the models downloaded by Ollama:
     
