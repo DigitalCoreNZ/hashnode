@@ -851,6 +851,13 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 
 ---
 
+## Updating Python 3.
+
+* From the terminal, I add the deadsnakes PPA to my repository list:
+    
+
+---
+
 ## Installing Rust.
 
 Rust is a general-purpose, memory-safe, programming language.
