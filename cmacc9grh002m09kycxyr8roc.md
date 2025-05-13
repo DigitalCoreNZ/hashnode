@@ -614,6 +614,9 @@ code .
     
 
 ```python
+from llm_axe.models import OllamaChat
+from llm_axe.agents import Agent
+
 llm = OllamaChat(model="llama3.1:8b")
 ag = Agent(llm, custom_system_prompt="", stream=True)
 res = ag.ask("Explain who you are in 20 paragraphs")
@@ -622,7 +625,7 @@ for chunk in res:
     print(chunk, end="", flush=True)
 ```
 
-* I open the VS Code terminal with `CTRL` + `~`.
+* I open the VS Code terminal with the `CTRL` + `~` keyboard combo.
     
 * I run the `01 Stream.py` script:
     
