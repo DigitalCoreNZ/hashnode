@@ -614,7 +614,7 @@ code .
     
 
 ```python
-llm = OllamaChat(model="llama3.1")
+llm = OllamaChat(model="llama3.1:8b")
 ag = Agent(llm, custom_system_prompt="", stream=True)
 res = ag.ask("Explain who you are in 20 paragraphs")
 
