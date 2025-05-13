@@ -32,9 +32,11 @@ This post is a guide to setting up a local AI toolkit on a Debian-based Linux di
     
 * LM Studio,
     
-* Pinokio, and
+* Pinokio,
     
-* Ngrok.
+* Ngrok, and
+    
+* LLM Axe.
     
 
 This guide includes step-by-step instructions for installing, updating, and uninstalling these tools, as well as promoting virtual environments (specifically [Conda](https://solodev.app/installing-miniconda)) for best practices. Also, this post occasionally offers insights into these tools and how they are utilised during AI development.
@@ -566,6 +568,67 @@ ngrok config add-authtoken <auth_token>
 
 ```bash
 ngrok http <local_port_number>
+```
+
+---
+
+## What is LLM Axe?
+
+LLM Axe is a toolkit that provides simple abstractions for commonly used LLM functions.
+
+### Installing LLM Axe.
+
+* I use pip to install LLM Axe:
+    
+
+```bash
+pip install llm-axe
+```
+
+### Streaming with LLM Axe.
+
+* I create, and move to, a new directory called LLM Axe:
+    
+
+```bash
+mkdir /media/brian/AI/'LLM Axe' && cd ~/AI/'LLM Axe'
+```
+
+> NOTE: I created a symbolic link that points to my external storage in a previous exercise.
+
+* I create a Python file called `01 Wave.py`:
+    
+
+```bash
+touch '01 Stream.py'
+```
+
+* I open the "LLM Axe” directory in VS Code:
+    
+
+```bash
+code .
+```
+
+* I add the following content to the `01 Stream.py` file:
+    
+
+```python
+llm = OllamaChat(model="llama3.1")
+ag = Agent(llm, custom_system_prompt="", stream=True)
+res = ag.ask("Explain who you are in 20 paragraphs")
+
+for chunk in res:
+    print(chunk, end="", flush=True)
+```
+
+* I open the VS Code terminal with `CTRL` + `~`.
+    
+* I run the `01 Stream.py` script:
+    
+
+```python
+python3 '01 Stream.py'
 ```
 
 ---
