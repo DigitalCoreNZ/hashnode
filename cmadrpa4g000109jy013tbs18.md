@@ -1,11 +1,11 @@
 ---
-title: "CrewAI: Generating a Report."
+title: "Generating a Report with CrewAI."
 seoTitle: "CrewAI Report Generation Guide"
 seoDescription: "Learn to deploy and use CrewAI agents effectively with a step-by-step guide inspired by Tyler Reed's tutorial. Enhance your understanding of AI agents."
 datePublished: Wed May 07 2025 10:00:22 GMT+0000 (Coordinated Universal Time)
 cuid: cmadrpa4g000109jy013tbs18
-slug: crewai-generating-a-report
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1746576039843/07af5bd8-d217-4724-b0f4-5019a236f5b5.png
+slug: generating-a-report-with-crewai
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1747204119988/dd659f7a-15f1-4c26-a38b-feaf0a405a96.png
 tags: ai, ubuntu, vs-code, ai-community, open-source, ai-tools, tech-blog, ai-integration, ai-projects, tech-tutorial, crewai, ai-research, learning-by-doing, practical-ai
 
 ---
