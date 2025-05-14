@@ -20,6 +20,8 @@ This post is a guide to setting up a local AI toolkit on a Debian-based Linux di
     
 * Crawl4AI,
     
+* LLM Axe,
+    
 * AI Extensions for VS Code,
     
 * OpenRouter.ai,
@@ -28,18 +30,18 @@ This post is a guide to setting up a local AI toolkit on a Debian-based Linux di
     
 * Windsurf,
     
-* Open WebUI,
-    
 * LM Studio,
     
-* Pinokio,
+* Open WebUI,
     
-* Ngrok, and
+* Pinokio, and
     
-* LLM Axe.
+* Ngrok.
     
 
 This guide includes step-by-step instructions for installing, updating, and uninstalling these tools, as well as promoting virtual environments (specifically [Conda](https://solodev.app/installing-miniconda)) for best practices. Also, this post occasionally offers insights into these tools and how they are utilised during AI development.
+
+Although this post contains many AI tools, the only ones I actually use are Ollama, CrewAI, Crawl4AI, the LLM Axe toolkit, the AI extensions for VS Code, and the OpenRouter.ai website.
 
 > **Attributions:**
 > 
@@ -258,6 +260,21 @@ crawl4ai-doctor
 
 ---
 
+## What is LLM Axe?
+
+LLM Axe is a toolkit that provides simple abstractions for commonly used LLM functions.
+
+### Installing LLM Axe.
+
+* I use pip to install LLM Axe:
+    
+
+```bash
+pip install llm-axe
+```
+
+---
+
 ## What are AI Extensions for VS Code?
 
 VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code. AI extensions for VS Code are tools and integrations that connect to local, AI models
@@ -279,13 +296,13 @@ Some of my favourite AI Extensions for VS Code include:
 
 ## What is OpenRouter.ai?
 
-OpenRouter is a platform that provides a unified API for accessing various models from multiple providers.
+[OpenRouter](https://openrouter.ai/) ***↗*** provides a single API for accessing numerous models from multiple providers.
 
 ### Open Models vs. OpenRouter.
 
-I prefer downloading open models to my local system, and using then using these models on my personal computer. That way, I can ensure my data does not leak, and my constructs are not used to train frontier models. Sometimes, however, I need to run complex inference. In those cases, I access better models with more parameters that run on powerful hardware. That is why I occasionally switch to using OpenRouter.
+I prefer downloading open models to my local system, and then using these models on my personal computer. Using local models ensures my data does not leak, and my constructs are not used to train other models. Sometimes, however, I need to run complex inference. In those cases, I will use better models that run on powerful hardware. This is why I sometimes switch to using OpenRouter.
 
-Choosing OpenRouter over open models depends on my requirements at each stage of a project.
+Choosing to use OpenRouter over open models depends on my requirements at each stage of a project.
 
 ---
 
@@ -293,7 +310,7 @@ Choosing OpenRouter over open models depends on my requirements at each stage of
 
 Cursor is a VS Code fork that provides an improved AI development experience.
 
-> NOTE: The following process can be use on any AppImage app.
+> NOTE: The following process can be used to install any AppImage app.
 
 ### Installing Cursor.
 
@@ -406,36 +423,11 @@ sudo apt upgrade windsurf
 
 ---
 
-## What is Open WebUI?
-
-Open WebUI is a browser-based interface for using AI models.
-
-### Installing Open WebUI.
-
-* From the terminal, I use Docker to pull Open WebUI:
-    
-
-```bash
-sudo docker pull ghcr.io/open-webui/open-webui:main
-```
-
-* Now I can run Open WebUI on port 3000 from within the Docker container:
-    
-
-```bash
-docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
-```
-
-* Alternatively, I can start Open WebUI from Docker Desktop.
-    
-
----
-
 ## What is LM Studio?
 
-LM Studio is an AI application for locally running AI models.
+LM Studio is an AI application for running local AI models.
 
-> The following process can be use on any AppImage app.
+> NOTE: The following process can be used to install any AppImage app.
 
 ### Installing LM Studio.
 
@@ -512,6 +504,31 @@ lmstudio
 
 ---
 
+## What is Open WebUI?
+
+Open WebUI is a browser-based interface for using AI models.
+
+### Installing Open WebUI.
+
+* From the terminal, I use Docker to pull Open WebUI:
+    
+
+```bash
+sudo docker pull ghcr.io/open-webui/open-webui:main
+```
+
+* Now I can run Open WebUI on port 3000 from within the Docker container:
+    
+
+```bash
+docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+```
+
+* Alternatively, I can start Open WebUI from Docker Desktop.
+    
+
+---
+
 ## What is Pinokio?
 
 Pinokio is a browser that runs applications.
@@ -568,70 +585,6 @@ ngrok config add-authtoken <auth_token>
 
 ```bash
 ngrok http <local_port_number>
-```
-
----
-
-## What is LLM Axe?
-
-LLM Axe is a toolkit that provides simple abstractions for commonly used LLM functions.
-
-### Installing LLM Axe.
-
-* I use pip to install LLM Axe:
-    
-
-```bash
-pip install llm-axe
-```
-
-### Streaming with LLM Axe.
-
-* I create, and move to, a new directory called LLM Axe:
-    
-
-```bash
-mkdir /media/brian/AI/'LLM Axe' && cd ~/AI/'LLM Axe'
-```
-
-> NOTE: I created a symbolic link that points to my external storage in a previous exercise.
-
-* I create a Python file called `01 Wave.py`:
-    
-
-```bash
-touch '01 Stream.py'
-```
-
-* I open the "LLM Axe” directory in VS Code:
-    
-
-```bash
-code .
-```
-
-* I add the following content to the `01 Stream.py` file:
-    
-
-```python
-from llm_axe.models import OllamaChat
-from llm_axe.agents import Agent
-
-llm = OllamaChat(model="llama3.1:8b")
-ag = Agent(llm, custom_system_prompt="", stream=True)
-res = ag.ask("Explain who you are in 20 paragraphs")
-
-for chunk in res:
-    print(chunk, end="", flush=True)
-```
-
-* I open the VS Code terminal with the `CTRL` + `~` keyboard combo.
-    
-* I run the `01 Stream.py` script:
-    
-
-```python
-python3 '01 Stream.py'
 ```
 
 ---
