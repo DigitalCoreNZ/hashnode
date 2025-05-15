@@ -277,7 +277,7 @@ pip install llm-axe
 
 ## What are AI Extensions for VS Code?
 
-VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-on that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code. AI extensions for VS Code are tools and integrations that connect to local, AI models
+VS Code is a FREE, open-source IDE (integrated development environment) from Microsoft. Extensions are add-ons that are installed within VS Code. These extensions provide extra functionality without having to make changes to the VS Code source code. AI extensions for VS Code are tools and integrations that connect to local, and remote, AI models.
 
 ### Some Popular AI Extensions for VS Code.
 
@@ -303,7 +303,7 @@ Other Extensions I find useful include:
 * Code Spell Checker from Street Side Software.
     
 
-> NOTE: I have a post that covers the installation of [VS Code and its’ Extensions](https://solodev.app/local-system-toolkit-for-ubuntu#heading-installing-vs-code).
+> NOTE: I have a post that covers the installation of [VS Code and some of its’ Extensions](https://solodev.app/local-system-toolkit-for-ubuntu#heading-installing-vs-code).
 
 ---
 
