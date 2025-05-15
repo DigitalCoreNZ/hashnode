@@ -715,7 +715,7 @@ sudo snap remove code
     
 
 ```bash
-sudo apt install ruby-full -y
+sudo apt install -y ruby-full
 ```
 
 * I install the AsciiDoctor PDF Gem:
@@ -725,7 +725,7 @@ sudo apt install ruby-full -y
 sudo gem install asciidoctor-pdf
 ```
 
-* Within VS Code, I open the Settings tab and search for `asciidoc-pdf`.
+* Within VS Code, I open the `Settings` tab and search for `asciidoc-pdf`.
     
 * I set the `Asciidoc > Pdf: Engine` to `asciidoctor-pdf`.
     
