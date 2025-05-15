@@ -292,6 +292,19 @@ Some of my favourite AI Extensions for VS Code include:
 * Continue.
     
 
+Other Extensions I find useful include:
+
+* AsciiDoc from AsciiDoctor,
+    
+* AsciiDoctor PDF from AsciiDoctor,
+    
+* vscode-pdf from tomoki1207, and
+    
+* Code Spell Checker from Street Side Software.
+    
+
+> NOTE: I have a post that covers the installation of [VS Code and its’ Extensions](https://solodev.app/local-system-toolkit-for-ubuntu#heading-installing-vs-code).
+
 ---
 
 ## What is OpenRouter.ai?
