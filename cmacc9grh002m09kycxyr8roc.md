@@ -149,7 +149,10 @@ ollama pull smallthinker:3b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.3:8b &&
 ollama pull exaone3.5:7.8b &&
-ollama pull exaone-deep:7.8b &&
+ollama pull exaone-deep:7.8b
+```
+
+```bash
 ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
 ollama pull llama3.2:3b &&
