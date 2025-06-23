@@ -134,19 +134,32 @@ curl https://ollama.com/install.sh | sh
 
 ```bash
 ollama pull nomic-embed-text:v1.5 &&
-ollama pull gemma3:12b &&
 ollama pull deepcoder:14b &&
 ollama pull codellama:13b &&
+ollama pull falcon3:10b &&
+ollama pull dolphin3:8b &&
+ollama pull gemma3:12b &&
+ollama pull cogito:14b &&
+ollama pull tulu3:8b &&
+ollama pull olmo2:13b &&
+ollama pull marco-o1:7b &&
+ollama pull opencoder:8b &&
+ollama pull openthinker:7b &&
+ollama pull smallthinker:3b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.3:8b &&
-ollama pull cogito:14b &&
+ollama pull exaone3.5:7.8b &&
+ollama pull exaone-deep:7.8b &&
 ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
 ollama pull llama3.2:3b &&
+ollama pull qwen2.5vl:7b &&
 ollama pull qwen2.5-coder:14b &&
 ollama pull qwen3:14b &&
 ollama pull phi4:14b &&
-ollama pull phi4-reasoning:14b
+ollama pull phi4-mini:3.8b &&
+ollama pull phi4-reasoning:14b &&
+ollama pull phi4-mini-reasoning:3.8b &&
 ollama pull deepseek-coder-v2:16b &&
 ollama pull deepseek-r1:14b
 ```
