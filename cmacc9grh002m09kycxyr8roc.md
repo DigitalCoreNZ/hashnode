@@ -139,6 +139,7 @@ ollama pull deepcoder:14b &&
 ollama pull codellama:13b &&
 ollama pull granite3.2-vision:2b &&
 ollama pull granite3.3:8b &&
+ollama pull cogito:14b &&
 ollama pull llama3.1:8b &&
 ollama pull llama3.2-vision:11b &&
 ollama pull llama3.2:3b &&
