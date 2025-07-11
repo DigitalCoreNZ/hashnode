@@ -845,9 +845,9 @@ sudo snap install krita
 * I copy the Krita logo to the Krita directory:
     
 
-> NOTE: I downloaded the Krita logo from the Internet.
+> NOTE: I downloaded the Krita PNG logo from the Internet.
 
-* From the Krita directory, I make the AppImage executable:
+* From the Krita directory, I make the AppImage executable, for example:
     
 
 ```bash
@@ -861,7 +861,7 @@ chmod +x krita-5.2.10-x86_64.AppImage
 nano ~/.local/share/applications/krita.desktop
 ```
 
-* I paste (CTRL + SHIFT + V) the following into the desktop entry:
+* I paste (CTRL + SHIFT + V) the following into the desktop entry, e.g.:
     
 
 ```bash
@@ -882,14 +882,17 @@ Categories=Graphics;Images
 sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage /usr/local/bin/krita
 ```
 
-* I restart my system.
+* I open a new terminal.
     
-* From the terminal, I run the Cursor IDE:
+* From the new terminal, I run the Krita IDE:
     
 
 ```bash
 krita
 ```
+
+* From the apps menu, I pin the Krita app to the Dash.
+    
 
 ---
 
