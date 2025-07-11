@@ -836,6 +836,61 @@ Krita is a pixel-based image editor.
 sudo snap install krita
 ```
 
+## Installing Krita Manually.
+
+* From a browser, I download the AppImage file from the [Krita.org](https://krita.org/en/download/) website.
+    
+* From the file manager, I move the Krita app to it’s own directory.
+    
+* I copy the Krita logo to the Krita directory:
+    
+
+> NOTE: I downloaded the Krita logo from the Internet.
+
+* From the Krita directory, I make the AppImage executable:
+    
+
+```bash
+chmod +x krita-5.2.10-x86_64.AppImage
+```
+
+* I use the Nano text editor to create a desktop entry:
+    
+
+```bash
+nano ~/.local/share/applications/krita.desktop
+```
+
+* I paste (CTRL + SHIFT + V) the following into the desktop entry:
+    
+
+```bash
+[Desktop Entry]
+Name=Krita
+Exec=/media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage
+Icon=/media/brian/Downloads/Ubuntu/Krita/krita-logo.png
+Type=Application
+Categories=Graphics;Images
+```
+
+* I save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor.
+    
+* I create a symlink to start Cursor from the terminal:
+    
+
+```bash
+sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage /usr/local/bin/krita
+```
+
+* I restart my system.
+    
+* From the terminal, I run the Cursor IDE:
+    
+
+```bash
+krita
+```
+
 ---
 
 ## Installing the Brave Browser.
