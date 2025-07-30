@@ -181,6 +181,93 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 ---
 
+## Running the Helper Script.
+
+* I visit [http://helper-scripts.com/](http://helper-scripts.com/).
+    
+* I search for ‘proxmox ve post install‘.
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749449711896/6bccba72-3d65-450e-90cb-d82b76186c7d.png align="center")
+
+* I copy the script command.
+    
+* I open a local terminal.
+    
+
+> NOTE: I can run the following commands from a browser that is logged into Proxmox VE by going to `Datacenter > pve > Shell`. However, the text is very small, so I am using a local terminal instead.
+> 
+> ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749453209487/0fcd70a6-cc89-424e-945f-9cf17124c194.png align="center")
+
+* I use the ssh (secure shell) command to login to the remote Proxmox VE:
+    
+
+```bash
+ssh root@192.168.0.60
+```
+
+* The password is the same one I use when logging in to the Proxmox VE browser GUI:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749450728113/d3f959e7-57ed-4d87-9c2f-3fb81b02e889.png align="center")
+
+* I paste the helper script command into the terminal:
+    
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
+```
+
+> NOTE: Answer ‘yes’ to MOST of the questions when asked but there are 3 exceptions, as listed below.
+
+* I answer ‘no’ to ‘Disable high availability?’:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451321563/2c94ed4f-12a3-4e6c-8da4-f39afc64b811.png align="center")
+
+> NOTE: High availability will be used when other nodes are created.
+
+* I answer ‘no’ to ‘Update Proxmox VE now?‘:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451488029/9440bbae-c167-4acb-9e48-6d8cd2e6c6fc.png align="center")
+
+> NOTE: I will update Proxmox manually.
+
+* I answer ‘no’ to ‘Reboot Proxmox VE now?‘:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451626813/9ee7cf61-d8db-4a69-9497-d6b48177c869.png align="center")
+
+> NOTE: I will reboot once I finish updating the remote system and upgrading Proxmox VE.
+
+* Once the script returns me to the terminal screen, I update the system:
+    
+
+```bash
+apt update
+```
+
+> NOTE: Sudo is not required as I am in the root account which has full privileges.
+
+* Once the updates have been downloaded, but not installed, I run the following command to update the system and the Proxmox VE installation:
+    
+
+```bash
+pveupgrade -y
+```
+
+* Due to the installation of a kernel update, I will reboot the remote Proxmox VE system:
+    
+
+```bash
+reboot
+```
+
+> NOTE: The `reboot` command will automatically end the session between my local terminal and the remote Proxmox VE system.
+
+---
+
 ## Downloading an OS to Proxmox VE.
 
 * I use a browser to login to Proxmox VE.
@@ -269,93 +356,6 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748595021450/77932deb-e7d9-4e1b-97e7-3320ef1d43b1.png align="center")
 
----
-
-## Running the Helper Script.
-
-* I visit [http://helper-scripts.com/](http://helper-scripts.com/).
-    
-* I search for ‘proxmox ve post install‘.
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749449711896/6bccba72-3d65-450e-90cb-d82b76186c7d.png align="center")
-
-* I copy the script command.
-    
-* I open a local terminal.
-    
-
-> NOTE: I can run the following commands from a browser that is logged into Proxmox VE by going to `Datacenter > pve > Shell`. However, the text is very small, so I am using a local terminal instead.
-> 
-> ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749453209487/0fcd70a6-cc89-424e-945f-9cf17124c194.png align="center")
-
-* I use the ssh (secure shell) command to login to the remote Proxmox VE:
-    
-
-```bash
-ssh root@192.168.0.50
-```
-
-* The password is the same one I use when logging in to the Proxmox VE browser GUI:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749450728113/d3f959e7-57ed-4d87-9c2f-3fb81b02e889.png align="center")
-
-* I paste the helper script command into the terminal:
-    
-
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
-```
-
-> NOTE: Answer ‘yes’ to MOST of the questions when asked but there are 3 exceptions, as listed below.
-
-* I answer ‘no’ to ‘Disable high availability?’:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451321563/2c94ed4f-12a3-4e6c-8da4-f39afc64b811.png align="center")
-
-> NOTE: High availability will be used when other nodes are created.
-
-* I answer ‘no’ to ‘Update Proxmox VE now?‘:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451488029/9440bbae-c167-4acb-9e48-6d8cd2e6c6fc.png align="center")
-
-> NOTE: I will update Proxmox manually.
-
-* I answer ‘no’ to ‘Reboot Proxmox VE now?‘:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451626813/9ee7cf61-d8db-4a69-9497-d6b48177c869.png align="center")
-
-> NOTE: I will reboot once I finish updating the remote system and upgrading Proxmox VE.
-
-* Once the script returns me to the terminal screen, I update the system:
-    
-
-```bash
-apt update
-```
-
-> NOTE: Sudo is not required as I am in the root account which has full privileges.
-
-* Once the updates have been downloaded, but not installed, I run the following command to update the system and the Proxmox VE installation:
-    
-
-```bash
-pveupgrade -y
-```
-
-* Due to the installation of a kernel update, I will reboot the remote Proxmox VE system:
-    
-
-```bash
-reboot
-```
-
-> NOTE: The `reboot` command will automatically end the session between my local terminal and the remote Proxmox VE system.
-> 
 > Now that all of the requirements are in place, I can take the next step by using a browser to login to Proxmox VE, clicking the blue `Create CT` button (top-right of the screen), following the resulting prompts, and creating a container.
 
 ---
