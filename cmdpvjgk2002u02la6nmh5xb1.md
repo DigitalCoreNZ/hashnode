@@ -393,7 +393,7 @@ The BMAD Method utilizes a set of specialized AI agents, each with a distinct ro
         
 * **QA Agent:**
     
-    * **Purpose:** Optionally reviews story drafts against existing artifacts. In the core development cycle, performs a senior developer review, refactors code, adds tests, and documents notes. Decides if more Dev work is needed or if the story is approved.
+    * **Purpose:** Optionally reviews story drafts against existing artefacts. In the core development cycle, performs a senior developer review, refactors code, adds tests, and documents notes. Decides if more Dev work is needed or if the story is approved.
         
 
 ---
