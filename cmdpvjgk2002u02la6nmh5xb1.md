@@ -166,9 +166,9 @@ The BMAD Method's flexibility comes from its natural language-based components, 
 
 * **Purpose:** This Markdown file allows users to inject their preferred technologies, design patterns, or other technical biases into the planning agents (e.g., PM, Architect).
     
-* **How to Change:** Add markdown content describing your preferences. For example, you can specify preferred frontend frameworks, backend languages, database types, or architectural styles.
+* **How to Change:** Add markdown content describing my preferences. For example, I can specify preferred frontend frameworks, backend languages, database types, or architectural styles.
     
-* **Impact of Changes:** Planning agents will consider these preferences when generating PRDs, architecture documents, and making technology recommendations, leading to plans more aligned with your specific technical stack and philosophy.
+* **Impact of Changes:** Planning agents will consider these preferences when generating PRDs, architecture documents, and making technology recommendations, leading to plans more aligned with my specific technical stack and philosophy.
     
 
 ### 3.4. Core Configuration (`bmad-core/core-config.yaml`).
@@ -177,7 +177,7 @@ The BMAD Method's flexibility comes from its natural language-based components, 
     
 * **How to Change:** Modify the `devLoadAlwaysFiles` list to specify which documents (e.g., coding standards, tech stack, project structure) the Dev agent should always load into its context.
     
-* **Impact of Changes:** Crucial for managing the Dev agent's context. By including lean, focused documents here, you ensure the Dev agent has essential guidelines without unnecessary context bloat, leading to more efficient and compliant code generation.
+* **Impact of Changes:** Crucial for managing the Dev agent's context. By including lean, focused documents here, I ensure the Dev agent has essential guidelines without unnecessary context bloat, leading to more efficient and compliant code generation.
     
 
 ### 3.5. Tasks (`bmad-core/tasks/*.md`).
@@ -208,20 +208,20 @@ The BMAD Method's flexibility comes from its natural language-based components, 
     
 * **Use Expansion Packs for Specialization:** For domain-specific needs (e.g., game development, DevOps) or non-technical applications, create or use expansion packs to avoid bloating the core agents.
     
-* **Iterative Refinement:** Continuously refine agent definitions, checklists, and preferences based on the quality of the AI-generated output and your evolving project needs.
+* **Iterative Refinement:** Continuously refine agent definitions, checklists, and preferences based on the quality of the AI-generated output and my evolving project needs.
     
-* **Commit Regularly:** Especially during the development cycle, commit your changes frequently to maintain version control and track progress.
+* **Commit Regularly:** Especially during the development cycle, commit my changes frequently to maintain version control and track progress.
     
-* **Understand the Workflows:** Familiarize yourself with both the Planning and Development workflows to effectively guide the agents and intervene when necessary.
+* **Understand the Workflows:** Familiarize myself with both the Planning and Development workflows to effectively guide the agents and intervene when necessary.
     
 
-By understanding these core components and their interplay, you can effectively leverage and customize the BMAD Method to streamline your AI-assisted development processes and achieve higher quality outcomes.
+By understanding these core components and their interplay, I can effectively leverage and customize the BMAD Method to streamline my AI-assisted development processes and achieve higher quality outcomes.
 
 ---
 
 ## 5\. Practically Applying the BMAD Method
 
-To effectively utilize the BMAD Method, you'll need to set up your local environment and understand the practical steps for generating documents. This section guides you through the installation, configuration, and a step-by-step process for creating a complete set of project documents.
+To effectively utilize the BMAD Method, I'll need to set up my local environment and understand the practical steps for generating documents. This section guides me through the installation, configuration, and a step-by-step process for creating a complete set of project documents.
 
 ### 5.1. Installation and Configuration
 
@@ -229,7 +229,7 @@ The BMAD Method is primarily built around Python scripts and Markdown/YAML files
 
 #### 5.1.1. Prerequisites
 
-Before you begin, ensure you have the following installed on your local machine:
+Before I begin, ensure I have the following installed on my local machine:
 
 * **Python 3.9+:** The core of the BMAD Method relies on Python.
     
@@ -239,12 +239,12 @@ Before you begin, ensure you have the following installed on your local machine:
     
 * **An IDE (e.g., VS Code):** Recommended for editing Markdown and YAML files, and running scripts.
     
-* **Access to an LLM API:** The BMAD Method requires access to a Large Language Model (LLM) API (e.g., OpenAI, Anthropic, Google Gemini). You will need an API key for your chosen LLM provider.
+* **Access to an LLM API:** The BMAD Method requires access to a Large Language Model (LLM) API (e.g., OpenAI, Anthropic, Google Gemini). I will need an API key for my chosen LLM provider.
     
 
 #### 5.1.2. Setup Steps
 
-1. **Clone the Repository:** Start by cloning the BMAD Method repository to your local machine:
+1. **Clone the Repository:** Start by cloning the BMAD Method repository to my local machine:
     
     ```bash
     git clone https://github.com/bmadcode/BMAD-METHOD.git
@@ -264,17 +264,17 @@ Before you begin, ensure you have the following installed on your local machine:
     pip install -r requirements.txt
     ```
     
-    (If `requirements.txt` is not present, you would typically install `langchain`, `openai` (or equivalent for your LLM), `pyyaml`, etc., manually.)
+    (If `requirements.txt` is not present, I would typically install `langchain`, `openai` (or equivalent for my LLM), `pyyaml`, etc., manually.)
     
-4. **Configure LLM API Key:** The BMAD Method will need your LLM API key to interact with the AI models. This is usually done by setting an environment variable. For example, for OpenAI:
+4. **Configure LLM API Key:** The BMAD Method will need my LLM API key to interact with the AI models. This is usually done by setting an environment variable. For example, for OpenAI:
     
     ```bash
-    export OPENAI_API_KEY="your_openai_api_key_here"
+    export OPENAI_API_KEY="my_openai_api_key_here"
     ```
     
-    Replace `"your_openai_api_key_here"` with your actual API key. For other LLMs, consult their documentation for the appropriate environment variable name.
+    Replace `"my_openai_api_key_here"` with my actual API key. For other LLMs, consult their documentation for the appropriate environment variable name.
     
-5. **Review** `bmad-core/core-config.yaml`: Familiarize yourself with the `bmad-core/core-config.yaml` file. This file contains crucial configurations, such as `devLoadAlwaysFiles`, which dictates what documents the Development agent always loads. Adjust this as needed for your project's specific standards.
+5. **Review** `bmad-core/core-config.yaml`: Familiarize myself with the `bmad-core/core-config.yaml` file. This file contains crucial configurations, such as `devLoadAlwaysFiles`, which dictates what documents the Development agent always loads. Adjust this as needed for my projects’ specific standards.
     
 
 ### 5.2. Step-by-Step Document Generation
@@ -295,7 +295,7 @@ This phase leverages the planning agents to define the project's scope and techn
         
 2. **Generate Product Requirement Document (PRD) (Product Manager Agent):**
     
-    * The Product Manager (PM) agent takes the Project Brief (or your initial idea) and generates a detailed PRD. This document will outline Functional Requirements (FRs), Non-Functional Requirements (NFRs), Epics, and high-level Stories.
+    * The Product Manager (PM) agent takes the Project Brief (or my initial idea) and generates a detailed PRD. This document will outline Functional Requirements (FRs), Non-Functional Requirements (NFRs), Epics, and high-level Stories.
         
     * *Command Example (conceptual):* `python bmad.py pm --task "create_prd" --input "ProjectBrief.md" --output "PRD.md"`
         
@@ -328,7 +328,7 @@ Once the core planning documents are stable, the focus shifts to creating detail
         
     * *Command Example (conceptual):* `python bmad.py sm --task "draft_story" --input "sharded_docs/epic_1_part_1.md" --output "Story_FeatureX_01.md"`
         
-    * Repeat this step for each story you need to generate.
+    * Repeat this step for each story I need to generate.
         
 3. **Generate Code and Tests (Development Agent):**
     
@@ -344,7 +344,7 @@ Once the core planning documents are stable, the focus shifts to creating detail
         
 5. **Generate User Guides, API Documentation, etc.:**
     
-    * Once the core application is developed, you can use specialized agents (or adapt existing ones) to generate further documentation:
+    * Once the core application is developed, I can use specialized agents (or adapt existing ones) to generate further documentation:
         
         * **User Guides:** An agent could take the PRD and implemented features to create user-facing documentation.
             
@@ -355,37 +355,46 @@ Once the core planning documents are stable, the focus shifts to creating detail
     * These would typically involve custom tasks and templates tailored for each document type.
         
 
-By following these steps, you can systematically apply the BMAD Method to produce a comprehensive suite of documents, from high-level requirements to executable code and user-facing guides, all driven by intelligent AI agents.
+By following these steps, I can systematically apply the BMAD Method to produce a comprehensive suite of documents, from high-level requirements to executable code and user-facing guides, all driven by intelligent AI agents.
 
 ---
 
-## 6. Agent Names
+## 6\. Agent Names
 
 The BMAD Method utilizes a set of specialized AI agents, each with a distinct role and purpose within the development workflow. Understanding these agents is key to effectively leveraging the method.
 
-*   **Analyst Agent:**
-    *   **Purpose:** Involved in the initial project idea and research phase. Responsible for brainstorming, market research, and competitor analysis to help create a foundational Project Brief.
-
-*   **Product Manager (PM) Agent:**
-    *   **Purpose:** Creates the Product Requirement Document (PRD) from the Project Brief. This document details Functional Requirements (FRs), Non-Functional Requirements (NFRs), Epics, and Stories.
-
-*   **Architect Agent:**
-    *   **Purpose:** Designs the system architecture based on the PRD and optional UX specifications. This includes defining the technical stack, system components, data flow, and overall structural design.
-
-*   **UX Expert Agent (Optional):**
-    *   **Purpose:** If User Experience (UX) is required, this agent creates a Front End Specification and can generate UI prompts.
-
-*   **Product Owner (PO) Agent:**
-    *   **Purpose:** Ensures all planning documents (PRD, Architecture, UX Spec) are aligned by running a Master Checklist. If not aligned, the PO updates Epics and Stories and guides revisions. Also responsible for sharding the PRD and Architecture documents for the development cycle.
-
-*   **Scrum Master (SM) Agent:**
-    *   **Purpose:** Reviews previous development/QA notes and drafts the next development story from the sharded Epic and Architecture documents. Ensures stories are self-contained units of work.
-
-*   **Development (Dev) Agent:**
-    *   **Purpose:** Executes tasks sequentially, implements code and tests based on the detailed story files, and runs all validations. Marks stories as "Ready for Review" upon completion.
-
-*   **QA Agent:**
-    *   **Purpose:** Optionally reviews story drafts against existing artifacts. In the core development cycle, performs a senior developer review, refactors code, adds tests, and documents notes. Decides if more Dev work is needed or if the story is approved.
+* **Analyst Agent:**
+    
+    * **Purpose:** Involved in the initial project idea and research phase. Responsible for brainstorming, market research, and competitor analysis to help create a foundational Project Brief.
+        
+* **Product Manager (PM) Agent:**
+    
+    * **Purpose:** Creates the Product Requirement Document (PRD) from the Project Brief. This document details Functional Requirements (FRs), Non-Functional Requirements (NFRs), Epics, and Stories.
+        
+* **Architect Agent:**
+    
+    * **Purpose:** Designs the system architecture based on the PRD and optional UX specifications. This includes defining the technical stack, system components, data flow, and overall structural design.
+        
+* **UX Expert Agent (Optional):**
+    
+    * **Purpose:** If User Experience (UX) is required, this agent creates a Front End Specification and can generate UI prompts.
+        
+* **Product Owner (PO) Agent:**
+    
+    * **Purpose:** Ensures all planning documents (PRD, Architecture, UX Spec) are aligned by running a Master Checklist. If not aligned, the PO updates Epics and Stories and guides revisions. Also responsible for sharding the PRD and Architecture documents for the development cycle.
+        
+* **Scrum Master (SM) Agent:**
+    
+    * **Purpose:** Reviews previous development/QA notes and drafts the next development story from the sharded Epic and Architecture documents. Ensures stories are self-contained units of work.
+        
+* **Development (Dev) Agent:**
+    
+    * **Purpose:** Executes tasks sequentially, implements code and tests based on the detailed story files, and runs all validations. Marks stories as "Ready for Review" upon completion.
+        
+* **QA Agent:**
+    
+    * **Purpose:** Optionally reviews story drafts against existing artifacts. In the core development cycle, performs a senior developer review, refactors code, adds tests, and documents notes. Decides if more Dev work is needed or if the story is approved.
+        
 
 ---
 
