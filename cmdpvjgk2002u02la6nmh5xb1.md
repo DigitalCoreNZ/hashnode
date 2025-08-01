@@ -132,7 +132,7 @@ This phase focuses on implementing the planned features and ensuring quality.
 
 The BMAD Method's flexibility comes from its natural language-based components, primarily Markdown and YAML files, which define agent behaviors, workflows, and content.
 
-### 3.1. Agent Definition Files (`bmad-core/agents/*.md`)
+### 3.1. Agent Definition Files (`bmad-core/agents/*.md`).
 
 * **Purpose:** Each Markdown file in `bmad-core/agents/` defines a specific AI agent's persona, role, style, identity, focus, and core principles. They also list the commands the agent can execute and its dependencies (tasks, templates, checklists, data). The `customization` field allows for specific overrides that take precedence over other instructions.
     
