@@ -11,7 +11,7 @@ tags: software-development, agile-development, software-engineering, development
 
 ## TL;DR.
 
-This post provides an overview of how the BMAD Method works, identifies key markdown files and their purpose, explains how these files can be changed to meet my requirements, details the impact of making specific changes to these files, and walks through installing and systematically applying the BMAD Method to produce a comprehensive suite of documents (from high-level requirements to executable code and user-facing guides, all driven by intelligent AI agents).
+This post provides an overview of how the BMAD Method works, identifies key markdown files and their purpose, explains how these files can be changed to meet my requirements, details the impact of making specific changes to these files, and walks through installing, and systematically applying, the BMAD Method to produce a comprehensive suite of documents (from high-level requirements to executable code and user-facing guides, all driven by intelligent AI agents).
 
 > **Attributions:**
 > 
