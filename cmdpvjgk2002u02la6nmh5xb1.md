@@ -219,15 +219,15 @@ By understanding these core components and their interplay, I can effectively le
 
 ---
 
-## 5\. Practically Applying the BMAD Method
+## 5\. Practically Applying the BMAD Method.
 
 To effectively utilize the BMAD Method, I'll need to set up my local environment and understand the practical steps for generating documents. This section guides me through the installation, configuration, and a step-by-step process for creating a complete set of project documents.
 
-### 5.1. Installation and Configuration
+### 5.1. Installation and Configuration.
 
 The BMAD Method is primarily built around Python scripts and Markdown/YAML files, leveraging AI models for content generation.
 
-#### 5.1.1. Prerequisites
+#### 5.1.1. Prerequisites.
 
 Before I begin, ensure I have the following installed on my local machine:
 
@@ -242,7 +242,7 @@ Before I begin, ensure I have the following installed on my local machine:
 * **Access to an LLM API:** The BMAD Method requires access to a Large Language Model (LLM) API (e.g., OpenAI, Anthropic, Google Gemini). I will need an API key for my chosen LLM provider.
     
 
-#### 5.1.2. Setup Steps
+#### 5.1.2. Setup Steps.
 
 1. **Clone the Repository:** Start by cloning the BMAD Method repository to my local machine:
     
@@ -277,11 +277,11 @@ Before I begin, ensure I have the following installed on my local machine:
 5. **Review** `bmad-core/core-config.yaml`: Familiarize myself with the `bmad-core/core-config.yaml` file. This file contains crucial configurations, such as `devLoadAlwaysFiles`, which dictates what documents the Development agent always loads. Adjust this as needed for my projects’ specific standards.
     
 
-### 5.2. Step-by-Step Document Generation
+### 5.2. Step-by-Step Document Generation.
 
 The BMAD Method facilitates the creation of a comprehensive set of documents through a guided, agent-driven process. This section outlines a typical flow, starting with high-level planning documents and progressing to detailed development artifacts.
 
-#### 5.2.1. Phase 1: Planning Documents (PRD and Architecture)
+#### 5.2.1. Phase 1: Planning Documents (PRD and Architecture).
 
 This phase leverages the planning agents to define the project's scope and technical foundation.
 
@@ -312,7 +312,7 @@ This phase leverages the planning agents to define the project's scope and techn
     * *Command Example (conceptual):* `python bmad.py po --task "align_documents" --input "PRD.md,Architecture.md"`
         
 
-#### 5.2.2. Phase 2: Detailed Development Documents (Stories and Beyond)
+#### 5.2.2. Phase 2: Detailed Development Documents (Stories and Beyond).
 
 Once the core planning documents are stable, the focus shifts to creating detailed development artifacts that can directly drive AI-assisted coding.
 
@@ -359,7 +359,7 @@ By following these steps, I can systematically apply the BMAD Method to produce 
 
 ---
 
-## 6\. Agent Names
+## 6\. Agent Names.
 
 The BMAD Method utilizes a set of specialized AI agents, each with a distinct role and purpose within the development workflow. Understanding these agents is key to effectively leveraging the method.
 
