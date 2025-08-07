@@ -125,7 +125,7 @@ A terminal is a text window where system commands are issued.
 
 ---
 
-## Connecting to My NAS.
+## Connecting My System to My NAS.
 
 > NOTE: Safely ignore this section if a NAS explainer is unnecessary.
 
@@ -311,7 +311,7 @@ sudo apt autoremove -y
 
 ### Restoring the System Directories.
 
-* Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
+* Once I have access to my NAS, I I can edit the following file so the default system directories point to the equivalent NAS directories:
     
 
 ```bash
