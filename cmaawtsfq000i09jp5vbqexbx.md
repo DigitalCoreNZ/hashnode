@@ -129,7 +129,7 @@ A terminal is a text window where system commands are issued.
 
 > NOTE: Safely ignore this section if a NAS explainer is unnecessary.
 
-### Changing the Owner of my System Images.
+### Changing the Owner of My System Images.
 
 > NOTE: An image is a snapshot of my system. Due to my app development process, I sometimes end up with a flaky system. Using an image to restore my system to a previous state sidesteps the need to reinstall my OS and all of the apps. Creating images is an easy process when using CloneZilla Live from a USB thumb drive. After creating the USB drive, I can boot into CloneZilla Live and start “cloning“ my system as an image. An external HDD is handy because the resulting image can not be saved to a system drive that is being cloned. I use a simple naming convention, e.g. ‘datetime-img-clean-win10-ubu24’ where: ‘datetime-img-‘ is automatically prepended to the name, ‘clean‘ refers to a fresh installation, ‘win10‘ identifies Windows 10, and ‘ubu24‘ is a reference to Ubuntu Desktop 24.04.x LTS.
 
