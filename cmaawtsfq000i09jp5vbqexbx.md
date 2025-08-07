@@ -10,6 +10,8 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 
 ---
 
+Update: 7th August 2025
+
 ## TL;DR.
 
 This post provides a guide to setting up a personalised Ubuntu 24.04 LTS system with essential applications and utilities. It covers software installation for productivity, development, and media tasks, including package managers, partition tools, and specialised applications like VS Code and DaVinci Resolve Studio. This guide emphasises the importance of keeping my system updated while exploring new tools that optimise workflows, supports daily tasks, and helps to achieve long-term goals.
@@ -52,7 +54,7 @@ A PC is a generic tool where the installed software defines what the user is cap
 * From the terminal, I delete my login password:
     
 
-```nix
+```bash
 sudo passwd -d <account_name>
 ```
 
@@ -67,7 +69,7 @@ APT (advanced package tool) handles the installation and removal of software on 
 * From the terminal, I update my system:
     
 
-```python
+```bash
 sudo apt clean && \
 sudo apt update && \
 sudo apt dist-upgrade -y && \
@@ -123,12 +125,192 @@ A terminal is a text window where system commands are issued.
 
 ---
 
-## Connecting to the QNAP NAS.
+## Connecting to My NAS.
 
-QNAP is a company, and brand of NAS (network attacked storage) devices.
+> NOTE: Safely ignore this section if a NAS explainer is unnecessary.
 
-* I use a utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps connect my PC to my NAS.
+### Changing the Owner of my System Images.
+
+> NOTE: An image is a snapshot of my system. Due to my app development process, I sometimes end up with a flaky system. Using an image to restore my system to a previous state sidesteps the need to reinstall my OS and all of the apps. Creating images is an easy process when using CloneZilla Live from a USB thumb drive. After creating the USB drive, I can boot into CloneZilla Live and start “cloning“ my system as an image. An external HDD is handy because the resulting image can not be saved to a system drive that is being cloned. I use a simple naming convention, e.g. ‘datetime-img-clean-win10-ubu24’ where: ‘datetime-img-‘ is automatically prepended to the name, ‘clean‘ refers to a fresh installation, ‘win10‘ identifies Windows 10, and ‘ubu24‘ is a reference to Ubuntu Desktop 24.04.x LTS.
+
+* I power up my PC.
     
+* In the file manager, I navigate to the external drive that holds my system images.
+    
+* I access the root directory of the drive because that is where I save my images when they are made.
+    
+* I right-click the file manager and select `Open in Terminal` from the pop-up menu.
+    
+* From the terminal, I change the owner of an image:
+    
+
+```bash
+sudo chown -R $USER:$USER datetime-img-simplified-name-of-contents
+```
+
+### Installing Network Utilities.
+
+> NOTE: CIFS is a network file-sharing protocol that allows Linux systems to access Windows shares. Smbclient is a command-line tool that allows users to access and interact with SMB/CIFS file shares, commonly used in Windows environments, and Samba servers.
+
+* I install the CIFS utilities:
+    
+
+```bash
+sudo apt install -y cifs-utils smbclient
+```
+
+> NOTE: CIFS is a dialect of SMB.
+
+### Removing the System Directories.
+
+* I remove these directories:
+    
+
+```bash
+sudo rm -r ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos
+```
+
+> NOTE: It is now VITAL to continue this section until the very end. These deleted directories are important to the UI and UX of the desktop file manager.
+
+### Creating a Credentials File.
+
+* I make a hidden file called `.cred_smb` in my home directory:
+    
+
+```bash
+sudo touch /home/yt/.cred_smb
+```
+
+* I open the `.cred_smb` file using the Nano text editor:
+    
+
+```bash
+sudo nano /home/yt/.cred_smb
+```
+
+* I copy the following, add it (CTRL + SHIFT + V) to the `.cred_smb` file, save (CTRL + S) the changes, and exit (CTRL + X) Nano:
+    
+
+```plaintext
+username=yt
+password=super-secret-password
+domain=WORKGROUP
+```
+
+* I change the access permissions for the `.cred_smb` file:
+    
+
+```bash
+sudo chmod 600 ~/.cred_smb
+```
+
+### Altering the `fstab` File.
+
+* I use a QNAP utility called [Qfinder Pro](https://www.qnap.com/en/software/qfinder-pro) that helps identify the IP address of my NAS.
+    
+* I make a copy the `fstab` file as `fstab.bak`:
+    
+
+```bash
+sudo cp /etc/fstab /etc/fstab.bak
+```
+
+* I use the Nano text editor to open the `fstab` file:
+    
+
+```bash
+sudo nano /etc/fstab
+```
+
+* I copy the following, add it (CTRL + SHIFT + V) to the bottom of the `fstab` file, save (CTRL + S) the changes, and exit (CTRL + X) Nano:
+    
+
+```plaintext
+//192.168.0.2/ai             /media/yt/AI cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/desktop        /media/yt/Desktop cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/mydocs         /media/yt/Documents cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/downloads      /media/yt/Downloads cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/drawings       /media/yt/Drawings cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/images         /media/yt/Images cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/multimedia     /media/yt/Media cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/music          /media/yt/Music cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/mydocs         /media/yt/MyDocs cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/mydrive        /media/yt/MyDrive cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/photos         /media/yt/Pictures cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/public         /media/yt/Public cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/screencasts    /media/yt/Screencasts cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/screenshots    /media/yt/Screenshots cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/templates      /media/yt/Templates cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+//192.168.0.2/videos         /media/yt/Videos cifs vers=3.0,uid=1000,gid=1000,credentials=/home/yt/.cred_smb
+```
+
+### Making Remote Share Directories.
+
+* I create these directories where the remote shares will mount:
+    
+
+```bash
+sudo mkdir /media/yt/AI && \
+sudo mkdir /media/yt/Desktop && \
+sudo mkdir /media/yt/Documents && \
+sudo mkdir /media/yt/Downloads && \
+sudo mkdir /media/yt/Drawings && \
+sudo mkdir /media/yt/Images && \
+sudo mkdir /media/yt/Media && \
+sudo mkdir /media/yt/Music && \
+sudo mkdir /media/yt/MyDocs && \
+sudo mkdir /media/yt/MyDrive && \
+sudo mkdir /media/yt/Pictures && \
+sudo mkdir /media/yt/Public && \
+sudo mkdir /media/yt/Screencasts && \
+sudo mkdir /media/yt/Screenshots && \
+sudo mkdir /media/yt/Templates && \
+sudo mkdir /media/yt/Videos
+```
+
+### Creating Symbolic Links.
+
+* I create these symlinks (symbolic links) where the remote shares will display:
+    
+
+```bash
+ln -s "/media/yt/AI" "/home/yt/AI"  && \
+ln -s "/media/yt/Desktop" "/home/yt/Desktop" && \
+ln -s "/media/yt/MyDocs" "/home/yt/Documents" && \
+ln -s "/media/yt/Downloads" "/home/yt/Downloads" && \
+ln -s "/media/yt/Drawings" "/home/yt/Drawings" && \
+ln -s "/media/yt/Images" "/home/yt/Images" && \
+ln -s "/media/yt/Media" "/home/yt/Media" && \
+ln -s "/media/yt/Music" "/home/yt/Music" && \
+ln -s "/media/yt/MyDocs" "/home/yt/MyDocs" && \
+ln -s "/media/yt/MyDrive" "/home/yt/MyDrive" && \
+ln -s "/media/yt/Pictures" "/home/yt/Pictures" && \
+ln -s "/media/yt/Public" "/home/yt/Public" && \
+ln -s "/media/yt/Screencasts" "/home/yt/Screencasts" && \
+ln -s "/media/yt/Screenshots" "/home/yt/Screenshots" && \
+ln -s "/media/yt/Templates" "/home/yt/Templates" && \
+ln -s "/media/yt/Videos" "/home/yt/Videos"
+```
+
+* I update my system:
+    
+
+```bash
+sudo apt clean && \
+sudo apt update && \
+sudo apt dist-upgrade -y && \
+sudo apt --fix-broken install && \
+sudo apt autoclean && \
+sudo apt autoremove -y
+```
+
+* I reboot my system.
+    
+* I check the symlinks to my NAS.
+    
+
+### Restoring the System Directories.
+
 * Once access to my NAS is established, I edit the following file so the default system directories point to the equivalent NAS directories:
     
 
@@ -136,7 +318,7 @@ QNAP is a company, and brand of NAS (network attacked storage) devices.
 sudo nano $HOME/.config/user-dirs.dirs
 ```
 
-> NOTE: The details of this process is beyond the scope of this post.
+> NOTE: For example: XDG\_DOWNLOAD\_DIR="/media/yt/Downloads" points the system Downloads directory to the remote share directory I created earlier.
 
 ---
 
