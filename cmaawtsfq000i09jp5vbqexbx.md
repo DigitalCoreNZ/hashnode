@@ -311,7 +311,7 @@ sudo apt autoremove -y
 
 ### Restoring the System Directories.
 
-* Once I have access to my NAS, I can edit the following file so the default system directories point to the equivalent NAS directories:
+* Once I have access to my NAS, I can edit the following file so the default system directories point to the equivalent share directories which, in turn, point to the NAS:
     
 
 ```bash
