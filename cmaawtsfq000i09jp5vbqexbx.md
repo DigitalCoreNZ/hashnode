@@ -1020,6 +1020,15 @@ sudo snap install krita
 
 ## Installing Krita Manually.
 
+* Install the libfuse2 library:
+    
+
+```bash
+sudo apt install libfuse2
+```
+
+> NOTE: AppImages rely on FUSE (Filesystem in Userspace) to function properly.
+
 * From a browser, I download the AppImage file from the [Krita.org](https://krita.org/en/download/) website.
     
 * From the file manager, I move the Krita app to it’s own directory.
@@ -1068,12 +1077,6 @@ sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage /usr
     
 * From the new terminal, I run the Krita IDE:
     
-
-> NOTE: If you receive a “dlopen(): error loading [libfuse.so](http://libfuse.so).2“ error, install the libfuse2 library:
-> 
-> ```bash
-> sudo apt install libfuse2
-> ```
 
 ```bash
 krita
