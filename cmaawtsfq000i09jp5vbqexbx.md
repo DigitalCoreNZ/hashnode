@@ -1020,7 +1020,7 @@ sudo snap install krita
 
 ## Installing Krita Manually.
 
-* Install the libfuse2 library:
+* From the terminal, I install the libfuse2 library:
     
 
 ```bash
