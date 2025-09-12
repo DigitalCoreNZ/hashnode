@@ -570,6 +570,27 @@ sudo apt install -y git-all
 git -v
 ```
 
+* I add my name:
+    
+
+```bash
+git config --global user.name "Brian King"
+```
+
+* I add my email address:
+    
+
+```bash
+git config --global user.email "brian@digitalcore.co.nz"
+```
+
+* I list the configuration settings:
+    
+
+```bash
+git config --list
+```
+
 ---
 
 ## Installing the GitHub Utility.
