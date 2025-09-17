@@ -10,6 +10,8 @@ tags: ai, artificial-intelligence, ubuntu, linux, machine-learning, coding, deep
 
 ---
 
+Last update: Wednesday 17th September 2025
+
 ## TL;DR.
 
 This post is a guide to setting up a local AI toolkit on a Debian-based Linux distribution, specifically Ubuntu. It covers the installation and management of various AI tools and frameworks, including:
@@ -134,8 +136,10 @@ curl https://ollama.com/install.sh | sh
 
 ```bash
 ollama pull nomic-embed-text:v1.5 &&
+ollama pull qwen2.5-coder:14b &&
 ollama pull deepcoder:14b &&
 ollama pull codellama:13b &&
+ollama pull opencoder:8b &&
 ollama pull falcon3:10b &&
 ollama pull dolphin3:8b &&
 ollama pull gemma3:12b &&
@@ -143,7 +147,6 @@ ollama pull cogito:14b &&
 ollama pull tulu3:8b &&
 ollama pull olmo2:13b &&
 ollama pull marco-o1:7b &&
-ollama pull opencoder:8b &&
 ollama pull openthinker:7b &&
 ollama pull smallthinker:3b &&
 ollama pull granite3.2-vision:2b &&
