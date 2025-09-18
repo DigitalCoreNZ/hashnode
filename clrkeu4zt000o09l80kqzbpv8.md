@@ -9,25 +9,22 @@ tags: lxc, containers, virtual-machines, lxd
 ---
 
 Update: Saturday 10<sup>th</sup> February 2024.  
-Update: Wednesday 28<sup>th</sup> February 2024.
+Update: Wednesday 28<sup>th</sup> February 2024.  
+Update: Friday 19<sup>th</sup> September 2025.
 
 # TL;DR.
 
-LXD (<mark>L</mark>inu<mark>XD</mark>aemon) is a container manager for creating and managing containers. LXCs (<mark>L</mark>inu<mark>XC</mark>ontainers) are isolated system instances where anything within the container can NOT affect other containers or the base distro/OS. Also, multiple container instances can run concurrently on a single host.
+LXD (LinuX Daemon) is a container manager for creating and managing containers. LXCs (LinuX Containers) are isolated system instances where anything within the container can NOT affect other containers or the base distro/OS. Also, multiple container instances can run concurrently on a single host.
 
 > **Attributions:**
 > 
 > [https://ubuntu.com/lxd](https://ubuntu.com/lxd)***↗.***
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704973638230/7de81bc6-cc05-4948-9bee-df36ca3ca67f.png align="center")
 
 # An Introduction.
 
 This is a concise (read: less rambling) version of [a post from 2023](https://solodev.app/2-of-10-lxd-on-the-homelab). This time around, I will be more specific about my intentions for this adapted chronicle.
 
 > The purpose of this post is to present the installation, and likely uses, of LXD/LXC.
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704973659623/47b64773-c25d-40ae-a47d-642b09f48778.png align="center")
 
 # The Big Picture.
 
@@ -39,14 +36,10 @@ Containers are considered the Second Wave of System Isolation Technologies. The 
 | Wave 2: Containers | Isolation, reduced complexity, security, distributed computing, consistency, orchestration, portability, efficiency, scalability, automation, shared kernel. | Stateless, may be hard to network, compatibility with other container technologies, |
 | Wave 3: WASM | Portable, assemblies not needed after compilation, can run outside the browser with WASI. | Download size on Edge/2G and GSM/3G, not aware of the DOM - yet, lacks standard security defences. |
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704973687948/bc3fcb37-a70f-44ad-92a4-6805409a0c44.png align="center")
-
 # Prerequisites.
 
 * A Linux-based distro (I use Ubuntu).
     
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704973704880/d291b34b-927a-4873-8ad3-b3bf39b53771.png align="center")
 
 # Updating the System.
 
@@ -339,8 +332,6 @@ Here is a list of 23 commands that maybe somewhat useful. Although I commonly us
 > Attribution:
 > 
 > [https://www.cyberithub.com/20-best-lxc-command-examples-to-manage-linux-containers/](https://www.cyberithub.com/20-best-lxc-command-examples-to-manage-linux-containers/)
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1704973890076/16827347-fadb-4e3b-8749-2fe5c9a2a75b.png align="center")
 
 # The Results.
 
