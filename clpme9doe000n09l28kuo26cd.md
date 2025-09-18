@@ -8,7 +8,7 @@ tags: docker, containers, isolation, installation, portability
 
 ---
 
-Update: Tuesday 20<sup>th</sup> February 2024.
+Update: Thursday 18<sup>th</sup> September 2025.
 
 # TL;DR.
 
