@@ -1,9 +1,9 @@
 ---
-title: "Installing Docker."
+title: "Installing Docker CE."
 datePublished: Fri Dec 01 2023 09:00:12 GMT+0000 (Coordinated Universal Time)
 cuid: clpme9doe000n09l28kuo26cd
-slug: installing-docker
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1701641423263/e61d68f1-7f92-42ac-b2c0-fe85daad21f7.png
+slug: installing-docker-ce
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1758162642181/c5d509a8-39e1-4db1-941d-66c4fc34c9d5.png
 tags: docker, containers, isolation, installation, portability
 
 ---
