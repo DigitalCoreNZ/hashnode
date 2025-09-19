@@ -10,7 +10,8 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 
 ---
 
-Update: 7th August 2025
+Update: 7th August 2025  
+Update: 20th September 2025
 
 ## TL;DR.
 
@@ -647,7 +648,7 @@ gh auth login
 
 ---
 
-## Installing Docker.
+## Installing Docker CE.
 
 Docker is a container manager for app development and distribution.
 
