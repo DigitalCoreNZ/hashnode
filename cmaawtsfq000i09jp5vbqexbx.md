@@ -650,7 +650,7 @@ gh auth login
 
 ## Installing Docker CE.
 
-Docker is a container manager for app development and distribution.
+Docker CE (Community Edition) is a container manager for app development and distribution.
 
 > **Attribution:**
 > 
@@ -719,7 +719,7 @@ sudo usermod -aG docker $USER
 sudo docker run hello-world
 ```
 
-### Uninstalling Docker.
+### Uninstalling Docker CE.
 
 > **Attributions:**
 > 
