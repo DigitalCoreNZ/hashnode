@@ -10,7 +10,8 @@ tags: ai, artificial-intelligence, ubuntu, linux, machine-learning, coding, deep
 
 ---
 
-Last update: Wednesday 17th September 2025
+Last update: Wednesday 17th September 2025  
+Last update: Sunday 21st September 2025
 
 ## TL;DR.
 
@@ -128,6 +129,58 @@ curl https://ollama.com/install.sh | sh
 ```
 
 > NOTE: The update command is the same as the install command.
+
+### Changing the Models Location.
+
+* I make a new directory:
+    
+
+```bash
+mkdir /home/brian/ollama/models
+```
+
+* I make a new directory:
+    
+
+```bash
+sudo mkdir -p /etc/systemd/system/ollama.service.d
+```
+
+* I create a configuration override file:
+    
+
+```bash
+sudo nano /etc/systemd/system/ollama.service.d/override.conf
+```
+
+* I add the following to the `override.conf` file, save (CTRL+SHIFT+S) the changes, and exit (CTRL+SHIFT+X) the Nano text editor:
+    
+
+```bash
+[Service]
+Environment="OLLAMA_MODELS=/home/brian/ollama/models"
+```
+
+* I reload the service:
+    
+
+```bash
+sudo systemctl daemon-reload
+```
+
+* I restart Ollama:
+    
+
+```bash
+sudo systemctl restart ollama
+```
+
+* I verify the change:
+    
+
+```bash
+sudo systemctl status ollama
+```
 
 ### Pulling Models from Ollama.
 
