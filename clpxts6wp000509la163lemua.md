@@ -131,6 +131,20 @@ tell me a joke
 
 ---
 
+# Ollama Commands.
+
+| `ollama serve` | Starts the Ollama server to manage models. |
+| --- | --- |
+| `ollama run <model>` | Runs a specified model, downloading it if not already present. |
+| `ollama pull <model>` | Downloads a model from the Ollama library without running it. |
+| `ollama list` | Lists all installed models on your system. |
+| `ollama rm <model>` | Removes a specific model from your system. |
+| `ollama ps` | Shows currently running models and their resource usage. |
+| `ollama show <model>` | Displays metadata and details about a specific model. |
+| `ollama create <model>` | Creates a new model from an existing one for customization. |
+
+---
+
 # The Results.
 
 By following the steps outlined in this post, I can install Ollama, download LLMs from [Ollama.ai](https://ollama.ai/), and run these models locally. This process enables me to evaluate the power of cutting-edge models for research, development, business, and personal use.
