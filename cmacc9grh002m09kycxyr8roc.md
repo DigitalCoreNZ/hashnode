@@ -229,7 +229,7 @@ ollama pull gpt-oss:20b
     
 
 ```bash
-ollama list
+ollama ls
 ```
 
 ### Uninstalling Ollama.
