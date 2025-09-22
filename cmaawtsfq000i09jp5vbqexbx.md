@@ -11,7 +11,8 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 ---
 
 Update: 7th August 2025  
-Update: 20th September 2025
+Update: 20th September 2025  
+Update: 23rd September 2025
 
 ## TL;DR.
 
@@ -472,18 +473,39 @@ sudo apt install wget
 
 NodeJS is a server-side runtime that uses the V8 JavaScript engine.
 
-* From the terminal, I install NodeJS:
+* I download and install nvm:
     
 
 ```bash
-sudo apt install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
-* I verify the NodeJS installation:
+* I restart the shell:
+    
+
+```bash
+\. "$HOME/.nvm/nvm.sh"
+```
+
+* I download and install Node.js:
+    
+
+```bash
+nvm install 22
+```
+
+* I verify the Node.js version:
     
 
 ```bash
 node -v
+```
+
+* I verify npm version:
+    
+
+```bash
+npm -v
 ```
 
 ---
