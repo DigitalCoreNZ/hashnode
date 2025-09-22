@@ -130,58 +130,6 @@ curl https://ollama.com/install.sh | sh
 
 > NOTE: The update command is the same as the install command.
 
-### Changing the Models Location.
-
-* I make a new directory:
-    
-
-```bash
-mkdir /home/brian/ollama/models
-```
-
-* I make a new directory:
-    
-
-```bash
-sudo mkdir -p /etc/systemd/system/ollama.service.d
-```
-
-* I create a configuration override file:
-    
-
-```bash
-sudo nano /etc/systemd/system/ollama.service.d/override.conf
-```
-
-* I add the following to the `override.conf` file, save (CTRL+SHIFT+S) the changes, and exit (CTRL+SHIFT+X) the Nano text editor:
-    
-
-```bash
-[Service]
-Environment="OLLAMA_MODELS=/home/brian/ollama/models"
-```
-
-* I reload the service:
-    
-
-```bash
-sudo systemctl daemon-reload
-```
-
-* I restart Ollama:
-    
-
-```bash
-sudo systemctl restart ollama
-```
-
-* I verify the change:
-    
-
-```bash
-sudo systemctl status ollama
-```
-
 ### Pulling Models from Ollama.
 
 * I pull the following models from Ollama (it will take time for these downloads to complete):
@@ -225,11 +173,31 @@ ollama pull gpt-oss:20b
 
 > NOTE: Theses models are perfect for running on my GTX3060 GPU with 12GB VRAM. Also, this list is continually updated. If a newer version of a model is released, I remove the old listing above, replace it with the new listing, run the pull commands, list the installed models (`ollama ls`), and remove (`ollama rm <model-name>`) the older model.
 
+### Listing the AI Models.
+
 * I list the models downloaded by Ollama:
     
 
 ```bash
 ollama ls
+```
+
+### Running an AI Model.
+
+* I run one of the listed AI models:
+    
+
+```bash
+ollama run deepseek-r1:14b
+```
+
+### Stopping an AI Model.
+
+* I stop running the AI model by typing the following prompt:
+    
+
+```bash
+/bye
 ```
 
 ### Uninstalling Ollama.
