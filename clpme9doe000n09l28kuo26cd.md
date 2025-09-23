@@ -193,7 +193,7 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 
 ## Docker Commands.
 
-The commands I commonly use are highlighted in <mark>yellow</mark>.
+The commands I commonly use are highlighted in yellow.
 
 ### Management Commands.ls -al
 
@@ -211,8 +211,8 @@ The commands I commonly use are highlighted in <mark>yellow</mark>.
 | `docker build` | Build an image from a Dockerfile |
 | `docker commit` | Create a new image from a container’s changes |
 | `docker history` | Show the history of an image |
-| <mark>docker image rm [ID] -f</mark> | Remove image by ID |
-| <mark>docker images</mark> | List images |
+| docker image rm \[ID\] -f | Remove image by ID |
+| docker images | List images |
 | `docker import` | Import the contents from a tarball to create a filesystem image |
 | `docker load` | Load an image from a tar archive or STDIN |
 | `docker rmi` | Remove one or more images |
@@ -224,7 +224,7 @@ The commands I commonly use are highlighted in <mark>yellow</mark>.
 | Command | Description |
 | --- | --- |
 | `docker attach` | Attach to a running container |
-| <mark>docker container prune -f</mark> | Remove all stopped containers |
+| docker container prune -f | Remove all stopped containers |
 | `docker cp` | Copy files/folders from a container to a HOSTDIR or to STDOUT |
 | `docker create` | Create a new container |
 | `docker diff` | Inspect changes on a container’s filesystem |
@@ -235,15 +235,15 @@ The commands I commonly use are highlighted in <mark>yellow</mark>.
 | `docker logs` | Fetch the logs of a container |
 | `docker pause` | Pause all processes within a container |
 | `docker port` | List port mappings or a specific mapping for the container |
-| <mark>docker ps</mark> | List running containers |
-| <mark>docker ps -f "status=exited"</mark> | List stopped containers |
+| docker ps | List running containers |
+| docker ps -f "status=exited" | List stopped containers |
 | `docker rename` | Rename a container |
 | `docker restart` | Restart a running container |
-| <mark>docker rm</mark> | Remove one or more containers |
+| docker rm | Remove one or more containers |
 | `docker run` | Run a command in a new container |
 | `docker start` | Start one or more stopped containers |
 | `docker stats` | Display a live stream of container(s) resource usage statistics |
-| <mark>docker stop</mark> | Stop a running container |
+| docker stop | Stop a running container |
 | `docker top` | Display the running processes of a container |
 | `docker unpause` | Unpause all processes within a container |
 | `docker update` | Update configuration of one or more containers |
