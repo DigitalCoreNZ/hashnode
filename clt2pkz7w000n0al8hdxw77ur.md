@@ -9,7 +9,8 @@ tags: ubuntu, python, data-science, coding, programming-ciovqvfcb008mb253jrczo9y
 ---
 
 Update: Thursday 2<sup>nd</sup> May 2024.  
-Update: Wednesday 19<sup>th</sup> June 2024.
+Update: Wednesday 19<sup>th</sup> June 2024.  
+Update: Tuesday 23<sup>rd</sup> September 2025.
 
 ---
 
@@ -213,7 +214,7 @@ conda env
     
 
 ```bash
-conda create -n new-env python=3.11 pandas -y
+conda create -n new-env python=3.12 pandas -y numpy -y
 ```
 
 > NOTE: The property after the `-n` or the `--name` flag is the name for the environment.
