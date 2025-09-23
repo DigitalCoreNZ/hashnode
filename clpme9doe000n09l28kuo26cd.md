@@ -8,7 +8,8 @@ tags: docker, containers, isolation, installation, portability
 
 ---
 
-Update: Thursday 18<sup>th</sup> September 2025.
+Update: Thursday 18<sup>th</sup> September 2025.  
+Update: Wednesday 24<sup>th</sup> September 2025.
 
 # TL;DR.
 
@@ -235,7 +236,7 @@ The commands I commonly use are highlighted in yellow.
 | `docker logs` | Fetch the logs of a container |
 | `docker pause` | Pause all processes within a container |
 | `docker port` | List port mappings or a specific mapping for the container |
-| docker ps | List running containers |
+| docker ps -a | List ALL containers |
 | docker ps -f "status=exited" | List stopped containers |
 | `docker rename` | Rename a container |
 | `docker restart` | Restart a running container |
