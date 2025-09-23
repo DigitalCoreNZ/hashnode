@@ -214,7 +214,7 @@ conda env
     
 
 ```bash
-conda create -n new-env python=3.12 pandas -y numpy -y
+conda create -n new-env python=3.12 pandas -y
 ```
 
 > NOTE: The property after the `-n` or the `--name` flag is the name for the environment.
