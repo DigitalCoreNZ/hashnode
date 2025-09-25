@@ -112,12 +112,7 @@ echo \
     
 
 ```bash
-sudo apt clean && \
-sudo apt update && \
-sudo apt dist-upgrade -y && \
-sudo apt --fix-broken install && \
-sudo apt autoclean && \
-sudo apt autoremove -y
+sudo apt update
 ```
 
 * I install the `Docker` Community Edition engine, the Docker CLI, the container daemon, and the Buildx and Compose plugins:
