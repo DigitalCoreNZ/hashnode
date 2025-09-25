@@ -12,7 +12,8 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 
 Update: 7th August 2025  
 Update: 20th September 2025  
-Update: 23rd September 2025
+Update: 23rd September 2025  
+Update: 25th September 2025
 
 ## TL;DR.
 
@@ -1086,7 +1087,7 @@ sudo apt install libfuse2
     
 
 ```bash
-chmod +x krita-5.2.10-x86_64.AppImage
+chmod +x krita-5.2.13-x86_64.AppImage
 ```
 
 * I use the Nano text editor to create a desktop entry:
@@ -1102,7 +1103,7 @@ nano ~/.local/share/applications/krita.desktop
 ```bash
 [Desktop Entry]
 Name=Krita
-Exec=/media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage
+Exec=/media/brian/Downloads/Ubuntu/Krita/krita-5.2.13-x86_64.AppImage
 Icon=/media/brian/Downloads/Ubuntu/Krita/krita-logo.png
 Type=Application
 Categories=Graphics;Images
@@ -1114,7 +1115,7 @@ Categories=Graphics;Images
     
 
 ```bash
-sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.10-x86_64.AppImage /usr/local/bin/krita
+sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.13-x86_64.AppImage /usr/local/bin/krita
 ```
 
 * I open a new terminal.
