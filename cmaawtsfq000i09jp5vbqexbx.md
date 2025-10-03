@@ -10,10 +10,7 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 
 ---
 
-Update: 7th August 2025  
-Update: 20th September 2025  
-Update: 23rd September 2025  
-Update: 25th September 2025
+Latest update: 4th October 2025
 
 ## TL;DR.
 
@@ -1111,7 +1108,7 @@ Categories=Graphics;Images
 
 * I save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor.
     
-* I create a symlink to start Cursor from the terminal:
+* I create a symlink to start Krita from the terminal:
     
 
 ```bash
@@ -1120,7 +1117,7 @@ sudo ln -s /media/brian/Downloads/Ubuntu/Krita/krita-5.2.13-x86_64.AppImage /usr
 
 * I open a new terminal.
     
-* From the new terminal, I run the Krita IDE:
+* From the new terminal, I run the Krita image editor:
     
 
 ```bash
