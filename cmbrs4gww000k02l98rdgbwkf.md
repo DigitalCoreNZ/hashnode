@@ -254,7 +254,7 @@ apt update
     
 
 ```bash
-pveupgrade -y
+pveupgrade
 ```
 
 * Due to the installation of a kernel update, I will reboot the remote Proxmox VE system:
