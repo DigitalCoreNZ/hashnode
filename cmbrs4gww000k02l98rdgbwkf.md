@@ -203,7 +203,7 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
     
 
 ```bash
-ssh root@192.168.0.60
+ssh root@192.168.0.70
 ```
 
 * The password is the same one I use when logging in to the Proxmox VE browser GUI:
@@ -295,7 +295,7 @@ reboot
 
 ---
 
-### **Initializing Drives for Containers and Virtual Machines**.
+### **Initializing a Drive for Containers**.
 
 > NOTE: The following is adapted from the instructions provided by the [Proxmox VE team](https://forum.proxmox.com/threads/proxmox-beginner-tutorial-how-to-set-up-your-first-virtual-machine-on-a-secondary-hard-disk.59559/).
 
@@ -333,7 +333,7 @@ reboot
 
 > NOTE: The `/dev/sdb` disk is an external SDD that uses the USB 3.0 interface.
 
-### Installing a CT Template.
+### Installing a Container Template.
 
 * I use a browser to login to Proxmox VE.
     
@@ -355,13 +355,89 @@ reboot
 
 ---
 
-## Creating a New Account for the Container.
-
-> After creating a container by clicking the blue `Create CT` button (top-right of the screen), and following the resulting prompts, I can now prepare the container for use.
+## Creating a New Container
 
 * I use a browser to login to Proxmox VE.
     
-* On the left of the screen, under Server View, I go to `Datacenter > pve > 101 ServerLab1` (where the `CT ID` and `Hostname` are the settings I gave when creating the container).
+* At the top-right of the screen, I click the blue ‘Create CT‘ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427372537/7ee1e8d0-5cfa-4ee3-9666-ce2b26cd58da.png align="center")
+
+* I add details to the ‘General’ tab, then I click the blue ‘Next’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427571502/997731d6-a921-4234-bdbe-9b26386795ab.png align="center")
+
+* I select the ‘Template:’, then I click the blue ‘Next’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427696366/7090e00d-5fb6-4440-b95b-181ff2376605.png align="center")
+
+* I select the ‘Storage:‘ (zfs-disk), set the size (28GB), then I click the blue ‘Next’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427879586/078e6880-4847-4f0c-b13a-33d50a9157ae.png align="center")
+
+* I leave the ‘Cores:‘ set to 1, then I click the blue ‘Next‘ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427978033/86f7b6a7-5ffc-4865-8b74-1e1cc13fde55.png align="center")
+
+* I set the ‘Memory (MiB):’ (12288), the ‘Swap (MiB):’ (4096), then I click the blue ‘Next‘ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428332958/845eb069-07c3-4f9e-bd18-5c2c2c8ce53e.png align="center")
+
+* I set the ‘IPv4/CIDR:’, ‘Gateway (IPv4):’, then I click the blue ‘Next’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428484682/07cead37-115e-4b3d-b974-73809664de8c.png align="center")
+
+* I leave the DNS settings blank, then I click the blue ‘Next’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428561097/be8f573f-3c43-4689-8e62-2c6f9251f044.png align="center")
+
+* I check my settings, then I click the blue ‘Finish’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428664632/d2070ae8-6582-48cd-9189-73bc9afec6f3.png align="center")
+
+The resulting container can now be cloned.
+
+---
+
+## Cloning the Container.
+
+* I use a browser to login to Proxmox VE.
+    
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab70`.
+    
+* I right-click the ‘101 (nuclab71)’ container and, in the pop-up menu, I click the ‘Clone’ option:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762429158590/513cf689-72d9-4474-8b87-93261237ac4a.png align="center")
+
+* In the ‘Clone CT 101 (nuclab71)’ modal, I enter the following details, then I click the blue ‘Clone’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762430725828/55d37442-786f-498c-9b63-812447f82595.png align="center")
+
+* I repeat this process as often as I need to meet my requirements.
+    
+* Once I have created all the containers, I start each container by selecting it and then clicking the ‘Start’ button near the top-right of the screen.
+    
+
+---
+
+## Creating a User Account for a Container.
+
+> Now I create user accounts for all of the containers.
+
+* I use a browser to login to Proxmox VE.
+    
+* On the left of the screen, under Server View, I go to `Datacenter > pve > 101 nuclab71` (where the `CT ID` and `Hostname` are the settings I gave when creating the container).
     
 * In the 2nd pane, I click `Console`.
     
