@@ -185,7 +185,7 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 * I visit [http://helper-scripts.com/](http://helper-scripts.com/).
     
-* I search for ‘proxmox ve post install‘.
+* I search for ‘pve post install‘.
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749449711896/6bccba72-3d65-450e-90cb-d82b76186c7d.png align="center")
