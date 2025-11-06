@@ -319,24 +319,19 @@ reboot
 
 * I repeat the process for the `/dev/sdb` disk.
     
-* Back in the 2nd pane, I click `Disks > LVM`.
+* Back in the 2nd pane, I click `Disks > ZFS`.
     
-* In the 3rd pane, I click the grey `Create: Volume Group` button:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748582841385/eebcb312-a152-4947-af16-c75e0f615f40.png align="center")
-
-* In the `Create: LVM Volume Group` modal, I select the `/dev/sda` disk:
+* In the 3rd pane, I click the grey `Create: ZFS` button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748585198379/c52aba41-999a-409b-987f-e34e15d60cb0.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762425971626/4d7d68d7-0bd4-42fa-88b6-ed5d94555007.png align="center")
 
-* I name the Group ‘Containers’, ensure the `Add Storage:` option is ticked, and click the blue `Create` button.
-    
-* I repeat the process for the `/dev/sdb` drive, except I name that group ‘VMs‘.
+* In the `Create: ZFS` modal, I add the following details and then click the blue ‘Create‘ button:
     
 
-> NOTE: The `/dev/sda` disk is an internal SSD that uses the SATA interface while the `/dev/sdb` disk is an external HDD that uses the USB 3.0 interface.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762426262241/b235add3-ef6c-4ec8-9c1b-03cab15e839d.png align="center")
+
+> NOTE: The `/dev/sdb` disk is an external SDD that uses the USB 3.0 interface.
 
 ### Installing a CT Template.
 
