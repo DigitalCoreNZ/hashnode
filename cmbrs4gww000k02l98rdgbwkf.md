@@ -257,7 +257,7 @@ apt update
 pveupgrade
 ```
 
-* Due to the installation of a kernel update, I will reboot the remote Proxmox VE system:
+* Due to the installation of a kernel update, I need to reboot the remote Proxmox VE system:
     
 
 ```bash
