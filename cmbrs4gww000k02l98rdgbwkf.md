@@ -281,7 +281,7 @@ reboot
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748583261047/5dec42a4-c9a5-4145-bf16-0c40c9851da5.png align="center")
 
-* In the pop-up modal, I add `https://releases.ubuntu.com/24.04.2/ubuntu-24.04.2-live-server-amd64.iso` to the `URL:` field so that Proxmox VE can download the ISO for Ubuntu Server 24.04.2 LTS.
+* In the pop-up modal, I add `https://releases.ubuntu.com/24.04.2/ubuntu-24.04.3-live-server-amd64.iso` to the `URL:` field so that Proxmox VE can download the ISO for Ubuntu Server 24.04.2 LTS.
     
 * I click the blue `Query URL` button to check the link:
     
