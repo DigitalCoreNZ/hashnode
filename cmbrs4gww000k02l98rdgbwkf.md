@@ -130,7 +130,7 @@ Proxmox VE (Virtual Environment) is an open-source virtualization platform desig
 * I use the following network settings that work on my LAN:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748580985843/c31a04e6-1167-4ce8-8d50-428c4b18ed88.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762487898522/3828686b-8196-4dc1-bb23-00c6ebc09d75.png align="center")
 
 > NOTE: During the Management Network Configuration setup, I can use IPv4 or IPv6 but I CANNOT mix the 2 protocols. The Management Interface is the name of the NIC (Network Interface Card) that is installed in the NUC which, in my case, is eno1. The Hostname (FQDN) only matters if I intend to open, and host, Proxmox VE over the Internet. The IP Address (CIDR), as assigned by my router, is 192.168.0.50 with a subnet mask of 24 (255.255.255.0) that defines the subnet in my LAN to which this device belongs. The Gateway is the IP address of my router, which is 192.168.0.1, and is needed to connect the NUC to the Internet. The DHCP server is found at 192.168.0.1 because my router includes the server that is responsible for assigning IP addresses.
 
@@ -181,44 +181,42 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 ---
 
-## Running the Helper Script.
+## Accessing Proxmox VE.
 
-* I visit [http://helper-scripts.com/](http://helper-scripts.com/).
+* I use a browser to login to Proxmox VE.
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762491437546/674cff6a-903b-449a-bd9c-885c314008c7.png align="center")
+
+* On the left of the screen, I go to `Datacenter > nuclab60`.
+    
+* In the 2nd pane, I click ‘Shell‘.
+    
+
+---
+
+## The Helper Script.
+
+* In a new browser tab, I visit [http://helper-scripts.com/](https://community-scripts.github.io/ProxmoxVE/).
     
 * I search for ‘pve post install‘.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749449711896/6bccba72-3d65-450e-90cb-d82b76186c7d.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762490969910/44ff4e69-0f0d-4fbc-8aac-9494f3319a82.png align="center")
 
 * I copy the script command.
     
-* I open a local terminal.
+
+---
+
+## Running the Helper Script.
+
+* Back in the Proxmox tab, I run the helper script command from the terminal:
     
 
-> NOTE: I can run the following commands from a browser that is logged into Proxmox VE by going to `Datacenter > pve > Shell`. However, the text is very small, so I am using a local terminal instead.
-> 
-> ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749453209487/0fcd70a6-cc89-424e-945f-9cf17124c194.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492508747/308667bd-d3eb-4cae-849e-42fffe6c1712.png align="center")
 
-* I use the ssh (secure shell) command to login to the remote Proxmox VE:
-    
-
-```bash
-ssh root@192.168.0.70
-```
-
-* The password is the same one I use when logging in to the Proxmox VE browser GUI:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749450728113/d3f959e7-57ed-4d87-9c2f-3fb81b02e889.png align="center")
-
-* I paste the helper script command into the terminal:
-    
-
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
-```
-
-> NOTE: Answer ‘yes’ to MOST of the questions when asked but there are 3 exceptions, as listed below.
+> NOTE: I answer ‘yes’ to MOST of the questions when asked but there are 3 exceptions, as listed below.
 
 * I answer ‘no’ to ‘Disable high availability?’:
     
@@ -241,30 +239,22 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
 
 > NOTE: I will reboot once I finish updating the remote system and upgrading Proxmox VE.
 
-* Once the script returns me to the terminal screen, I update the system:
+* Once the script returns to the terminal screen, I update the system:
     
 
-```bash
-apt update
-```
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492721385/7aa75a5a-9840-4c12-b3f8-110c06912454.png align="center")
 
-> NOTE: Sudo is not required as I am in the root account which has full privileges.
+> NOTE: The ‘sudo’ command is not required as I am in the root account which has full privileges.
 
-* Once the updates have been downloaded, but not installed, I run the following command to update the system and the Proxmox VE installation:
+* Once the updates have been downloaded, *but not installed*, I run the ‘pveupgrade‘ command to update the system and the Proxmox VE installation:
     
 
-```bash
-pveupgrade
-```
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492827888/1c0d9bdb-0f64-4158-a301-656fd97aab91.png align="center")
 
-* Due to the installation of a kernel update, I need to reboot the remote Proxmox VE system:
+* Due to the installation of a kernel update, I need to reboot Proxmox VE:
     
 
-```bash
-reboot
-```
-
-> NOTE: The `reboot` command will automatically end the session between my local terminal and the remote Proxmox VE system.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762493073753/3d8b8b81-c5d3-459d-ae2d-e82f094d047f.png align="center")
 
 ---
 
