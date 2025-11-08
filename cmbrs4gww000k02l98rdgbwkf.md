@@ -173,12 +173,6 @@ Replacing dynamic IP addresses with static IP addresses requires:
 * Reflecting those changes to each container, virtual machine, and Pi5 that makes up my server cluster.
     
 
-Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749459270865/e221bbf5-087e-446c-b58d-b8a42f66181b.png align="center")
-
-> NOTE: There are prerequisites that I need to meet before I can build this container.
-
 ---
 
 ## Accessing Proxmox VE.
@@ -239,14 +233,14 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 > NOTE: I will reboot once I finish updating the remote system and upgrading Proxmox VE.
 
-* Once the script returns to the terminal screen, I update the system:
+* Once the script has finished, I update the system:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492721385/7aa75a5a-9840-4c12-b3f8-110c06912454.png align="center")
 
-> NOTE: The ‘sudo’ command is not required as I am in the root account which has full privileges.
+> NOTE: The ‘sudo’ command is not required as the root account has full privileges.
 
-* Once the updates have been downloaded, *but not installed*, I run the ‘pveupgrade‘ command to update the system and the Proxmox VE installation:
+* Once the updates have been downloaded, I run the ‘pveupgrade‘ command to update the system and the Proxmox VE installation:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492827888/1c0d9bdb-0f64-4158-a301-656fd97aab91.png align="center")
@@ -262,30 +256,35 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 
 * I use a browser to login to Proxmox VE.
     
-* On the left of the screen, under Server View, I go to `Datacenter > pve > local (pve)`.
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > local (nuclab60)`.
     
 * In the 2nd pane, I click `ISO Images`.
     
 * In the 3rd pane, I click the grey `Download from URL` button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748583261047/5dec42a4-c9a5-4145-bf16-0c40c9851da5.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762550929041/a1a1eafc-cd6b-4b82-9525-387d8485be5b.png align="center")
 
-* In the pop-up modal, I add [`https://releases.ubuntu.com/24.04.2/ubuntu-24.04.3-live-server-amd64.iso`](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso) to the `URL:` field so that Proxmox VE can download the ISO for Ubuntu Server 24.04.2 LTS.
+* In the pop-up modal, I add [`https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso`](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso) to the `URL:` field so that Proxmox VE can download the ISO for Ubuntu Server 24.04.2 LTS.
     
 * I click the blue `Query URL` button to check the link:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748583371806/f47fc57d-dc6d-431d-b716-e714682dcf29.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762551133028/79464be1-463d-459e-af6b-63d436e0bfb4.png align="center")
 
 * I click the blue `Download` button to start the download:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748583422133/5f088bef-c1ab-4118-8c25-5397dbd4c1c5.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762551187522/dec4a9ea-6852-4a6c-8def-09436d5bd24b.png align="center")
+
+* I close the modal once I receive the ‘TASK OK’ message:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762551720898/1cc54434-e656-4592-9b05-37ea637754a7.png align="center")
 
 ---
 
-### **Initializing a Drive for Containers**.
+### **Preparing the Disks**.
 
 > NOTE: The following is adapted from the instructions provided by the [Proxmox VE team](https://forum.proxmox.com/threads/proxmox-beginner-tutorial-how-to-set-up-your-first-virtual-machine-on-a-secondary-hard-disk.59559/).
 
@@ -298,14 +297,14 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 * In the 3rd pane, I select the `dev/sda` drive (that currently has 2 partitions).
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748584828748/d362dea2-a48d-4329-acde-d10cc182c880.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762554101378/327bc127-931d-4abc-87c3-c2a10bf15eec.png align="center")
 
 * I click the grey `Wipe Disk` button.
     
 * In the Confirm modal, I click the blue `Yes` button.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748584945425/544abe54-3909-4a63-b5bb-c9da498b967d.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762555505727/d3ac8cd5-f7ce-42a2-8e4c-629a8211533a.png align="center")
 
 * I repeat the process for the `/dev/sdb` disk.
     
@@ -334,14 +333,14 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 * In the 3rd pane, I click the grey `Templates` button.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748594820627/9590ab68-d3b6-4fe7-8b6a-f1ee28ca53bd.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762555737511/be9cd9f8-9d45-4ed9-9e4c-083cfabf606a.png align="center")
 
 * In the Templates modal, I select the `ubuntu-24.04-standard` template and click the blue `Download` button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1748595021450/77932deb-e7d9-4e1b-97e7-3320ef1d43b1.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762555933959/94fff826-af15-4025-9964-1183783b15cf.png align="center")
 
-> Now that all of the requirements are in place, I can take the next step by using a browser to login to Proxmox VE, clicking the blue `Create CT` button (top-right of the screen), following the resulting prompts, and creating a container.
+> Now that all of the requirements are in place, I can take the next step by clicking the blue `Create CT` button (top-right of the screen), following the resulting prompts, and creating a container.
 
 ---
 
@@ -352,47 +351,47 @@ Below is a Proxmox VE container where the `Edit: Network Device (veth)` is open:
 * At the top-right of the screen, I click the blue ‘Create CT‘ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427372537/7ee1e8d0-5cfa-4ee3-9666-ce2b26cd58da.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762558404220/01f4f41d-36a6-44af-9196-fdc66cdd3a39.png align="center")
 
 * I add details to the ‘General’ tab, then I click the blue ‘Next’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427571502/997731d6-a921-4234-bdbe-9b26386795ab.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762558556205/07dc05cd-d20f-42b1-aa86-997f1426381d.png align="center")
 
 * I select the ‘Template:’, then I click the blue ‘Next’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427696366/7090e00d-5fb6-4440-b95b-181ff2376605.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762558699395/68981f3e-3df6-4c5e-b79f-30cd11e1cddd.png align="center")
 
-* I select the ‘Storage:‘ (zfs-disk), set the size (28GB), then I click the blue ‘Next’ button:
+* I select the ‘Storage:‘ (zfs-disk), set the size (56GB), then I click the blue ‘Next’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427879586/078e6880-4847-4f0c-b13a-33d50a9157ae.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559126740/052da609-a2e3-4c2f-a6cc-31caf1360e16.png align="center")
 
 * I leave the ‘Cores:‘ set to 1, then I click the blue ‘Next‘ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762427978033/86f7b6a7-5ffc-4865-8b74-1e1cc13fde55.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559170147/84c51057-a488-4fa4-a955-abb032895592.png align="center")
 
 * I set the ‘Memory (MiB):’ (12288), the ‘Swap (MiB):’ (4096), then I click the blue ‘Next‘ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428332958/845eb069-07c3-4f9e-bd18-5c2c2c8ce53e.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559235214/ddd9768b-fc2f-4d35-a6b4-27b05c51acea.png align="center")
 
 * I set the ‘IPv4/CIDR:’, ‘Gateway (IPv4):’, then I click the blue ‘Next’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428484682/07cead37-115e-4b3d-b974-73809664de8c.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559308645/3ba179a5-aef7-4cb9-b173-d4fc253d6ea3.png align="center")
 
 * I leave the DNS settings blank, then I click the blue ‘Next’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428561097/be8f573f-3c43-4689-8e62-2c6f9251f044.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559352433/24f69e7d-8a78-4817-a467-9ae65baebded.png align="center")
 
 * I check my settings, then I click the blue ‘Finish’ button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762428664632/d2070ae8-6582-48cd-9189-73bc9afec6f3.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559398955/a72906ce-494a-448f-a582-82ec3865bbb2.png align="center")
 
 The resulting container can now be cloned.
 
@@ -402,22 +401,29 @@ The resulting container can now be cloned.
 
 * I use a browser to login to Proxmox VE.
     
-* On the left of the screen, under Server View, I go to `Datacenter > nuclab70`.
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60`.
     
-* I right-click the ‘101 (nuclab71)’ container and, in the pop-up menu, I click the ‘Clone’ option:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762429158590/513cf689-72d9-4474-8b87-93261237ac4a.png align="center")
-
-* In the ‘Clone CT 101 (nuclab71)’ modal, I enter the following details, then I click the blue ‘Clone’ button:
+* I right-click the ‘101 (nuclab61)’ container and, in the pop-up menu, I click the ‘Clone’ option:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762430725828/55d37442-786f-498c-9b63-812447f82595.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559530710/07abcc6a-5f52-425a-8f88-c11f0d50b77f.png align="center")
+
+* In the ‘Clone CT 101 (nuclab61)’ modal, I enter the following details, then I click the blue ‘Clone’ button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559671586/b28d6ea9-46df-41f8-ad3f-c137b9f84724.png align="center")
+
+* After a moment, a clone of the original container appears under `Datacenter > nuclab60`:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559913550/f7a26f78-bf32-4197-bb75-7705b80f25a8.png align="center")
 
 * I repeat this process as often as I need to meet my requirements.
     
-* Once I have created all the containers, I start each container by selecting it and then clicking the ‘Start’ button near the top-right of the screen.
+* Once I have created all the containers I need, I start each container by selecting it and then clicking the ‘Start’ button near the top-right of the screen:
     
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762560087109/49a8b78b-32d3-48ab-81fb-f269194152fa.png align="center")
 
 ---
 
