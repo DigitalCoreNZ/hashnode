@@ -418,12 +418,12 @@ The resulting container can now be cloned.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559913550/f7a26f78-bf32-4197-bb75-7705b80f25a8.png align="center")
 
-* I repeat this process as often as I need to meet my requirements.
+* I repeat this process two more times to meet my requirements.
     
-* Once I have created all the containers I need, I start each container by selecting it and then clicking the ‘Start’ button near the top-right of the screen:
+* Once I have created all the containers I need, I select a container and then clicking the ‘Start’ button near the top-right of the screen:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762560087109/49a8b78b-32d3-48ab-81fb-f269194152fa.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064012838/5a477892-980e-4d25-b22c-8b47e3672bb7.png align="center")
 
 ---
 
@@ -433,14 +433,14 @@ The resulting container can now be cloned.
 
 * I use a browser to login to Proxmox VE.
     
-* On the left of the screen, under Server View, I go to `Datacenter > pve > 101 nuclab71` (where the `CT ID` and `Hostname` are the settings I gave when creating the container).
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61`):
     
 * In the 2nd pane, I click `Console`.
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749339376114/12db2ba9-f96c-456e-9de0-819f84cf8d97.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064209330/18c821bb-be78-47d6-94a5-7910873d44bd.png align="center")
 
-* In the 3rd pane, I login to the container using root as the `ServerLab1 login` and the same password I use to login to Proxmox VE.
+* In the 3rd pane, I login to the container using root as the `nuclab61 login:` and the password I created while building the container.
     
 * Once logged in, I create a new user account:
     
@@ -463,39 +463,24 @@ usermod -aG sudo <user_name>
 exit
 ```
 
-* Towards the top-left of the console window, I open the drop down menu of the `Shutdown` option, by clicking the down arrow (⌄), and selecting `Reboot`:
+* Towards the top-right of the console window, I open the drop down menu of the `Shutdown` option, by clicking the down arrow (⌄), and selecting `Reboot`:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749339991320/4e5f0757-6541-40df-b769-68ac8cc7baed.png align="center")
-
----
-
-## Logging In from a Remote Terminal.
-
-* I open a local terminal.
-    
-* I use the ssh (secure shell) command to login to the remote container:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749340859602/048b8c43-5dc0-4ee4-a219-7533eb4b3c70.png align="center")
-
-> NOTE: My `yt` account is temporary, is used for generating screenshots, and will be deleted after it has served its’ purpose.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064962161/5a6e1985-14a9-497e-b85d-04d2f2da9fc4.png align="center")
 
 ---
 
 ## The Results.
 
-Installing Proxmox VE on an Intel NUC 10 provides a compact and efficient solution for managing virtual environments. The process involves preparing the hardware, creating installation media, and configuring the system to suit my network and storage needs. By following the steps outlined, I can effectively set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the Intel NUC but also offers flexibility and scalability for various computing tasks.
+Installing Proxmox VE on an Intel NUC 10 provides a compact and efficient solution for managing virtual environments. The process involves preparing the installation hardware, creating a USB drive that is used as the installation media, and configuring the system to suit my network and storage needs. By following the steps outlined, I can effectively set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the Intel NUC but also offers flexibility and scalability for various computing tasks.
 
 ---
 
 ## In Conclusion.
 
-In this guide, I walked through the prerequisites, step-by-step installation process, and tips for optimizing my virtual environment setup. From creating a Proxmox VE installation thumb drive to configuring network settings and initializing drives, the result is an Intel NUC 10 that hosts a container that is accessible across my LAN.
+In this guide, I created a USB installation thumb drive for Proxmox VE, installed Proxmox VE onto a NUC10 PC, learned how to download an OS to Proxmox VE, installed CT templates, created a container, cloned that container multiple times, and created new accounts for those containers. By following these steps, I maximized the capabilities of the Intel NUC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
 
-I learned how to download an OS to Proxmox VE, install CT templates, and create new accounts for my first container. By following these steps, I maximized the capabilities of the Intel NUC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
-
-Have you tried setting up Proxmox VE on a spare PC? What challenges did you face, and how did you overcome them? Let's discuss in the comments!
+Have you tried setting up Proxmox VE on a spare PC? What challenges did you face? How did you overcome those challenges? Let's discuss in the comments below!
 
 Until next time: Be safe, be kind, be awesome.
 
