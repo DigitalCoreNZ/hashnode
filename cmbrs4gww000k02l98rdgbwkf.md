@@ -10,6 +10,8 @@ tags: ubuntu, linux, debian, networking, containers, virtualization, virtual-mac
 
 ---
 
+Update: Friday 14th November 2025
+
 ## TL;DR.
 
 This post is a comprehensive walk-through on how I install Proxmox VE on an Intel NUC 10. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
