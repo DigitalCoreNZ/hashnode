@@ -6,15 +6,15 @@ datePublished: Wed Jun 11 2025 10:00:40 GMT+0000 (Coordinated Universal Time)
 cuid: cmbrs4gww000k02l98rdgbwkf
 slug: installing-proxmox-ve-on-an-intel-nuc-10
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1749598613011/87c7b086-7fb6-4a6c-83ba-dfbbfd7698ef.png
-tags: ubuntu, linux, debian, networking, containers, virtualization, virtual-machines, homelab, proxmox, serversetup, techguide, techenthusiast, proxmoxve, intelnuc, servercluster
+tags: ubuntu, linux, networking, containers, virtualization, virtual-machines, homelab, pve, proxmox, serversetup, techguide, proxmoxve, intelnuc, servercluster
 
 ---
 
-Update: Friday 14th November 2025
+Update: Sunday 16th November 2025
 
 ## TL;DR.
 
-This post is a comprehensive walk-through on how I install Proxmox VE on an Intel NUC 10. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
+This post is a comprehensive walk-through on how I install PVE (Proxmox Virtual Environment) on an Intel NUC 10. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
 
 > **Attributions:**
 > 
@@ -26,15 +26,15 @@ This post is a comprehensive walk-through on how I install Proxmox VE on an Inte
 
 ## An Introduction.
 
-Containers and virtual machines are technologies that allow operating systems and applications to be isolated within a runtime environment. Depending on the hardware specifications, Proxmox VE allows multiple containers and virtual machines to run on a single PC:
+Containers and virtual machines are technologies that allow operating systems and applications to be isolated within a runtime environment. Depending on the hardware specifications, PVE allows multiple containers and virtual machines to run on a single PC:
 
-> The purpose of this post is to demonstrate how I install Proxmox VE and create a container.
+> The purpose of this post is to demonstrate how I install PVE and create a container.
 
 ---
 
 ## The Big Picture.
 
-Learn how I efficiently install Proxmox VE on an Intel NUC 10 with this comprehensive guide. Discover the prerequisites, step-by-step installation process, and tips that I use to optimize my virtual environment setup. Proxmox is perfect for tech enthusiasts looking to maximize their Homelab PCs.
+Learn how I efficiently install PVE on an Intel NUC 10 with this comprehensive guide. Discover the prerequisites, step-by-step installation process, and tips that I use to optimize my virtual environment setup. PVE is perfect for tech enthusiasts looking to maximize their Homelab PCs.
 
 ---
 
@@ -88,19 +88,19 @@ An Intel NUC (Next Unit of Computing) is a small-form-factor computer designed b
 | Memory | 64GB |
 | --- | --- |
 | Storage | 256GB M.2 internal, 256GB SSD internal, 2TB HDD external |
-| OS | A modified Debian LTS kernel running under Proxmox VE |
+| OS | A modified Debian LTS kernel running under PVE |
 
 ---
 
-## What is Proxmox VE?
+## What is PVE?
 
-Proxmox VE (Virtual Environment) is an open-source virtualization platform designed for setting up hyper-converged infrastructure and, under the GNU AGPLv3 license, can be used for commercial purposes. It lets me deploy and manage containers and virtual machines. Proxmox VE is built on a modified Debian LTS kernel, and supports two types of virtualization: containers with LXC and virtual machines with KVM. Proxmox VE features a web-based management interface, and there is also a mobile app available for managing PVEs (Proxmox Virtual Environments).
+PVE (Proxmox Virtual Environment) is an open-source virtualization platform designed for setting up hyper-converged infrastructure and, under the GNU AGPLv3 license, can be used for commercial purposes. It lets me deploy and manage containers and virtual machines. PVE is built on a modified Debian LTS (Long Term Service) kernel, and supports two types of virtualization: containers with LXC (Linux Containers) and virtual machines with KVM (Kernel-level Virtual Machines). PVE features a web-based management interface, and there is also a mobile app available for managing PVEs.
 
 ---
 
-## Creating a Proxmox VE Installation Thumb Drive.
+## Creating a PVE Installation Thumb Drive.
 
-* I download the Proxmox ISO file from [https://proxmox.com/en/downloads/proxmox-virtual-environment/iso](https://proxmox.com/en/downloads/proxmox-virtual-environment/iso).
+* I download the PVE ISO file from [https://proxmox.com/en/downloads/proxmox-virtual-environment/iso](https://proxmox.com/en/downloads/proxmox-virtual-environment/iso).
     
 * I grab a 32GB thumb drive and label it.
     
@@ -119,13 +119,13 @@ Proxmox VE (Virtual Environment) is an open-source virtualization platform desig
 * After the ISO has been successfully flashed onto the thumb drive, I eject the thumb drive and remove it from my PC.
     
 
-### Installing Proxmox VE.
+### Installing PVE.
 
-> NOTE: Proxmox VE requires at least 3 drives that are directly connected to the NUC. I have an internal 256GB M.2 drive that uses the NVMe interface labelled `prox-int-nvme`, an internal 256GB SSD that uses the SATA interface which has been split into 2 × 128GB partitions labelled `prox-int-sata1` & `prox-int-sata2`, and an external 2TB HDD that uses the USB 3.0 interface labelled `prox-ext-usb3`. These configurations will be altered during the Proxmox VE setup process.
+> NOTE: PVE requires at least 3 drives that are directly connected to the NUC. I have an internal 256GB M.2 drive that uses the NVMe interface labelled `prox-int-nvme`, an internal 256GB SSD that uses the SATA interface which has been split into 2 × 128GB partitions labelled `prox-int-sata1` & `prox-int-sata2`, and an external 2TB HDD that uses the USB 3.0 interface labelled `prox-ext-usb3`. These configurations will be altered during the PVE setup process.
 
-* I plug the Proxmox VE installation thumb drive into my NUC.
+* I plug the PVE installation thumb drive into the NUC.
     
-* I power up my NUC.
+* I power up the NUC.
     
 * I follow the installation instructions.
     
@@ -134,19 +134,19 @@ Proxmox VE (Virtual Environment) is an open-source virtualization platform desig
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762487898522/3828686b-8196-4dc1-bb23-00c6ebc09d75.png align="center")
 
-> NOTE: During the Management Network Configuration setup, I can use IPv4 or IPv6 but I CANNOT mix the 2 protocols. The Management Interface is the name of the NIC (Network Interface Card) that is installed in the NUC which, in my case, is eno1. The Hostname (FQDN) only matters if I intend to open, and host, Proxmox VE over the Internet. The IP Address (CIDR), as assigned by my router, is 192.168.0.50 with a subnet mask of 24 (255.255.255.0) that defines the subnet in my LAN to which this device belongs. The Gateway is the IP address of my router, which is 192.168.0.1, and is needed to connect the NUC to the Internet. The DHCP server is found at 192.168.0.1 because my router includes the server that is responsible for assigning IP addresses.
+> NOTE: During the Management Network Configuration setup, I can use IPv4 or IPv6 but I CANNOT mix the 2 protocols. The Management Interface is the name of the NIC (Network Interface Card) that is installed in the NUC which, in my case, is eno1. The Hostname (FQDN) only matters if I intend to open, and host, PVE over the Internet. The IP Address (CIDR), as assigned by my router, is 192.168.0.50 with a subnet mask of 24 (255.255.255.0) that defines the subnet in my LAN to which this device belongs. The Gateway is the IP address of my router, which is 192.168.0.1, and is needed to connect the NUC to the Internet. The DHCP server is found at 192.168.0.1 because my router includes the server that is responsible for assigning IP addresses.
 
 * After installation, the NUC will reboot.
     
 * At this time, I remove the USB installation thumb drive.
     
-* At the login screen, I make a note of the Proxmox VE IP address and :port number that is displayed.
+* At the login screen, I make a note of the PVE IP address and :port number that is displayed.
     
-* On a PC that is connected to the same network as Proxmox VE, I open a browser, visit the IP address and :port, and bookmark that address.
+* On a PC that is connected to the same network as PVE, I open a browser, visit the IP address and :port, and bookmark that address.
     
 * At the browser login screen, my user name is ‘root’ and my ‘password’ is the same one I gave during the installation.
     
-* From the terminal, I SSH into Proxmox VE with root@ip\_address and password.
+* From the terminal, I SSH into PVE with root@ip\_address and password.
     
 
 ---
@@ -166,7 +166,7 @@ The problem is that all the devices that connect to the LAN require unique ident
 
 In most cases, each device in the LAN is dynamically, i.e. automatically, assigned an IP address from a pool of available, unassigned addresses. Most often, devices will use the same dynamic IP addresses when they connect to the LAN, but sometimes the DHCP server will issue new dynamic IP addresses. This is a fine solution and is NOT a problem. In most cases.
 
-Servers, however, are special use cases. Proxmox VE, as well as the containers and virtual machines it manages, require *static* IP addresses. My Pi5 SBCs (Single Board Computers) will also need static IP addresses if they want to become nodes in my server cluster. The reason each node in a cluster needs an IP address *that doesn’t change* is because they need to know how to find each other.
+Servers, however, are special use cases. PVE, as well as the containers and virtual machines it manages, require *static* IP addresses. My Pi5 SBCs (Single Board Computers) will also need static IP addresses if they want to become nodes in my server cluster. The reason each node in a cluster needs an IP address *that doesn’t change* is because they need to know how to find each other.
 
 Replacing dynamic IP addresses with static IP addresses requires:
 
@@ -177,9 +177,9 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## Accessing Proxmox VE.
+## Accessing PVE.
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762491437546/674cff6a-903b-449a-bd9c-885c314008c7.png align="center")
@@ -207,7 +207,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ## Running the Helper Script.
 
-* Back in the Proxmox tab, I run the helper script command from the terminal:
+* Back in the Shell for nuclab60, I run the helper script command from the terminal:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492508747/308667bd-d3eb-4cae-849e-42fffe6c1712.png align="center")
@@ -226,14 +226,14 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451488029/9440bbae-c167-4acb-9e48-6d8cd2e6c6fc.png align="center")
 
-> NOTE: I will update Proxmox manually.
+> NOTE: I will update PVE manually later in this post.
 
 * I answer ‘no’ to ‘Reboot Proxmox VE now?‘:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1749451626813/9ee7cf61-d8db-4a69-9497-d6b48177c869.png align="center")
 
-> NOTE: I will reboot once I finish updating the remote system and upgrading Proxmox VE.
+> NOTE: I will reboot once I finish updating the remote system and upgrading PVE.
 
 * Once the script has finished, I update the system:
     
@@ -242,21 +242,21 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 > NOTE: The ‘sudo’ command is not required as the root account has full privileges.
 
-* Once the updates have been downloaded, I run the ‘pveupgrade‘ command to update the system and the Proxmox VE installation:
+* Once the updates have been downloaded, I run the ‘pveupgrade‘ command to update the system and the PVE installation:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762492827888/1c0d9bdb-0f64-4158-a301-656fd97aab91.png align="center")
 
-* Due to the installation of a kernel update, I need to reboot Proxmox VE:
+* Due to the installation of a kernel update, I need to reboot PVE:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762493073753/3d8b8b81-c5d3-459d-ae2d-e82f094d047f.png align="center")
 
 ---
 
-## Downloading an OS to Proxmox VE.
+## Downloading an OS to PVE.
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > local (nuclab60)`.
     
@@ -267,7 +267,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762550929041/a1a1eafc-cd6b-4b82-9525-387d8485be5b.png align="center")
 
-* In the pop-up modal, I add [`https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso`](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso) to the `URL:` field so that Proxmox VE can download the ISO for Ubuntu Server 24.04.2 LTS.
+* In the pop-up modal, I add [`https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso`](https://releases.ubuntu.com/24.04.3/ubuntu-24.04.3-live-server-amd64.iso) to the `URL:` field so that PVE can download the ISO for Ubuntu Server 24.04.2 LTS.
     
 * I click the blue `Query URL` button to check the link:
     
@@ -288,9 +288,9 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ### **Preparing the Disks**.
 
-> NOTE: The following is adapted from the instructions provided by the [Proxmox VE team](https://forum.proxmox.com/threads/proxmox-beginner-tutorial-how-to-set-up-your-first-virtual-machine-on-a-secondary-hard-disk.59559/).
+> NOTE: The following is adapted from the instructions provided by the [PVE team](https://forum.proxmox.com/threads/proxmox-beginner-tutorial-how-to-set-up-your-first-virtual-machine-on-a-secondary-hard-disk.59559/).
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * On the left of the screen, under Server View, I go to `Datacenter > pve`.
     
@@ -326,7 +326,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ### Installing a Container Template.
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * On the left of the screen, under Server View, I go to `Datacenter > pve > local (pve)`.
     
@@ -348,7 +348,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ## Creating a New Container
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * At the top-right of the screen, I click the blue ‘Create CT‘ button:
     
@@ -401,7 +401,7 @@ The resulting container can now be cloned.
 
 ## Cloning the Container.
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * On the left of the screen, under Server View, I go to `Datacenter > nuclab60`.
     
@@ -422,7 +422,7 @@ The resulting container can now be cloned.
 
 * I repeat this process two more times to meet my requirements.
     
-* Once I have created all the containers I need, I select a container and then clicking the ‘Start’ button near the top-right of the screen:
+* Once I have created all the containers I need, I select each container and then clicking the ‘Start’ button near the top-right of the screen:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064012838/5a477892-980e-4d25-b22c-8b47e3672bb7.png align="center")
@@ -433,7 +433,7 @@ The resulting container can now be cloned.
 
 > Now I create user accounts for all of the containers.
 
-* I use a browser to login to Proxmox VE.
+* I use a browser to login to PVE.
     
 * On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61`):
     
@@ -472,17 +472,234 @@ exit
 
 ---
 
+## Setting Up the Local Terminal.
+
+The following describes setting up the remote PiLab servers, two of which will become the control plane nodes of the MicroK8s cluster. These settings must also be applied to the [eight NucLab containers](https://solodev.app/installing-proxmox-ve-on-an-intel-nuc-10#heading-creating-a-new-account-for-the-container) that will become the worker nodes of the MicroK8s cluster.
+
+---
+
+## Creating an RSA Key Pair on the Local PC.
+
+* From my local, PC terminal (`CTRL` + `ALT` + `T`), I start the ssh-agent:
+    
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+* I generate a pair of RSA keys called "/home/brian/.ssh/key-name" (where I replace "key-name" with the name of the remote server):
+    
+
+```bash
+ssh-keygen -b 4096
+```
+
+> NOTE: It is my convention to name RSA keys after the remote server on which they will be used.
+
+* I add the SSH key to my workstation account (where I replace "key-name" with the *actual* name of the ssh key):
+    
+
+```bash
+ssh-add /home/brian/.ssh/nuclab61
+```
+
+---
+
+## Uploading the Public Key to the Remote Server.
+
+* From the `workstation` terminal (`CTRL` + `ALT` + `T`), I use "ssh-copy-id" to upload the locally-generated public key to the remote container (where I replace "container-name" with the *actual* name of the container):
+    
+
+```bash
+ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
+```
+
+---
+
+## Logging In to the Remote Server.
+
+* From the terminal (CTRL + ALT + T), I login to the account of the remote server:
+    
+
+```bash
+ssh 'brian@192.168.0.61'
+```
+
+---
+
+## Updating the Remote Server.
+
+* From the terminal, I update the remote server:
+    
+
+```python
+sudo apt clean && \
+sudo apt update && \
+sudo apt dist-upgrade -y && \
+sudo apt --fix-broken install && \
+sudo apt autoclean && \
+sudo apt autoremove -y
+```
+
+---
+
+## Hardening the Remote Server.
+
+* From the terminal (CTRL + ALT + T) that is connected to the remote server, I open the "sshd\_config" file:
+    
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+* I add (CTRL + V) the following to the bottom of the "sshd\_config" page, save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor:
+    
+
+```bash
+PasswordAuthentication no
+PermitRootLogin no
+Protocol 2
+```
+
+* I restart the "ssh" service:
+    
+
+```bash
+sudo systemctl restart ssh.service
+```
+
+---
+
+## Enabling, and Setting Up, UFW on the Remote Server.
+
+* From the PC terminal (`CTRL` + `ALT` + `T`) that is connected to the remote server, I check the UFW status:
+    
+
+```bash
+sudo ufw status
+```
+
+* I enable the UFW:
+    
+
+```bash
+sudo ufw enable
+```
+
+* I install a UFW rule:
+    
+
+```bash
+sudo ufw allow from 192.168.?.?
+```
+
+> NOTE: I can use `ip a` or `ip addr` in my local PC terminal to find my IP address. ***I replace the IP address above with the actual address for the*** `workstation`***, e.g. 192.168.188.41.***
+
+* I check the status of the UFW and list the rules by number:
+    
+
+```bash
+sudo ufw status numbered
+```
+
+> NOTE 1: UFW will, by default, block all incoming traffic, including SSH and HTTP.
+> 
+> NOTE 2: I will update the UFW rules as I deploy other services to the remote server.
+
+* I can delete a UFW rule by number if needed:
+    
+
+```bash
+sudo ufw delete 1
+```
+
+* I can also disable UFW if needed:
+    
+
+```bash
+sudo ufw disable
+```
+
+---
+
+## Installing, and Setting Up, Fail2Ban on the Remote Server.
+
+* From the terminal (CTRL + ALT + T) that is connected to the remote server, I install Fail2Ban:
+    
+
+```bash
+sudo apt install -y fail2ban
+```
+
+* I copy the `jail.conf` file as `jail.local`:
+    
+
+```bash
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+```
+
+* I open the `jail.local` file in Nano:
+    
+
+```bash
+sudo nano /etc/fail2ban/jail.local
+```
+
+* I make the following changes to a few (SSH-centric) settings in the `jail.local` file, then I save (CTRL + S) those changes, and exit (CTRL + X) the Nano text editor:
+    
+
+```bash
+[DEFAULT]
+⋮
+bantime = 1d
+maxretry = 3
+⋮
+[sshd]
+enabled = true
+port = ssh,22
+```
+
+* I restart Fail2Ban:
+    
+
+```bash
+sudo systemctl restart fail2ban
+```
+
+* I check the status of Fail2Ban:
+    
+
+```bash
+sudo systemctl status fail2ban
+```
+
+* I enable Fail2Ban to auto-start on boot:
+    
+
+```bash
+sudo systemctl enable fail2ban
+```
+
+* I reboot the remote server:
+    
+
+```bash
+sudo reboot
+```
+
+---
+
 ## The Results.
 
-Installing Proxmox VE onto an Intel NUC 10 PC results in a compact and efficient solution for creating, and managing, containers and virtual environments. The process involves preparing the installation hardware, creating a USB drive that is used as the installation media, and configuring the system to suit my network and storage needs. By following the steps above, I can set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the Intel NUC 10 but also offers flexibility and scalability for various computing tasks.
+Installing PVE (Proxmox Virtual Environment) onto an Intel NUC 10 PC results in a compact and efficient solution for creating, and managing, containers and virtual environments. The process involves preparing the installation hardware, creating a USB drive that is used as the installation media, and configuring the system to suit my network and storage needs. By following the steps above, I can set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the Intel NUC 10 but also offers flexibility and scalability for various computing tasks.
 
 ---
 
 ## In Conclusion.
 
-In this guide, I created a USB installation thumb drive for Proxmox VE, installed Proxmox VE onto an Intel NUC 10 PC, learned how to download an OS to Proxmox VE, installed CT templates, created a container, cloned that container multiple times, and created new accounts for those containers. By following these steps, I maximized the capabilities of the Intel NUC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
+In this guide, I created a USB installation thumb drive for PVE, installed PVE onto an Intel NUC 10 PC, learned how to download an OS to PVE, installed CT templates, created a container, cloned that container multiple times, and created new accounts for those containers. By following these steps, I maximized the capabilities of the Intel NUC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
 
-Have you tried setting up Proxmox VE on a spare PC? What challenges did you face? How did you overcome those challenges? Let's discuss in the comments below!
+Have you tried setting up PVE on a spare PC? What challenges did you face? How did you overcome those challenges? Let's discuss in the comments below!
 
 Until next time: Be safe, be kind, be awesome.
 
@@ -490,4 +707,4 @@ Until next time: Be safe, be kind, be awesome.
 
 ## Hash Tags.
 
-#ProxmoxVE #IntelNUC #Virtualization #Homelab #Containers #VirtualMachines #Networking #ServerSetup #ServerCluster #Linux #Debian #Ubuntu #TechGuide #TechEnthusiast
+#ProxmoxVE #pve #IntelNUC #Virtualization #Homelab #Containers #VirtualMachines #Networking #ServerSetup #ServerCluster #Linux #Debian #Ubuntu #TechGuide
