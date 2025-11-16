@@ -10,7 +10,7 @@ tags: ubuntu, linux, networking, containers, virtualization, virtual-machines, h
 
 ---
 
-Update: Sunday 16th November 2025
+Update: Monday 17th November 2025
 
 ## TL;DR.
 
