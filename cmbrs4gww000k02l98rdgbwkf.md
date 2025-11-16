@@ -422,16 +422,41 @@ The resulting container can now be cloned.
 
 * I repeat this process two more times to meet my requirements.
     
-* Once I have created all the containers I need, I select each container and then clicking the ‘Start’ button near the top-right of the screen:
+
+---
+
+## Network Settings for Each Clone.
+
+* I use a browser to login to PVE.
+    
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61)`.
+    
+* In the 2nd pane, I click `Network`.
+    
+* In the 3rd pane, I select the Network Device and click the gray, `Edit` button:
     
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064012838/5a477892-980e-4d25-b22c-8b47e3672bb7.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763326487766/76e9a27b-02fb-48ca-bca6-9d6095ca8a36.png align="center")
+
+* In the ‘Edit: Network Device’ modal, I change:
+    
+    * the ‘Name:’,
+        
+    * Ensure the ‘IPv4:’ radio button is set to ‘Static’,
+        
+    * Ensure the ‘IPv4/CIDR:’ setting is correct, and
+        
+    * Ensure the ‘Gateway (IPv4):’ setting is correct:
+        
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763326666045/728c477e-d325-47ba-9024-3b0173e7ba42.png align="center")
+
+* Once I confirm these settings, I click the blue `OK` button and repeat the process for the three remaining containers.
+    
 
 ---
 
 ## Creating a User Account for a Container.
-
-> Now I create user accounts for all of the containers.
 
 * I use a browser to login to PVE.
     
@@ -470,11 +495,29 @@ exit
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064962161/5a6e1985-14a9-497e-b85d-04d2f2da9fc4.png align="center")
 
+* Once the first user account is created, I repeat this process for the remaining three containers.
+    
+
 ---
 
 ## Setting Up the Local Terminal.
 
-The following describes setting up the remote PiLab servers, two of which will become the control plane nodes of the MicroK8s cluster. These settings must also be applied to the [eight NucLab containers](https://solodev.app/installing-proxmox-ve-on-an-intel-nuc-10#heading-creating-a-new-account-for-the-container) that will become the worker nodes of the MicroK8s cluster.
+The following describes:
+
+* How to locally generate an RSA Key Pair for an SSH connection,
+    
+* Pushing the public key to the container,
+    
+* Logging in to the remote container,
+    
+* Updating the OS that is running on the container,
+    
+* Hardening the container by changing a few settings, and
+    
+* Installing and enabling security utilities like UFW and Fail2Ban.
+    
+
+> NOTE: These operations need to be performed for (and on) each container as well as the Pi5 SBCs.
 
 ---
 
