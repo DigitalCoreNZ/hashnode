@@ -586,6 +586,17 @@ sudo apt autoremove -y
 
 ---
 
+## Checking the Unattended Updates Log.
+
+* I check the Unattended Updates log to ensure to ensure it is working:
+    
+
+```bash
+cat /var/log/unattended-upgrades/unattended-upgrades.log
+```
+
+---
+
 ## Hardening the Remote Server.
 
 * From the terminal (CTRL + ALT + T) that is connected to the remote server, I open the "sshd\_config" file:
@@ -633,7 +644,7 @@ sudo ufw enable
     
 
 ```bash
-sudo ufw allow from 192.168.?.?
+sudo ufw allow from 192.168.0.1
 ```
 
 > NOTE: I can use `ip a` or `ip addr` in my local PC terminal to find my IP address. ***I replace the IP address above with the actual address for the*** `workstation`***, e.g. 192.168.188.41.***
