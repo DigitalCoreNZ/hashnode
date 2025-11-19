@@ -654,7 +654,13 @@ sudo reboot
 
 ---
 
-## Cloning the Container.
+## “Clone.”
+
+A clone is a direct, functional copy of a container that includes all of the settings from the original. After making the clones, I will adjust the settings of each so they will function correctly.
+
+---
+
+### Cloning the Container.
 
 * I use a browser to login to PVE.
     
@@ -684,7 +690,7 @@ sudo reboot
 
 ---
 
-## Network Settings for Each Clone.
+### Network Settings for Each Clone.
 
 * I use a browser to login to PVE.
     
@@ -732,11 +738,11 @@ The following describes:
 * Installing and enabling security utilities like UFW and Fail2Ban.
     
 
-> NOTE: These operations need to be performed for (and on) each container as well as the Pi5 SBCs.
+> NOTE: These operations need to be performed for (and on) each container.
 
 ---
 
-## Creating an RSA Key Pair on the Local PC.
+### Creating an RSA Key Pair on the Local PC.
 
 * From my local, PC terminal (`CTRL` + `ALT` + `T`), I start the ssh-agent:
     
@@ -763,7 +769,7 @@ ssh-add /home/brian/.ssh/nuclab61
 
 ---
 
-## Uploading the Public Key to the Remote Server.
+### Uploading the Public Key to the Remote Server.
 
 * From the `workstation` terminal (`CTRL` + `ALT` + `T`), I use "ssh-copy-id" to upload the locally-generated public key to the remote container (where I replace "container-name" with the *actual* name of the container):
     
@@ -774,7 +780,7 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 
 ---
 
-## Logging In to the Remote Server.
+### Logging In to the Remote Server.
 
 * From the terminal (CTRL + ALT + T), I login to the account of the remote server:
     
