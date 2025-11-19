@@ -465,7 +465,9 @@ logout
 
 ## Updating the Container.
 
-* From the terminal, I update the remote server:
+* Once the reboot is complete, I log in to the container with the new account.
+    
+* I update Ubuntu:
     
 
 ```python
@@ -479,9 +481,25 @@ sudo apt autoremove -y
 
 ---
 
-### Checking the Unattended Updates Log.
+### Installing the Unattended Upgrades Utility.
 
-* I check the Unattended Updates log to ensure to ensure it is working:
+* I install the `unattended-upgrades` package:
+    
+
+```bash
+sudo apt install unattended-upgrades
+```
+
+* I manually trigger an Unattended Upgrade:
+    
+
+```bash
+sudo unattended-upgrade
+```
+
+> NOTE: -d is the switch for running this command in debug mode.
+
+* I check the Unattended Updates log to ensure everything is worked as expected:
     
 
 ```bash
@@ -492,7 +510,7 @@ cat /var/log/unattended-upgrades/unattended-upgrades.log
 
 ### Hardening the Container.
 
-* From the terminal (CTRL + ALT + T) that is connected to the remote server, I open the "sshd\_config" file:
+* I open the "sshd\_config" file:
     
 
 ```bash
@@ -519,7 +537,7 @@ sudo systemctl restart ssh.service
 
 ### Enabling, and Setting Up, UFW on the Container.
 
-* From the PC terminal (`CTRL` + `ALT` + `T`) that is connected to the remote server, I check the UFW status:
+* I check the UFW status:
     
 
 ```bash
@@ -537,10 +555,10 @@ sudo ufw enable
     
 
 ```bash
-sudo ufw allow from 192.168.0.1
+sudo ufw allow from 192.168.0.2
 ```
 
-> NOTE: I can use `ip a` or `ip addr` in my local PC terminal to find my IP address. ***I replace the IP address above with the actual address for the*** `workstation`***, e.g. 192.168.188.41.***
+> NOTE: I specify the IP address of the PC from which I will connect using SSH***.***
 
 * I check the status of the UFW and list the rules by number:
     
@@ -571,7 +589,7 @@ sudo ufw disable
 
 ### Installing, and Setting Up, Fail2Ban on the Container.
 
-* From the terminal (CTRL + ALT + T) that is connected to the remote server, I install Fail2Ban:
+* I install Fail2Ban:
     
 
 ```bash
@@ -627,7 +645,7 @@ sudo systemctl status fail2ban
 sudo systemctl enable fail2ban
 ```
 
-* I reboot the remote server:
+* I reboot the container:
     
 
 ```bash
