@@ -348,6 +348,12 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ## Creating a New Container
 
+This container is built to be cloned. As such, there is a lot of effort that goes into building it.
+
+---
+
+### “Create CT.”
+
 * I use a browser to login to PVE.
     
 * At the top-right of the screen, I click the blue ‘Create CT‘ button:
@@ -397,7 +403,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## “Start at boot.”
+### “Start at boot.”
 
 * I use a browser to login to PVE.
     
@@ -414,7 +420,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## Creating a User Account for the Container.
+### Creating a User Account for the Container.
 
 * I use a browser to login to PVE.
     
@@ -443,7 +449,7 @@ adduser brian
 usermod -aG sudo brian
 ```
 
-* I logout of the root account for the container:
+* I log out of the root account for the container:
     
 
 ```bash
@@ -455,7 +461,178 @@ logout
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763549124333/0e716d01-684e-4b1e-bb97-cf9f6373eb7a.png align="center")
 
-> NOTE: Practically speaking, I jump down to the ‘[Updating the Remote Server](https://solodev.app/installing-proxmox-ve-on-an-intel-nuc-10#heading-updating-the-remote-server)’ section before cloning this container.
+---
+
+## Updating the Container.
+
+* From the terminal, I update the remote server:
+    
+
+```python
+sudo apt clean && \
+sudo apt update && \
+sudo apt dist-upgrade -y && \
+sudo apt --fix-broken install && \
+sudo apt autoclean && \
+sudo apt autoremove -y
+```
+
+---
+
+### Checking the Unattended Updates Log.
+
+* I check the Unattended Updates log to ensure to ensure it is working:
+    
+
+```bash
+cat /var/log/unattended-upgrades/unattended-upgrades.log
+```
+
+---
+
+### Hardening the Container.
+
+* From the terminal (CTRL + ALT + T) that is connected to the remote server, I open the "sshd\_config" file:
+    
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+* I add (CTRL + V) the following to the bottom of the "sshd\_config" page, save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor:
+    
+
+```bash
+PasswordAuthentication no
+PermitRootLogin no
+Protocol 2
+```
+
+* I restart the "ssh" service:
+    
+
+```bash
+sudo systemctl restart ssh.service
+```
+
+---
+
+### Enabling, and Setting Up, UFW on the Container.
+
+* From the PC terminal (`CTRL` + `ALT` + `T`) that is connected to the remote server, I check the UFW status:
+    
+
+```bash
+sudo ufw status
+```
+
+* I enable the UFW:
+    
+
+```bash
+sudo ufw enable
+```
+
+* I install a UFW rule:
+    
+
+```bash
+sudo ufw allow from 192.168.0.1
+```
+
+> NOTE: I can use `ip a` or `ip addr` in my local PC terminal to find my IP address. ***I replace the IP address above with the actual address for the*** `workstation`***, e.g. 192.168.188.41.***
+
+* I check the status of the UFW and list the rules by number:
+    
+
+```bash
+sudo ufw status numbered
+```
+
+> NOTE 1: UFW will, by default, block all incoming traffic, including SSH and HTTP.
+> 
+> NOTE 2: I will update the UFW rules as I deploy other services to the remote server.
+
+* I can delete a UFW rule by number if needed:
+    
+
+```bash
+sudo ufw delete 1
+```
+
+* I can also disable UFW if needed:
+    
+
+```bash
+sudo ufw disable
+```
+
+---
+
+### Installing, and Setting Up, Fail2Ban on the Container.
+
+* From the terminal (CTRL + ALT + T) that is connected to the remote server, I install Fail2Ban:
+    
+
+```bash
+sudo apt install -y fail2ban
+```
+
+* I copy the `jail.conf` file as `jail.local`:
+    
+
+```bash
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+```
+
+* I open the `jail.local` file in Nano:
+    
+
+```bash
+sudo nano /etc/fail2ban/jail.local
+```
+
+* I make the following changes to a few (SSH-centric) settings in the `jail.local` file, then I save (CTRL + S) those changes, and exit (CTRL + X) the Nano text editor:
+    
+
+```bash
+[DEFAULT]
+⋮
+bantime = 1d
+maxretry = 3
+⋮
+[sshd]
+enabled = true
+port = ssh,22
+```
+
+* I restart Fail2Ban:
+    
+
+```bash
+sudo systemctl restart fail2ban
+```
+
+* I check the status of Fail2Ban:
+    
+
+```bash
+sudo systemctl status fail2ban
+```
+
+* I enable Fail2Ban to auto-start on boot:
+    
+
+```bash
+sudo systemctl enable fail2ban
+```
+
+* I reboot the remote server:
+    
+
+```bash
+sudo reboot
+```
 
 ---
 
@@ -586,179 +763,6 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 
 ```bash
 ssh 'brian@192.168.0.61'
-```
-
----
-
-## Updating the Remote Server.
-
-* From the terminal, I update the remote server:
-    
-
-```python
-sudo apt clean && \
-sudo apt update && \
-sudo apt dist-upgrade -y && \
-sudo apt --fix-broken install && \
-sudo apt autoclean && \
-sudo apt autoremove -y
-```
-
----
-
-## Checking the Unattended Updates Log.
-
-* I check the Unattended Updates log to ensure to ensure it is working:
-    
-
-```bash
-cat /var/log/unattended-upgrades/unattended-upgrades.log
-```
-
----
-
-## Hardening the Remote Server.
-
-* From the terminal (CTRL + ALT + T) that is connected to the remote server, I open the "sshd\_config" file:
-    
-
-```bash
-sudo nano /etc/ssh/sshd_config
-```
-
-* I add (CTRL + V) the following to the bottom of the "sshd\_config" page, save (CTRL + S) the changes, and exit (CTRL + X) the Nano text editor:
-    
-
-```bash
-PasswordAuthentication no
-PermitRootLogin no
-Protocol 2
-```
-
-* I restart the "ssh" service:
-    
-
-```bash
-sudo systemctl restart ssh.service
-```
-
----
-
-## Enabling, and Setting Up, UFW on the Remote Server.
-
-* From the PC terminal (`CTRL` + `ALT` + `T`) that is connected to the remote server, I check the UFW status:
-    
-
-```bash
-sudo ufw status
-```
-
-* I enable the UFW:
-    
-
-```bash
-sudo ufw enable
-```
-
-* I install a UFW rule:
-    
-
-```bash
-sudo ufw allow from 192.168.0.1
-```
-
-> NOTE: I can use `ip a` or `ip addr` in my local PC terminal to find my IP address. ***I replace the IP address above with the actual address for the*** `workstation`***, e.g. 192.168.188.41.***
-
-* I check the status of the UFW and list the rules by number:
-    
-
-```bash
-sudo ufw status numbered
-```
-
-> NOTE 1: UFW will, by default, block all incoming traffic, including SSH and HTTP.
-> 
-> NOTE 2: I will update the UFW rules as I deploy other services to the remote server.
-
-* I can delete a UFW rule by number if needed:
-    
-
-```bash
-sudo ufw delete 1
-```
-
-* I can also disable UFW if needed:
-    
-
-```bash
-sudo ufw disable
-```
-
----
-
-## Installing, and Setting Up, Fail2Ban on the Remote Server.
-
-* From the terminal (CTRL + ALT + T) that is connected to the remote server, I install Fail2Ban:
-    
-
-```bash
-sudo apt install -y fail2ban
-```
-
-* I copy the `jail.conf` file as `jail.local`:
-    
-
-```bash
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-```
-
-* I open the `jail.local` file in Nano:
-    
-
-```bash
-sudo nano /etc/fail2ban/jail.local
-```
-
-* I make the following changes to a few (SSH-centric) settings in the `jail.local` file, then I save (CTRL + S) those changes, and exit (CTRL + X) the Nano text editor:
-    
-
-```bash
-[DEFAULT]
-⋮
-bantime = 1d
-maxretry = 3
-⋮
-[sshd]
-enabled = true
-port = ssh,22
-```
-
-* I restart Fail2Ban:
-    
-
-```bash
-sudo systemctl restart fail2ban
-```
-
-* I check the status of Fail2Ban:
-    
-
-```bash
-sudo systemctl status fail2ban
-```
-
-* I enable Fail2Ban to auto-start on boot:
-    
-
-```bash
-sudo systemctl enable fail2ban
-```
-
-* I reboot the remote server:
-    
-
-```bash
-sudo reboot
 ```
 
 ---
