@@ -769,7 +769,7 @@ ssh-add /home/brian/.ssh/nuclab61
 
 ---
 
-### Uploading the Public Key to the Remote Server.
+### Uploading the Public Key to the Remote Container.
 
 * From the `workstation` terminal (`CTRL` + `ALT` + `T`), I use "ssh-copy-id" to upload the locally-generated public key to the remote container (where I replace "container-name" with the *actual* name of the container):
     
@@ -780,7 +780,7 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 
 ---
 
-### Logging In to the Remote Server.
+### Logging In to the Remote Container.
 
 * From the terminal (CTRL + ALT + T), I login to the account of the remote server:
     
@@ -789,17 +789,19 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 ssh 'brian@192.168.0.61'
 ```
 
+> NOTE: I repeat this process for all of the remaining containers.
+
 ---
 
 ## The Results.
 
-Installing PVE (Proxmox Virtual Environment) onto an Intel NUC 10 PC results in a compact and efficient solution for creating, and managing, containers and virtual environments. The process involves preparing the installation hardware, creating a USB drive that is used as the installation media, and configuring the system to suit my network and storage needs. By following the steps above, I can set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the Intel NUC 10 but also offers flexibility and scalability for various computing tasks.
+Installing PVE (Proxmox Virtual Environment) onto a spare PC results in a compact and efficient solution for creating, and managing, containers and virtual environments. The process involves preparing the installation hardware, creating a USB drive that is used as the installation media, and configuring the system to suit my network and storage needs. By following the steps above, I can set up a robust virtualization platform that supports both containers and virtual machines. This setup not only maximizes the capabilities of the spare PC but also offers flexibility and scalability for various computing tasks.
 
 ---
 
 ## In Conclusion.
 
-In this guide, I created a USB installation thumb drive for PVE, installed PVE onto an Intel NUC 10 PC, learned how to download an OS to PVE, installed CT templates, created a container, cloned that container multiple times, and created new accounts for those containers. By following these steps, I maximized the capabilities of the Intel NUC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
+In this guide, I created a USB installation thumb drive for PVE, installed PVE onto a spare PC, learned how to download an OS to PVE, installed CT templates, created a container, created a new account for that container, and cloned that container multiple times. By following these steps, I maximized the capabilities of the spare PC and now enjoy a robust virtualization platform that supports both containers and virtual machines. This setup offers flexibility and scalability for various computing tasks, making it perfect for tech enthusiasts and professionals alike.
 
 Have you tried setting up PVE on a spare PC? What challenges did you face? How did you overcome those challenges? Let's discuss in the comments below!
 
