@@ -455,7 +455,7 @@ logout
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763549124333/0e716d01-684e-4b1e-bb97-cf9f6373eb7a.png align="center")
 
-> NOTE: The resulting container is now ready to clone.
+> NOTE: Practically speaking, I jump down to the ‘[Updating the Remote Server](https://solodev.app/installing-proxmox-ve-on-an-intel-nuc-10#heading-updating-the-remote-server)’ section before cloning this container.
 
 ---
 
