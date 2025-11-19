@@ -1,11 +1,11 @@
 ---
-title: "Installing Proxmox VE on an Intel NUC 10."
+title: "Installing Proxmox VE on a Spare PC."
 seoTitle: "Proxmox VE Setup on Intel NUC 10"
 seoDescription: "Discover how to install Proxmox VE on an Intel NUC 10. Optimize virtualization with detailed steps and tips for tech enthusiasts."
 datePublished: Wed Jun 11 2025 10:00:40 GMT+0000 (Coordinated Universal Time)
 cuid: cmbrs4gww000k02l98rdgbwkf
 slug: installing-proxmox-ve-on-an-intel-nuc-10
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1749598613011/87c7b086-7fb6-4a6c-83ba-dfbbfd7698ef.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1763582854257/08b76608-bda7-4561-99a8-6abb859202b6.png
 tags: ubuntu, linux, networking, containers, virtualization, virtual-machines, homelab, pve, proxmox, serversetup, techguide, proxmoxve, intelnuc, servercluster
 
 ---
@@ -14,7 +14,7 @@ Update: Thursday 20th November 2025
 
 ## TL;DR.
 
-This post is a comprehensive walk-through on how I install PVE (Proxmox Virtual Environment) on an Intel NUC 10. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
+This post is a comprehensive walk-through on how I install PVE (Proxmox Virtual Environment) on a spare PC. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
 
 > **Attributions:**
 > 
@@ -34,7 +34,7 @@ Containers and virtual machines are technologies that allow operating systems an
 
 ## The Big Picture.
 
-Learn how I efficiently install PVE on an Intel NUC 10 with this comprehensive guide. Discover the prerequisites, step-by-step installation process, and tips that I use to optimize my virtual environment setup. PVE is perfect for tech enthusiasts looking to maximize their Homelab PCs.
+Learn how I efficiently install PVE on a spare PC with this comprehensive guide. Discover the prerequisites, step-by-step installation process, and tips that I use to optimize my virtual environment setup. PVE is perfect for tech enthusiasts looking to maximize their Homelab PCs.
 
 ---
 
@@ -65,9 +65,9 @@ sudo apt autoremove -y
 
 ---
 
-## What is an Intel NUC?
+## What are the Specs for my Spare PC?
 
-An Intel NUC (Next Unit of Computing) is a small-form-factor computer designed by Intel, which offers a compact and powerful computing solution. This PC typically come without RAM, storage, or an operating system, allowing me to customize my system according to my needs.
+An Intel NUC (Next Unit of Computing) is a small-form-factor computer designed by Intel, which offers a compact and powerful computing solution. This PC typically comes without RAM, storage, or an operating system, allowing me to customize the hardware according to my needs.
 
 ### NUC Specifications.
 
@@ -98,7 +98,7 @@ PVE (Proxmox Virtual Environment) is an open-source virtualization platform desi
 
 ---
 
-## Creating a PVE Installation Thumb Drive.
+### Creating a PVE Installation Thumb Drive.
 
 * I download the PVE ISO file from [https://proxmox.com/en/downloads/proxmox-virtual-environment/iso](https://proxmox.com/en/downloads/proxmox-virtual-environment/iso).
     
@@ -111,6 +111,9 @@ PVE (Proxmox Virtual Environment) is an open-source virtualization platform desi
     
 * I start the `balenaEtcher-1.14.3-x64.AppImage` imaging utility that runs on Ubuntu.
     
+
+> NOTE: There are versions of Balena Etcher for Windows, macOS, and (x64 & x86) Linux.
+
 * I select the 1.57GB ISO file as the source, the 32GB thumb drive as the target, and then I click the blue `Flash` button.
     
 
@@ -134,9 +137,9 @@ PVE (Proxmox Virtual Environment) is an open-source virtualization platform desi
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762487898522/3828686b-8196-4dc1-bb23-00c6ebc09d75.png align="center")
 
-> NOTE: During the Management Network Configuration setup, I can use IPv4 or IPv6 but I CANNOT mix the 2 protocols. The Management Interface is the name of the NIC (Network Interface Card) that is installed in the NUC which, in my case, is eno1. The Hostname (FQDN) only matters if I intend to open, and host, PVE over the Internet. The IP Address (CIDR), as assigned by my router, is 192.168.0.50 with a subnet mask of 24 (255.255.255.0) that defines the subnet in my LAN to which this device belongs. The Gateway is the IP address of my router, which is 192.168.0.1, and is needed to connect the NUC to the Internet. The DHCP server is found at 192.168.0.1 because my router includes the server that is responsible for assigning IP addresses.
+> NOTE: During the Management Network Configuration setup, I can use IPv4 or IPv6 but I CANNOT mix the 2 protocols. The Management Interface is the name of the NIC (Network Interface Card) that is installed in the NUC which, in my case, is eno1. The Hostname (FQDN) only matters if I intend to open, and host, PVE over the Internet. The IP Address (CIDR) is 192.168.0.60/24. The PVE tells the router that this is the IP address it wants. The Gateway is the IP address of my router, which is 192.168.0.1, and is needed to connect PVE to the LAN. The DHCP server is found at 192.168.0.1 because my router includes the server that is responsible for assigning IP addresses.
 
-* After installation, the NUC will reboot.
+* After installation, the spare PC will reboot.
     
 * At this time, I remove the USB installation thumb drive.
     
@@ -164,15 +167,15 @@ As the name suggests, Internet connectivity is *routed* to all of the linked dev
 
 The problem is that all the devices that connect to the LAN require unique identifiers. These identifiers are called IP addresses. But where does a device get an IP address? To solve the IP address problem, my router has a built-in DHCP server where DHCP stands for Dynamic Host Configuration Protocol. Almost all routers have a DHCP server and the purpose of this server is to assign a dynamic IP address to every wired, and wireless, device in the LAN.
 
-In most cases, each device in the LAN is dynamically, i.e. automatically, assigned an IP address from a pool of available, unassigned addresses. Most often, devices will use the same dynamic IP addresses when they connect to the LAN, but sometimes the DHCP server will issue new dynamic IP addresses. This is a fine solution and is NOT a problem. In most cases.
+In most cases, each device in the LAN is dynamically, i.e. automatically, assigned an IP address from a pool of available, unassigned addresses. Most often, devices will use the same dynamic IP addresses when they connect to the LAN, but sometimes the DHCP server will issue a new IP address. This is a fine solution and is NOT a problem. In most cases.
 
-Servers, however, are special use cases. PVE, as well as the containers and virtual machines it manages, require *static* IP addresses. My Pi5 SBCs (Single Board Computers) will also need static IP addresses if they want to become nodes in my server cluster. The reason each node in a cluster needs an IP address *that doesn’t change* is because they need to know how to find each other.
+Servers, however, are special use cases. PVE, as well as the containers and virtual machines it manages, require *static* IP addresses. My NUC 10 will need static IP addresses if it, and the containers, want to be accessible in my local LAN. The reason I need IP addresses *that DO NOT CHANGE* is because I will setup a Kubernetes cluster and each node needs to know how to find each other. (Setting up a cluster is beyond the scope of this post.)
 
 Replacing dynamic IP addresses with static IP addresses requires:
 
-* Accessing my router and making changes to the DHCP settings for each server node (which is beyond the scope of this post), and
+* Accessing my router and making changes to the DHCP settings for each container and virtual machine (which is *also* beyond the scope of this post), and
     
-* Reflecting those changes to each container, virtual machine, and Pi5 that makes up my server cluster.
+* Reflecting those changes to each container and virtual machine running on PVE.
     
 
 ---
