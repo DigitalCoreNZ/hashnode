@@ -10,7 +10,7 @@ tags: ubuntu, linux, networking, containers, virtualization, virtual-machines, h
 
 ---
 
-Update: Wednesday 19th November 2025
+Update: Thursday 20th November 2025
 
 ## TL;DR.
 
@@ -395,7 +395,67 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559398955/a72906ce-494a-448f-a582-82ec3865bbb2.png align="center")
 
-The resulting container can now be cloned.
+---
+
+## “Start at boot.”
+
+* I use a browser to login to PVE.
+    
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61)`.
+    
+* In the 2nd pane, I click `Options`.
+    
+* In the 3rd pane, I select “Start at boot“ from the list and click the gray `Edit` button.
+    
+* In the “Edit: Start at boot“ modal, I tick the “Start at boot” option followed by the blue `OK` button:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763546634367/623125be-b6e2-4f48-9bc9-fb7288798f2c.png align="center")
+
+---
+
+## Creating a User Account for the Container.
+
+* I use a browser to login to PVE.
+    
+* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61`):
+    
+* I start the container.
+    
+* In the 2nd pane, I click `Console`.
+    
+* In the 3rd pane, I login to the container using root as the `nuclab61 login:` and the password I created while building the container.
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763548852242/34220966-59d6-4c92-8df5-6a66279d3b49.png align="center")
+
+* Once logged in, I create a new user account:
+    
+
+```bash
+adduser brian
+```
+
+* I add the new user to the 'sudo' group:
+    
+
+```bash
+usermod -aG sudo brian
+```
+
+* I logout of the root account for the container:
+    
+
+```bash
+logout
+```
+
+* Towards the top-right of the console window, I open the drop down menu of the `Shutdown` option, by clicking the down arrow (⌄), and selecting `Reboot`:
+    
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763549124333/0e716d01-684e-4b1e-bb97-cf9f6373eb7a.png align="center")
+
+> NOTE: The resulting container is now ready to clone.
 
 ---
 
@@ -405,7 +465,11 @@ The resulting container can now be cloned.
     
 * On the left of the screen, under Server View, I go to `Datacenter > nuclab60`.
     
-* I right-click the ‘101 (nuclab61)’ container and, in the pop-up menu, I click the ‘Clone’ option:
+* In the second pane, I select “Search”.
+    
+* In the third pane, I right-click the ‘101 (nuclab61)’ container and, in the pop-up menu, I click the ‘Shutdown’ option if the container is running.
+    
+* In the third pane, I right-click the ‘101 (nuclab61)’ container and, in the pop-up menu, I click the ‘Clone’ option:
     
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762559530710/07abcc6a-5f52-425a-8f88-c11f0d50b77f.png align="center")
@@ -452,50 +516,6 @@ The resulting container can now be cloned.
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763326666045/728c477e-d325-47ba-9024-3b0173e7ba42.png align="center")
 
 * Once I confirm these settings, I click the blue `OK` button and repeat the process for the three remaining containers.
-    
-
----
-
-## Creating a User Account for a Container.
-
-* I use a browser to login to PVE.
-    
-* On the left of the screen, under Server View, I go to `Datacenter > nuclab60 > 101 (nuclab61`):
-    
-* In the 2nd pane, I click `Console`.
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064209330/18c821bb-be78-47d6-94a5-7910873d44bd.png align="center")
-
-* In the 3rd pane, I login to the container using root as the `nuclab61 login:` and the password I created while building the container.
-    
-* Once logged in, I create a new user account:
-    
-
-```bash
-adduser <user_name>
-```
-
-* I add the new user to the 'sudo' group:
-    
-
-```bash
-usermod -aG sudo <user_name>
-```
-
-* I exit the root account of the container:
-    
-
-```bash
-exit
-```
-
-* Towards the top-right of the console window, I open the drop down menu of the `Shutdown` option, by clicking the down arrow (⌄), and selecting `Reboot`:
-    
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763064962161/5a6e1985-14a9-497e-b85d-04d2f2da9fc4.png align="center")
-
-* Once the first user account is created, I repeat this process for the remaining three containers.
     
 
 ---
