@@ -180,7 +180,13 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## Accessing PVE.
+## The PVE Server.
+
+PVE (Proxmox Virtual Environment) is the server that hosts the containers and virtual machines I deploy.
+
+---
+
+### Accessing PVE.
 
 * I use a browser to login to PVE:
     
@@ -194,7 +200,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## The Helper Script.
+### The Helper Script.
 
 * In a new browser tab, I visit [http://helper-scripts.com/](https://community-scripts.github.io/ProxmoxVE/).
     
@@ -208,7 +214,7 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## Running the Helper Script.
+### Running the Helper Script.
 
 * Back in the Shell for nuclab60, I run the helper script command from the terminal:
     
@@ -257,7 +263,13 @@ Replacing dynamic IP addresses with static IP addresses requires:
 
 ---
 
-## Downloading an OS to PVE.
+## Preparing PVE.
+
+Before I can create any containers or virtual machines, I need to prepare PVE and the assets it will use.
+
+---
+
+### Downloading an OS to PVE.
 
 * I use a browser to login to PVE.
     
