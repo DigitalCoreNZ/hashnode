@@ -478,7 +478,13 @@ logout
 
 ---
 
-## Updating the Container.
+## Preparing the Container.
+
+The next step is to prepare the container for cloning.
+
+---
+
+### Updating the Container.
 
 * Once the reboot is complete, I log in to the container with the new account.
     
