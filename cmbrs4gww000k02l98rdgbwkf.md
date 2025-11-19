@@ -2,7 +2,7 @@
 title: "Installing Proxmox VE on a Spare PC."
 seoTitle: "Proxmox VE Setup on Intel NUC 10"
 seoDescription: "Discover how to install Proxmox VE on an Intel NUC 10. Optimize virtualization with detailed steps and tips for tech enthusiasts."
-datePublished: Wed Jun 11 2025 10:00:40 GMT+0000 (Coordinated Universal Time)
+datePublished: Wed Nov 19 2025 11:00:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmbrs4gww000k02l98rdgbwkf
 slug: installing-proxmox-ve-on-a-spare-pc
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1763582854257/08b76608-bda7-4561-99a8-6abb859202b6.png
