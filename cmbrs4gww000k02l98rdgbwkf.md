@@ -10,8 +10,6 @@ tags: ubuntu, linux, networking, containers, virtualization, virtual-machines, h
 
 ---
 
-Update: Thursday 20th November 2025
-
 ## TL;DR.
 
 This post is a comprehensive walk-through on how I install PVE (Proxmox Virtual Environment) on a spare PC. I cover the step-by-step installation process, and tips for optimizing the virtual environment. This article is ideal for tech enthusiasts who want to maximize the capabilities of their Homelab by setting up a robust virtualization platform that supports both containers and virtual machines.
@@ -476,6 +474,59 @@ logout
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763549124333/0e716d01-684e-4b1e-bb97-cf9f6373eb7a.png align="center")
 
+> Once the reboot is complete, I switch to a terminal on my local PC.
+
+---
+
+## Creating an RSA Key Pair on the Local PC.
+
+* From a terminal (`CTRL` + `ALT` + `T`) on my local PC, I start the ssh-agent:
+    
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+* I generate a pair of RSA keys called "/home/brian/.ssh/key-name" (where I replace "key-name" with the name of the remote server):
+    
+
+```bash
+ssh-keygen -b 4096
+```
+
+> NOTE: It is my convention to name RSA keys after the remote server on which they will be used.
+
+* I add the SSH key to my workstation account (where I replace "key-name" with the *actual* name of the ssh key):
+    
+
+```bash
+ssh-add /home/brian/.ssh/nuclab61
+```
+
+---
+
+### Uploading the Public Key to the Remote Container.
+
+* From the `workstation` terminal (`CTRL` + `ALT` + `T`), I use "ssh-copy-id" to upload the locally-generated public key to the remote container (where I replace "container-name" with the *actual* name of the container):
+    
+
+```bash
+ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
+```
+
+---
+
+### Logging In to the Remote Container.
+
+* From the terminal (CTRL + ALT + T), I login to the account of the remote server:
+    
+
+```bash
+ssh -i /home/brian/.ssh/nuclab61 'brian@192.168.0.61'
+```
+
+> NOTE: I create RSA Key Pairs for the remaining containers.
+
 ---
 
 ## Preparing the Container.
@@ -486,8 +537,6 @@ The next step is to prepare the container for cloning.
 
 ### Updating the Container.
 
-* Once the reboot is complete, I log in to the container with the new account.
-    
 * I update Ubuntu:
     
 
@@ -524,7 +573,7 @@ sudo unattended-upgrade
     
 
 ```bash
-cat /var/log/unattended-upgrades/unattended-upgrades.log
+sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
 ```
 
 ---
@@ -579,7 +628,7 @@ sudo ufw enable
 sudo ufw allow from 192.168.0.2
 ```
 
-> NOTE: I specify the IP address of the PC from which I will connect using SSH***.***
+> NOTE: I specify the IP address of the PC from which I will connect using SSH\*\*\*.\*\*\*
 
 * I check the status of the UFW and list the rules by number:
     
@@ -637,8 +686,7 @@ sudo nano /etc/fail2ban/jail.local
 ```bash
 [DEFAULT]
 ⋮
-bantime = 1d
-maxretry = 3
+bantime = 60m
 ⋮
 [sshd]
 enabled = true
@@ -760,57 +808,6 @@ The following describes:
     
 
 > NOTE: These operations need to be performed for (and on) each container.
-
----
-
-### Creating an RSA Key Pair on the Local PC.
-
-* From my local, PC terminal (`CTRL` + `ALT` + `T`), I start the ssh-agent:
-    
-
-```bash
-eval "$(ssh-agent -s)"
-```
-
-* I generate a pair of RSA keys called "/home/brian/.ssh/key-name" (where I replace "key-name" with the name of the remote server):
-    
-
-```bash
-ssh-keygen -b 4096
-```
-
-> NOTE: It is my convention to name RSA keys after the remote server on which they will be used.
-
-* I add the SSH key to my workstation account (where I replace "key-name" with the *actual* name of the ssh key):
-    
-
-```bash
-ssh-add /home/brian/.ssh/nuclab61
-```
-
----
-
-### Uploading the Public Key to the Remote Container.
-
-* From the `workstation` terminal (`CTRL` + `ALT` + `T`), I use "ssh-copy-id" to upload the locally-generated public key to the remote container (where I replace "container-name" with the *actual* name of the container):
-    
-
-```bash
-ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
-```
-
----
-
-### Logging In to the Remote Container.
-
-* From the terminal (CTRL + ALT + T), I login to the account of the remote server:
-    
-
-```bash
-ssh 'brian@192.168.0.61'
-```
-
-> NOTE: I repeat this process for all of the remaining containers.
 
 ---
 
