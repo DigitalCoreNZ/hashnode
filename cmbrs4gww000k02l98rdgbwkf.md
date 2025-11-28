@@ -516,6 +516,57 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 
 ---
 
+## SPECIAL NOTES
+
+The "Permission denied (publickey)" error indicates that your SSH connection was rejected because the server could not authenticate your public key. To resolve this, ensure your public key is correctly added to your account on the server and that your private key has the correct file permissions.
+
+### Understanding the "Permission Denied (publickey)" Error
+
+The "Permission denied (publickey)" error occurs when your SSH client cannot authenticate with the server using the provided public key. This can happen for several reasons.
+
+### Common Causes and Solutions
+
+### 1\. Incorrect SSH Key Configuration
+
+* **Public Key Not Added**: Ensure your public key is added to the server's `~/.ssh/authorized_keys` file.
+    
+* **Key Format**: Verify that the key is in the correct format and not corrupted.
+    
+
+### 2\. SSH Key Permissions
+
+* **File Permissions**: The permissions for your SSH keys must be set correctly:
+    
+    * Private key: `chmod 600 ~/.ssh/id_rsa`
+        
+    * Public key: `chmod 644 ~/.ssh/id_`[`rsa.pub`](http://rsa.pub)
+        
+    * `.ssh` directory: `chmod 700 ~/.ssh`
+        
+
+### 3\. SSH Agent Issues
+
+* **SSH Agent Not Running**: Start the SSH agent with `eval "$(ssh-agent -s)"`.
+    
+* **Key Not Loaded**: Add your private key to the agent using `ssh-add ~/.ssh/id_rsa`.
+    
+
+### 4\. Connection User
+
+* **Correct User**: Always connect using the "git" user for GitHub or the appropriate user for your server. For example, use `ssh -T` [`git@github.com`](mailto:git@github.com).
+    
+
+### Additional Troubleshooting Steps
+
+* **Verbose Mode**: Use `ssh -v user@host` to get detailed output about the connection process. This can help identify where the failure occurs.
+    
+* **Firewall or Network Issues**: Ensure that your network allows SSH connections and that the server's firewall is not blocking your access.
+    
+
+By following these steps, you should be able to resolve the "Permission denied (publickey)" error and successfully connect to your server.
+
+---
+
 ### Logging In to the Remote Container.
 
 * From the terminal (CTRL + ALT + T), I login to the account of the remote server:
@@ -525,7 +576,12 @@ ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
 ssh -i /home/brian/.ssh/nuclab61 'brian@192.168.0.61'
 ```
 
-> NOTE: I create RSA Key Pairs for the remaining containers.
+* For ‘Too many authentication failures‘, use the following:
+    
+
+```bash
+ssh -o IdentitiesOnly=yes brian@192.168.0.61
+```
 
 ---
 
