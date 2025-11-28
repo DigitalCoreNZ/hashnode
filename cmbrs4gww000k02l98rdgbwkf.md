@@ -687,6 +687,7 @@ sudo nano /etc/fail2ban/jail.local
 [DEFAULT]
 ⋮
 bantime = 60m
+ignoreip = 127.0.0.1/8 your_ip_address
 ⋮
 [sshd]
 enabled = true
@@ -698,6 +699,13 @@ port = ssh,22
 
 ```bash
 sudo systemctl restart fail2ban
+```
+
+* I check the Fail2ban whitelist:
+    
+
+```bash
+sudo fail2ban-client status
 ```
 
 * I check the status of Fail2Ban:
