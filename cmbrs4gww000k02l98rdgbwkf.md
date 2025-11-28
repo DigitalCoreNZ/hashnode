@@ -686,7 +686,7 @@ sudo nano /etc/fail2ban/jail.local
 ```bash
 [DEFAULT]
 ⋮
-bantime = 60m
+bantime = 30m
 ignoreip = 127.0.0.1/8 your_ip_address
 ⋮
 [sshd]
