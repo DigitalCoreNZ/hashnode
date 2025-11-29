@@ -72,7 +72,7 @@ An Intel NUC (Next Unit of Computing) is a small-form-factor computer designed b
 | Model | BXNUC10i3FNHN |
 | --- | --- |
 | Processor | Intel i3-10110U 2.10GHz Dual Core, 4 Threads, Up to 4.10GHz, 4MB SmartCache |
-| Memory | Dual Channel, 2x DDR4-2666 SODIMM slots, 1.2V, 64GB maximum |
+| Memory | Dual Channel, 2x DDR4-2666 SODIMM slots, 1.2V |
 | Graphics | Intel UHD Graphics, 1x HDMI 2.0a Port, 1x USB 3.1 Gen 2 (10 Gbps), DisplayPort 1.2 via USB-C |
 | Audio | Up to 7.1 surround audio via HDMI or DisplayPort signals, Headphone/microphone jack on the front panel, dual array front mics on the chassis front |
 | Peripheral Connectivity | 1x HDMI 2.0 Port with 4K at 60Hz, 1x USB 3.1 Gen 2 (10 Gbps), DisplayPort 1.2 via USB-C, 1x Front USB 3.1 Type A (Gen 2) Port, 1x Front USB 3.1 Type-C (Gen 2) Port, 2x Rear USB 3.1 Type A (Gen 2), 2x Ethernet Ports, 2x Internal USB 2.0 via header |
@@ -83,10 +83,7 @@ An Intel NUC (Next Unit of Computing) is a small-form-factor computer designed b
 
 ### Hardware Specifications.
 
-| Memory | 64GB |
-| --- | --- |
-| Storage | 256GB M.2 internal, 256GB SSD internal, 2TB HDD external |
-| OS | A modified Debian LTS kernel running under PVE |
+<table><tbody><tr><td colspan="1" rowspan="1"><p>Storage</p></td><td colspan="1" rowspan="1"><p>256GB M.2 internal (50GB/CT), 256GB SSD internal, 2TB HDD external</p></td></tr><tr><th colspan="1" rowspan="1"><p>Memory</p></th><th colspan="1" rowspan="1"><p>64GB (12288/CT, 2048/Swap)</p></th></tr><tr><td colspan="1" rowspan="1"><p>OS</p></td><td colspan="1" rowspan="1"><p>A modified Debian LTS kernel running under PVE</p></td></tr></tbody></table>
 
 ---
 
@@ -512,6 +509,31 @@ ssh-add /home/brian/.ssh/nuclab61
 
 ```bash
 ssh-copy-id -i /home/brian/.ssh/nuclab61.pub brian@192.168.0.61
+```
+
+---
+
+### SSH Folder and File Permissions.
+
+* Change the permission for the .ssh folder:
+    
+
+```bash
+chmod 0700 /home/brian/.ssh
+```
+
+* Change the permission for the private key:
+    
+
+```bash
+chmod 0600 /home/brian/.ssh/nuclab61
+```
+
+* Change the permission for the public key:
+    
+
+```bash
+chmod 0644 /home/brian/.ssh/nuclab61.pub
 ```
 
 ---
