@@ -1255,7 +1255,7 @@ sudo mv /opt/resolve/libs/libglib-2.0.so* /opt/resolve/libs/libgio-2.0.so* /opt/
     
 
 ```bash
-sudo apt install -y nvidia-driver-550
+sudo apt install -y nvidia-driver-580
 ```
 
 > NOTE: Resolve requires the 550 drivers or later.
@@ -1289,25 +1289,32 @@ Fusion Studio is a visual effects, 3D animation, and motion graphics app.
 
 [https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion](https://www.blackmagicdesign.com/au/support/family/davinci-resolve-and-fusion)
 
-* I go to the Downloads directory:
+* I go to the directory with the latest copy of Fusion Studio:
     
 
 ```bash
-cd ~/Downloads
+cd /media/brian/Downloads/Ubuntu/Blackmagic_Design/Fusion/20.2.3_Studio
 ```
 
 * I extract the contents of the downloaded ZIP file:
     
 
 ```bash
-sudo unzip ./Blackmagic_Fusion_Studio_*_installer.zip
+sudo unzip ./Blackmagic_Fusion_Studio_*.tar
+```
+
+* I change to the new sub-directory:
+    
+
+```bash
+cd ./Blackmagic_Fusion_Studio_20.2.3_Linux
 ```
 
 * I change the mode of the extracted RUN file to an executable:
     
 
 ```bash
-sudo chmod +x ./Blackmagic_Fusion_Studio_*_installer.run
+sudo chmod +x ./Blackmagic_Fusion_Studio_*.run
 ```
 
 * I install the unzipped `run` file:
@@ -1321,7 +1328,7 @@ sudo SKIP_PACKAGE_CHECK=1 ./Blackmagic_Fusion_Studio_*_installer.run -i
     
 
 ```bash
-sudo apt install -y nvidia-driver-550
+sudo apt install -y nvidia-driver-580
 ```
 
 > NOTE: Fusion requires the 550 drivers or later.
