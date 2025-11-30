@@ -1205,11 +1205,11 @@ DaVinci Resolve is a video editing, colour grading, and sound mixing app.
 sudo apt install -y libqt5x11extras5 libfuse2
 ```
 
-* I go to the Downloads directory:
+* I go to the directory with the latest copy of DaVinci Resolve Studio:
     
 
 ```bash
-cd ~/Downloads
+cd /media/brian/Downloads/Ubuntu/Blackmagic_Design/DaVinci_Resolve/20.2.3_Studio
 ```
 
 * I extract the contents of the downloaded ZIP file:
@@ -1278,7 +1278,7 @@ sudo apt install -y nvidia-driver-550
 
 ---
 
-## Installing Fusion Studio 19.
+## Installing Fusion Studio.
 
 Fusion Studio is a visual effects, 3D animation, and motion graphics app.
 
