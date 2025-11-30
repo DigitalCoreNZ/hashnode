@@ -1187,7 +1187,7 @@ sudo apt install -y obs-studio
 
 ---
 
-## Installing DaVinci Resolve Studio 19.
+## Installing DaVinci Resolve Studio.
 
 DaVinci Resolve is a video editing, colour grading, and sound mixing app.
 
