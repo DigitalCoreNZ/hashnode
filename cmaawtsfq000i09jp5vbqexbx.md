@@ -1015,16 +1015,11 @@ Inkscape is a vector-based image editor.
 sudo add-apt-repository ppa:inkscape.dev/stable
 ```
 
-* I update my system:
+* I update and upgrade my system:
     
 
 ```bash
-sudo apt clean && \
-sudo apt update && \
-sudo apt -y dist-upgrade && \
-sudo apt --fix-broken install && \
-sudo apt autoclean && \
-sudo apt -y autoremove
+sudo apt update && sudo apt -y dist-upgrade
 ```
 
 * I install Inkscape:
