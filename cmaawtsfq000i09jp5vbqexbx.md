@@ -51,7 +51,7 @@ A PC is a generic tool where the installed software defines what the user is cap
 
 ## Updating the System.
 
-APT (advanced package tool) handles the installation and removal of software on Debian and Debian-based Linux distributions. The following commands are used to keep my Ubuntu system (a Debian-based Linux distro) up-to-date.
+APT (Advanced Package Tool) handles the installation and removal of software on Debian and Debian-based Linux distributions. The following commands are used to keep my Ubuntu system (a Debian-based Linux distro) up-to-date.
 
 * From the terminal, I update my system:
     
@@ -89,7 +89,7 @@ Ubuntu Pro is a subscription service that extends the Long Term Support (LTS) ve
 * It takes a moment to successfully apply the subscription.
     
 
-> NOTE: Canonical provides up to five (5) FREE tokens.
+> NOTE: Canonical provides up to five (5) FREE tokens for personal PCs.
 
 ---
 
@@ -99,9 +99,9 @@ A terminal is a text window where system commands are issued.
 
 * I go to Preferences &gt; Unnamed &gt; Text tab,
     
-* I set the `Initial terminal size` to 72 columns and 21 rows,
+* I set the `Initial terminal size` to 80 columns and 24 rows,
     
-* I set the `Custom font` to Monospace at 22pt,
+* I set the `Custom font` to Monospace at 20pt,
     
 * I set the `Allow blinking text` to Never, and
     
