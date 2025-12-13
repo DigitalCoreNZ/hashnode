@@ -951,14 +951,35 @@ sudo apt install -y ruby-full
 sudo gem install asciidoctor-pdf
 ```
 
+* From the terminal, I look for the path to the AsciiDoctor PDF Gem:
+    
+
+```bash
+which asciidoctor-pdf
+```
+
 * Within VS Code, I open the `Settings` tab and search for `asciidoc-pdf`.
     
+* I set the `Asciidoc > Pdf: Asciidoctor Pdf Command Path`:
+    
+
+```bash
+/usr/local/bin/asciidoctor-pdf
+```
+
+> NOTE: The path might also be `/usr/bin/asciidoctor-pdf`.
+
 * I set the `Asciidoc > Pdf: Engine` to `asciidoctor-pdf`.
     
-* I set the `Asciidoc > Pdf: Asciidoctor Pdf Command Path` to `asciidoctor-pdf`.
+* I create an example AsciiDoc file called `example.ad`:
     
-* I open an AsciiDoc (example.ad) file.
-    
+
+```bash
+# Test File
+
+This is a test file.
+```
+
 * I open the Command Palette (CTRL + SHIFT + P) and search for `AsciiDoc: Export Document as PDF`.
     
 * I use this feature to generate a PDF file based on my my `example.ad` file.
