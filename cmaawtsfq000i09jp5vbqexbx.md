@@ -912,10 +912,25 @@ sudo snap install code --classic
 
 ### Removing VS Code.
 
-I use the following command to remove VS Code:
+* I use the following command to remove VS Code:
+    
 
 ```bash
 sudo snap remove code
+```
+
+* This command removes the configurations for VS Code:
+    
+
+```bash
+sudo rm -R ~/.config/Code
+```
+
+* This command removes the installation directory:
+    
+
+```bash
+sudo rm -R ~/.vscode
 ```
 
 ### Printing an AsciiDoc File as a PDF.
