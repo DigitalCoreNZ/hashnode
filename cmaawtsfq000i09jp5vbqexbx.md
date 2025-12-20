@@ -10,7 +10,7 @@ tags: ubuntu, productivity, software-development, linux, docker, spotify, blende
 
 ---
 
-Latest update: 4th October 2025
+Latest update: 21st December 2025
 
 ## TL;DR.
 
@@ -910,6 +910,14 @@ VS Code (Visual Studio Code) **is** a free, versatile code editor.
 sudo snap install code --classic
 ```
 
+### Updating the Snap-Installed VS Code Editor.
+
+I use the following command to update the Snap-Installed VS Code editor:
+
+```bash
+sudo snap refresh code --classic
+```
+
 ### Removing VS Code.
 
 * I use the following command to remove VS Code:
@@ -1144,6 +1152,26 @@ krita
 
 * From the apps menu, I pin the Krita app to the Dash.
     
+
+---
+
+## Updating the Firefox Browser.
+
+> NOTE: I can determine the type of Firefox installation (APT or Snap) by reading the `Help > About Firefox` banner.
+
+* I use the following command to update the Snap-installed Firefox browser:
+    
+
+```bash
+sudo snap refresh firefox
+```
+
+* I use the following command to update the APT-installed Firefox browser:
+    
+
+```bash
+sudo apt update && sudo apt upgrade firefox
+```
 
 ---
 
